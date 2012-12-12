@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[12pt,a4paper]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[czech]{babel}
@@ -291,8 +291,8 @@ Zbylé rovnosti analogicky.
 \begin{vetal}[Fourierovy vzorce]
 Nechť $f \in \mathcal{P}_{2 \pi}$ a nechť $f(x) = \frac{a_0}{2} + \sum_{k=1}^{\infty} a_k \cos(kx) + b_k \sin(kx)$, nechť navíc řada napravo konverguje stejnoměrně. Pak
 \begin{eqnarray}
-a_k & = & \frac{1}{\pi} \int_0^\pi f(x) \cos(2x) dx, \quad k \in \{0, 1, 2, \ldots\} \nonumber\\
-b_k & = & \frac{1}{\pi} \int_0^\pi f(x) \sin(2x) dx, \quad k \in \{1, 2, \ldots\} \nonumber
+a_k & = & \frac{1}{\pi} \int_0^{2 \pi} f(x) \cos(kx) dx, \quad k \in \{0, 1, 2, \ldots\} \nonumber\\
+b_k & = & \frac{1}{\pi} \int_0^{2 \pi} f(x) \sin(kx) dx, \quad k \in \{1, 2, \ldots\} \nonumber
 \end{eqnarray}
 \end{vetal}
 
@@ -323,7 +323,7 @@ Nehchť $f \in \mathcal{P}_{2 \pi}$. Pak definujeme čísla
 
 \begin{eqnarray}
 a_k & = & \frac{1}{\pi} \int_{0}^{2 \pi} f(x) \cos(kx) dx, \quad k=0,1,\ldots \nonumber\\
-b_K & = & \frac{1}{\pi} \int_{0}^{2 \pi} f(x) \sin(kx) dx, \quad k=1,2,\ldots \nonumber
+b_k & = & \frac{1}{\pi} \int_{0}^{2 \pi} f(x) \sin(kx) dx, \quad k=1,2,\ldots \nonumber
 \end{eqnarray}
 
 a nazveme je \emph{Fourierovými koeficienty} funkce $f$ a 
@@ -392,8 +392,8 @@ Pro Dirichletovo jádro $D_n$ platí
 \end{enumerate}
 \end{vetal}
 
-\begin{vetal}[částečné součtz Fourierovy řady]
-Nechť $f \in \mathcal{P}_{2 \pi}$ a $F_f$ je Fourierova řada pro $f$. Potom pro částečné součty $s_n(x) = \frac{a_0}{2} + \sum_{k=1}^{n} (a_k \cos ( kx) + b_k \sin ( kx )$ platí
+\begin{vetal}[částečné součty Fourierovy řady]
+Nechť $f \in \mathcal{P}_{2 \pi}$ a $F_f$ je Fourierova řada pro $f$. Potom pro částečné součty $s_n(x) = \frac{a_0}{2} + \sum_{k=1}^{n} (a_k \cos ( kx) + b_k \sin ( kx ))$ platí
 $$s_n(x) = \frac{1}{\pi} \int_{-pi}^\pi f(x+z)D_n(y)dy = \frac{1}{\pi} \int_0^\pi \left( f(x+y) + f(x-y) \right) D_n(y) dy$$
 \end{vetal}
 
@@ -404,8 +404,8 @@ Speciálně pro Fourierovy koeficienty funkce $f \in \mathcal{P}_{2 \pi}$ platí
 \end{vetat}
 
 \begin{vetat}[Diniho kriterium]
-Nechť $f \int \mathcal{P}_{2 \pi}$ a $x \in \mathbb{R}$. Nechť existují vlastní limity $f(x+) = \lim_{x \rightarrow x+} f(y)$ a $f(x-) = \lim_{y \rightarrow x-} f(y)$ a nechť existují vlastní limity
-$$\lim_{x \rightarrow x+} \frac{f(y)-f(x+)}{y-x} \mathrm{a} \lim_{y \rightarrow x-} \frac{f(y)-f(x-)}{y-x}$$
+Nechť $f \int \mathcal{P}_{2 \pi}$ a $x \in \mathbb{R}$. Nechť existují vlastní limity $f(x+) = \lim_{y \rightarrow x+} f(y)$ a $f(x-) = \lim_{y \rightarrow x-} f(y)$ a nechť existují vlastní limity
+$$\lim_{y \rightarrow x+} \frac{f(y)-f(x+)}{y-x} \quad \mathrm{a} \quad \lim_{y \rightarrow x-} \frac{f(y)-f(x-)}{y-x}$$
 Potom Fourierova řada funkce $f$ konverguje v bodě $x$ k hodnotě $\frac{f(x+) + f(x-)}{2}$.
 \end{vetat}
 
@@ -502,7 +502,15 @@ má hromadný bod v $G$, neboli existují $z_n \in M$ a $z_0 \in G$ takové, že
 \end{vetal}
 
 \begin{definice}
-Řekneme, že funkce $f$ má v bodě $z_0$ pól násobnosti nejvýše $k \in \mathbb{N}$, je-li funkce $f(z) = (z-z_0)^{k+1}$ pro $z \neq z_0$ pro $z = z_0$ holomorfní na nějakém okolí bodu $z_0$. Řekneme, že má pól násobnosti $k$, je-li $k \in \mathbb{N}$ nejmenší s touto vlastností.
+Řekneme, že funkce $f$ má v bodě $z_0$ pól násobnosti nejvýše $k \in \mathbb{N}$, je-li funkce 
+\begin{equation}
+F(z) = \left\{ \begin{array}{ll}
+ (z-z_0)^{k+1}f(z) & \textrm{pro $z \neq z_0$} \nonumber\\
+ 0 & \textrm{pro $z=z_0$}
+  \end{array} \right.
+\end{equation}
+
+holomorfní na nějakém okolí bodu $z_0$. Řekneme, že má pól násobnosti $k$, je-li $k \in \mathbb{N}$ nejmenší s touto vlastností.
 \end{definice}
 
 Například funkce $f(z) = 1 / z^k$ má v bodě 0 pól násobnosti k.
@@ -515,5 +523,38 @@ Nechť $M \subset G \subset \mathbb{C}$ je konečná množina. Řekneme, že fun
 Nehcť $f$ je holomorfní na mezikruží $B(z_0, R) \backslash \overline{B(z_0, r)}$, $0 < r < R$. Pak existují jednoznačně určená čísla $a_k \in \mathbb{C}$, $k \in \mathbb{Z}$, že platí 
 $$f(z) = \sum_{k= - \infty}^\infty a_k (z-z_0)^k \textrm{ pro všechna } z \in B(z_0, R) \backslash \overline{B(z_0, r)}$$
 \end{vetat}
+
+\subsection{Reziduová věta a její aplikace}
+
+\begin{definice}
+Nechť $\sum_{k =- \infty}^\infty a_k ( z-z_0)^k$ je Laurentova řada funkce $f$. \emph{Rezuduum} funkce $f$ v bodě $z_0$ nazveme koeficient $a_{(-1)}$ a značíme ho $res_{z_0} f$.
+\end{definice}
+
+\begin{definice}
+\emph{Index bodu $z_0$} vzhledem v uzavřené křivce $\varphi$ je definován jako
+$$ind_\varphi z_0 = \frac{1}{2 \pi i} \int_\varphi \frac{1}{z-z_0}dz$$
+\end{definice}
+
+Index bodu udává, kolikrát oběhne křivka $\varphi$ okolo bodu $z_0$, pokud uvažujeme násobnost a obíhání v opačném směru bereme s opačným znaménkem.
+
+\begin{vetat}[Reziduová věta]
+Nechť $G \subset \mathbb{C}$ je oblast, $f$ je meromorfní funkce na $G$, $\varphi$ je křivka a póly $f$ neleží na $\langle \varphi \rangle (\subset G)$. Pak platí
+$$\int_\varphi f(z) dz = 2 \pi i \sum_{\{z: z \textrm{ je pól } f\}} res_z f int_z f$$
+\end{vetat}
+
+\begin{proof}
+Označme $P = \left\{ z \in G \textrm{ : } f(z)=+\infty \textrm{ resp. $f$ má pól v $z$} \right\}$. 
+Pro $z_0 \in G$ označme 
+$$H_{z_0} = \sum_{k = -kz}^{-1} a_k (z-z_0)^k$$ 
+část rozvoje $f$ do Laurentovy řady.
+Pak $$F(z) = f(z) - \sum_{z_0 \in P} H_{z_0}(z)$$ je $F$ holomorfní na $G$.
+Podle Cauchyovy věty $\int_\varphi F(z) dz = 0$. Tedy
+\begin{eqnarray}
+\int_\varphi F(z) dz & = & \int_\varphi \sum_{z_0 \in P} H_{z_0}(z) dz \nonumber\\
+& = & \sum_{z_0 \in P} \sum_{k=-kz}^{-1} \int_\varphi a_k (z-z_0)^k dz \nonumber\\
+& = & \sum_{z_0 \in P} res_{z_0} f \int_\varphi \frac{1}{z-z_0} dz \nonumber\\
+& = & 2 \pi i \sum_{z_0 \in P} res_{z_0} f ind_\varphi z_0 \nonumber
+\end{eqnarray}
+\end{proof}
 
 \end{document}
