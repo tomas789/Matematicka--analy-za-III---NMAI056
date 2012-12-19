@@ -1,0 +1,51 @@
+\begin{definice}
+Nechť $J \subset \mathbb{R}$ je interval a nechť máme $f : J \rightarrow \mathbb{R}$ a $f_n : J \rightarrow \mathbb{R}$ pro $n \in \mathbb{N}$. Řekneme, že posloupnost funkcí $\{f_n\}$:
+
+\begin{enumerate}
+\item \emph{konverguje bodově} k $f$ na $J$, pokud pro každé $x \in J$ platí $\lim_{n \rightarrow \infty} f_n(x) = f(x)$, neboli
+$$\forall x \in J \forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall n \geq n_0 : |f_n(x) - f(x)| < \epsilon$$
+Značíme $f_n \rightarrow f$ na $J$.
+\item \emph{konverguje stejnoměrně} k $f$ na $J$, pokud
+$$\forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall n \geq n_0 \forall x \in J : | f_n(x) - f(x) | < \epsilon$$
+Značíme $f_n \con f$.
+\item \emph{konverguje lokálně stejnoměrně}, pokud pro každý omezený uzavřený interval $[a, b] \subset J$ platí: $f_n \rightrightarrows f$ na $[a, b]$. Značíme $f_n \conloc f$
+\end{enumerate}
+\end{definice}
+
+\begin{vetal}[kritérium stejnoměrné konvergence]
+Nechť $f_n, f:J \rightarrow \mathbb{R}$ pak
+$$f_n \con f na J \Leftrightarrow \lim_{n \rightarrow \inf} \sup \{ |f_n(x) = f(x)|; x \in J \} = 0$$
+\end{vetal}
+
+\begin{vetat}[Bolzano-Cauchyho podmínka pro stejnoměrnou konvergenci]
+Nechť $f_n,f : J \rightarrow \mathbb{R}$. Pak
+$$f_n \con f na J \Leftrightarrow \forall \epsilon > 0 \exists n_0 \forall m,n \geq n_0 \forall x \in J : | f_n(x) - f_m(x)| < \epsilon$$
+\end{vetat}
+
+\begin{vetat}[Moore-Osgood]
+Nechť $x_0$ je krajní bod intervalu J (může být i $\pm \infty$). Nechť $f, f_n : J \rightarrow \mathbb{R}$ splňují
+\begin{enumerate}
+\item $f_n \con f$ na $J$,
+\item existuje $\lim_{x \rightarrow x_0} f_n(x) = a_n \in \mathbb{R}$ pro všechna $n \in \mathbb{N}$
+\end{enumerate}
+Pak existují $\lim_{n \rightarrow \infty} a_n$ a $\lim_{x \rightarrow x_0} f(x)$ a jsou si rovny, neboli:
+$$\lim_{n \rightarrow \infty} \lim_{x \rightarrow x_0} f_n(x) = \lim_{x \rightarrow x_0} \lim_{n \rightarrow \infty} f_n(x)$$
+\end{vetat}
+
+\begin{dusledek}
+Nechť $f_n \con f$ na $I$ a nechť $f_n$ jsou na $I$ spojité. Pak $f$ je spojitá na $I$.
+\end{dusledek}
+
+\begin{vetal}[o záměně limity a integrálu]
+Nechť funkce $f_n \con f$ na $[a,b]$ a nechť $f_n \in \mathbb{R} ([a,b])$. Pak $f \in \mathbb{R}([a,b])$ a 
+$$(R) \int_a^b f(x) dx = \lim_{n \rightarrow \infty} (R) \int_a^b f_n(x) dx$$
+\end{vetal}
+
+\begin{vetat}[o záměně limity a derivace]
+Nechť funkce $f_n$, $n \in \mathbb{N}$, mají vlastní derivaci na intervalu $(a,b)$ a nechť:
+\begin{enumerate}
+\item existuje $x_0 \in (a,b)$ tak, že $\{f_n(x_0)\}_{n=0}^{\infty}$ konverguje,
+\item pro derivace $f_n'$ platí $f_n' \conloc$ na $(a,b)$
+\end{enumerate}
+Potom existuje funkce $f$ tak, že $f_n \conloc f$ na $(a,b)$, $f$ má vlastní derivaci a platí $f_n' \conloc f'$ na $(a,b)$.
+\end{vetat}

@@ -1,0 +1,46 @@
+\begin{definice}
+Nechť $f$ je funkce definovaná na okolí bodu $z_0 \in \mathbb{C}$ a zobrazující do $\mathbb{C}$. Komplexní derivací $f$ v $z_0$ nazýváme komplexní číslo
+$$f^\prime (z_0) = \lim_{z \rightarrow z_0} \frac{f(z) - f(z_0)}{z - z_0}$$
+pokud tato limita existuje.
+\end{definice}
+
+\begin{definice}
+Nechť $G \subset \mathbb{C}$ je otevřená. Funkce $f : G \rightarrow C$ se nazývá \emph{holomorfní}, má-li ve všech bodech $G$ komplexní derivaci.
+\end{definice}
+
+\begin{poznamka}
+Jsou-li $f$ a $g$ holomorfní na $G$, pak jsou $f+g$ i $f g$ holomorfní na $G$ a $f/g$ je holomorfní na $G \cap \{g \neq 0\}$.
+\end{poznamka}
+
+\begin{definice}
+Zobrazení $\varphi : [a,b] \rightarrow \mathbb{C}$ je křivka a $f : \langle \varphi \rangle \rightarrow \mathbb{R}$ je spojité zobrazení. Definujeme křivkový integrál
+$$\int_{\langle \varphi \rangle} f(z) dz = \int_\alpha^\beta f( \varphi (t)) \varphi^\prime(t) dt$$
+existuje-li integrál na pravé straně. Tento integrál můžeme značit i $\int_\varphi f(z) dz$.
+\end{definice}
+
+\begin{vetat}[Cauchyho věta pro trojúhélník]
+Nechť $f$ je holomorfní na otevřené množině $G \subset \mathbb{C}$ a $\Delta \subset G$ je trojúhelník. Pak $\int_{\delta \Delta} f(z) dz = 0$.
+\end{vetat}
+
+\begin{vetabd}[Cauchy]
+Nechť $f$ je holomorfní na otevřené množině $G \subset \mathbb{C}$. Nechť $\langle \varphi \rangle \subset G$ je uzavřená křivka taková, že vnitřek $\langle \varphi \rangle \subset G$ (tedy případné "díry" uvnitř G nejsou uvnitř $\langle \varphi \rangle$). Pak $\int_\varphi f(z)dz=0$.
+\end{vetabd}
+
+\begin{vetal}[Cauchyův vzorec]
+Nechť $f$ je holomorfní na kruhu $B(z_0, R)$ a $0<r<R$. Pro křivku $\varphi(t) = z_0 + r e^{it}$, $t \in [0,2\pi]$, platí
+
+\begin{equation}
+\frac{1}{2 \pi i} \int_\varphi \frac{f(z)}{z-s}  = \left\{ \begin{array}{ll}
+ f(z) & \textrm{pro $|s-z_0| < r$} \nonumber\\
+ 0 & \textrm{pro $| s-z_0 | > r$}
+  \end{array} \right.
+\end{equation}
+\end{vetal}
+
+\begin{vetat}[Liouville]
+Nechť $f$ je holomorfní a omezená na $\mathbb{C}$. Pak $f$ je konstantní.
+\end{vetat}
+
+\begin{vetal}[Základní věta algebry]
+Každý nekonstantní polynom (s komplexními koeficienty) má v $\mathbb{C}$ alespoň jeden kořen.
+\end{vetal}

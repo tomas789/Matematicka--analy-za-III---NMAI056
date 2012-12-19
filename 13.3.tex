@@ -1,0 +1,30 @@
+\begin{definice}
+Nechť $\sum_{k =- \infty}^\infty a_k ( z-z_0)^k$ je Laurentova řada funkce $f$. \emph{Rezuduum} funkce $f$ v bodě $z_0$ nazveme koeficient $a_{(-1)}$ a značíme ho $res_{z_0} f$.
+\end{definice}
+
+\begin{definice}
+\emph{Index bodu $z_0$} vzhledem v uzavřené křivce $\varphi$ je definován jako
+$$ind_\varphi z_0 = \frac{1}{2 \pi i} \int_\varphi \frac{1}{z-z_0}dz$$
+\end{definice}
+
+Index bodu udává, kolikrát oběhne křivka $\varphi$ okolo bodu $z_0$, pokud uvažujeme násobnost a obíhání v opačném směru bereme s opačným znaménkem.
+
+\begin{vetat}[Reziduová věta]
+Nechť $G \subset \mathbb{C}$ je oblast, $f$ je meromorfní funkce na $G$, $\varphi$ je křivka a póly $f$ neleží na $\langle \varphi \rangle (\subset G)$. Pak platí
+$$\int_\varphi f(z) dz = 2 \pi i \sum_{\{z: z \textrm{ je pól } f\}} res_z f int_z f$$
+\end{vetat}
+
+\begin{proof}
+Označme $P = \left\{ z \in G \textrm{ : } f(z)=+\infty \textrm{ resp. $f$ má pól v $z$} \right\}$. 
+Pro $z_0 \in G$ označme 
+$$H_{z_0} = \sum_{k = -kz}^{-1} a_k (z-z_0)^k$$ 
+část rozvoje $f$ do Laurentovy řady.
+Pak $$F(z) = f(z) - \sum_{z_0 \in P} H_{z_0}(z)$$ je $F$ holomorfní na $G$.
+Podle Cauchyovy věty $\int_\varphi F(z) dz = 0$. Tedy
+\begin{eqnarray}
+\int_\varphi F(z) dz & = & \int_\varphi \sum_{z_0 \in P} H_{z_0}(z) dz \nonumber\\
+& = & \sum_{z_0 \in P} \sum_{k=-kz}^{-1} \int_\varphi a_k (z-z_0)^k dz \nonumber\\
+& = & \sum_{z_0 \in P} res_{z_0} f \int_\varphi \frac{1}{z-z_0} dz \nonumber\\
+& = & 2 \pi i \sum_{z_0 \in P} res_{z_0} f ind_\varphi z_0 \nonumber
+\end{eqnarray}
+\end{proof}

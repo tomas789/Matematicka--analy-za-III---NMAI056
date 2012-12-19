@@ -1,0 +1,49 @@
+\begin{definice}
+Nehcť $z_0 \in \mathbb{R}$ a $a_n \in \mathbb{C}$ pro $n \in \mathbb{N}_0$. Řadu funkcí $\sum_{n=0}^{\infty} a_n (z-z_0)^n$ pro $z \in \mathbb{C}$ nazýváme mocninnou řadou s koeficienty $a_n$ o středu $z_0$.
+\end{definice}
+
+\begin{vetat}[o rozvoji do Taylorovy řady]
+Nechť $f$ je holomorfní na kruhu $B(z_0, R)$. Pak existuje právě jedna mocninná řada s poloměrem konvergence alespoň $R$, že na $B(z_0, R)$ platí
+$$f(z) = \sum_{n=0}^\infty a_n (z-z_0)^n$$
+Navíc platí $a_n = \frac{f^{(n)}(z_0)}{n!}$ pro všechna $n \in \mathbb{N}_0$.
+\end{vetat}
+
+Jako u reálných mocninných řad lze na kruhu konvergence prohazovat $\sum$ a derivaci a důkaz je podobný.
+
+\begin{dusledek}
+Je-li $f$ holomorfní na $G$, pak na $G$ existují derivace všech řádů $f^{(k)}$ pro $k \in \mathbb{N}$.
+\end{dusledek}
+
+\begin{definice}
+Množina $G \subset \mathbb{C}$ se nazývá \emph{oblast}, pokud je otevřená a souvislá. Tedy pokud platí
+$$\forall A, B \in G \textrm{ otevrene v } G, G=A \cup B, A \cap B = \emptyset \Rightarrow A = \emptyset \textrm{ nebo } B = \emptyset$$
+\end{definice}
+
+\begin{vetal}[o jednoznačnosti holomorfní funkce]
+Nechť $G \subset \mathbb{C}$ je oblast a $f, g$ jsou holomorfní na $G$. Předpokládejme, že množina
+$$M = \left\{ z \in G : f(z)=g(z) \right\} $$
+má hromadný bod v $G$, neboli existují $z_n \in M$ a $z_0 \in G$ takové, že $z_n \stackrel{n \rightarrow \infty}{\rightarrow} z_0$. Pak $f=g$ na $G$.
+\end{vetal}
+
+\begin{definice}
+Řekneme, že funkce $f$ má v bodě $z_0$ pól násobnosti nejvýše $k \in \mathbb{N}$, je-li funkce 
+\begin{equation}
+F(z) = \left\{ \begin{array}{ll}
+ (z-z_0)^{k+1}f(z) & \textrm{pro $z \neq z_0$} \nonumber\\
+ 0 & \textrm{pro $z=z_0$}
+  \end{array} \right.
+\end{equation}
+
+holomorfní na nějakém okolí bodu $z_0$. Řekneme, že má pól násobnosti $k$, je-li $k \in \mathbb{N}$ nejmenší s touto vlastností.
+\end{definice}
+
+Například funkce $f(z) = 1 / z^k$ má v bodě 0 pól násobnosti k.
+
+\begin{definice}
+Nechť $M \subset G \subset \mathbb{C}$ je konečná množina. Řekneme, že funkce $f : G \backslash M \rightarrow \mathbb{C}$ je \emph{meromorfní} v $G$, pokud je $f$ holomorfní na $G \backslash M$ a v bodech $M$ má $f$ póly (konečné násobnosti).
+\end{definice}
+
+\begin{vetat}[o rozovji do Laurentovy řady]
+Nehcť $f$ je holomorfní na mezikruží $B(z_0, R) \backslash \overline{B(z_0, r)}$, $0 < r < R$. Pak existují jednoznačně určená čísla $a_k \in \mathbb{C}$, $k \in \mathbb{Z}$, že platí 
+$$f(z) = \sum_{k= - \infty}^\infty a_k (z-z_0)^k \textrm{ pro všechna } z \in B(z_0, R) \backslash \overline{B(z_0, r)}$$
+\end{vetat}

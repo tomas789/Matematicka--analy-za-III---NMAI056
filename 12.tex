@@ -1,0 +1,201 @@
+\begin{definice}
+Nechť $a_k \in \mathbb{R}$ pro $k \in \mathbb{N}_0$ a $b_k \in \mathbb{R}$ pro $k \in \mathbb{N}$. Řadu $\frac{a_0}{2} + \sum_{k=1}^{\infty} \left( a_k \cos (kx) + b_k \sin (kx) \right)$ pro $x \in \mathbb{R}$ nazveme \emph{trigoniometrickou řadou}. Pro dané $n$ je $\frac{a_0}{2} + \sum_{k=1}^{n} \left( a_k \cos (kx) + b_k \sin (kx) \right)$   \emph{trigoniometrický polynom stupně $n$}. $\mathcal{P}_{2 \pi}$ značí množinu všech $2 \pi$-periodických funkcí majících Reimannův integrál na $[0, 2 \pi]$
+\end{definice}
+
+Cílem je danou $f \in \mathcal{P}_{2 \pi}$ rozvinout do trigoniometrické řady a:
+\begin{enumerate}
+\item spočítat $a_k$, $b_k$
+\item zjistit, zda-li je řada rovna původní funkci
+\end{enumerate}
+
+\begin{vetabd}
+Nechť $\{ a_n \}_{n \in \mathbb{N}}$ je posloupnost reálných čísel a $\{ b_n \}_{n=1}^{\infty}$ je nerostoucí posloupnost reálných čísel. Jestliže buď
+\begin{enumerate}
+\item[(A)] $\sum_{n=1}^{\infty} a_n$ je konvergentní, nebo
+\item[(D)] $\lim_{n \rightarrow \infty} b_n = 0$ a $\sum_{n=1}^{\infty} a_n$ má omezené částečné součty
+\end{enumerate}
+Pak $\sum_{n=1}^{\infty} a_n b_n$ konverguje.
+\end{vetabd}
+
+\begin{priklad}
+Vyšetřete konvergenci řady
+$$\sum_{n=1}^\infty \frac{\sin (nx)}{n}$$
+\end{priklad}
+
+\begin{proof}[Řešení]
+Pokud $x= \pi k$, $k \in \mathbb{Z} \Leftrightarrow \sum 0 \leftarrow$ konverguje.
+
+Dále předpokládejme, že $x \neq \pi k$. Označme $a_n = \sin (nx)$, $b_n = \frac{1}{n}$. $b_n$ je monotonní nerostoucí a $\lim_{n \rightarrow \infty} b_n = 0$. Nechť $m \in \mathbb{N}$.
+
+$$\left | \sum_{n=a}^{m} \sin (nx) \right | = \left | Im \left( \sum_{n=0}^{m} e^{inx} \right ) \right | = \left | Im \left( \frac{1- \left( e^{ix} \right)^{n+1}  }{1-e^{ix}} \right) \right | \leq \frac{3}{ \left | 1-e^{ix} \right | }$$
+
+Dle Dirichletova kriteria tato suma konverguje.
+
+\end{proof}
+
+\begin{vetal}[o ortogonalitě trigoniometrických funkcí]
+Nechť $m, n \in \mathbb{N}$, pak
+\begin{eqnarray}
+\int_{0}^{2 \pi} \sin (nx) \cos (mx) dx & = & 0 \nonumber\\
+\int_{0}^{2 \pi} \sin (nx) \sin (mx) dx & = & \pi \textrm{ (pro $n=m$)}, 0 \textrm{ (pro $n \neq m$) } \nonumber\\
+\int_{0}^{2 \pi} \cos (nx) \cos (mx) dx & = & \pi \textrm{ (pro $n \neq m$)}, 0 \textrm{ (pro $n=m$)} \nonumber
+\end{eqnarray}
+\end{vetal}
+
+\emph{Poznámka} proč se věta jmenuje o ortogonalitě trigoniometrických funkcí? Vraťme se zpět k lineární algebře. Skalární součin vektorů $x$ a $y$ jsme definovali jako $\left\langle x,y \right\rangle = \sum_{i=0}^{n} x_i y_i$. Zcela ekvivalentně byl zaveden skalární součit funkcí $f$ a $g$ jako $\left\langle f, g \right\rangle = \int f(x) g(x) dx$. O vektorech řekneme, že jsou na sebe kolmé (ortogonální), pokud je jejich skalární součin roven nule. Nejinak je tomu i u skalárního součinu funkcí. 
+
+\emph{Poznámka 2} Skalární součin funkcí se nazývá Hilbertovy prostory
+
+\begin{proof}
+
+\begin{eqnarray}
+\sin \alpha \sin \beta & = & \frac{1}{2} \left( \cos (\alpha - \beta) - \cos (\alpha + \beta) \right) \nonumber\\
+\cos \alpha \cos \beta & = & \frac{1}{2} \left( \cos (\alpha - \beta) + \cos (\alpha + \beta) \right) \nonumber\\
+\sin \alpha \cos \beta & = & \frac{1}{2} \left( \cos (\alpha - \beta) + \sin (\alpha + \beta) \right) \nonumber
+\end{eqnarray}
+
+$$\int_{0}^{2 \pi} \sin (nx) \cos(mx) = \int_{0}^{2 \pi} \left[ \frac{1}{2} \cos \left( (n-m)x \right) - \frac{1}{2} \left( (n+m)x \right) \right] = $$
+Pro $n \neq m$
+$$= \left[ \frac{1}{2} \frac{\sin \left( (n-m)x \right)}{n-m} \right]_{0}^{2 \pi} - \left[ \frac{1}{2} \frac{\sin \left( (n+m)x \right)}{n+m} \right]_{0}^{2 \pi} = 0$$
+Pro $n=m$
+$$=\int_{0}^{2 \pi} \frac{1}{2} \cos 0 + (2. clen stejne) = \pi$$
+
+Zbylé rovnosti analogicky.
+\end{proof}\begin{opakovani}[Vlastnosti Reimanovsky integrovantelných funkcí] \quad
+\begin{enumerate}
+\item $f \in R((a,b)) \Leftrightarrow \forall \varepsilon > 0 \textrm{ dělení } (a,b)$ : $S(f,D) -s(f,D) < \varepsilon$
+\item $f \in R((a,b))$ a $f \in R((b,c)) \Leftrightarrow f \in R((a,c))$ pro $a<b<c$
+\item $f$ je spojitá na $[a,b] \Rightarrow f \in R((a,b))$
+\item $f$ je spojitá na $(a,b)$ a omezená na $[a,b] \Rightarrow f \in R((a,b))$
+\item $f, g \in R((a,b)) \Rightarrow f \pm g, f * g \in R((a,b))$
+\end{enumerate}
+\end{opakovani}
+
+\begin{vetal}[Fourierovy vzorce]
+Nechť $f \in \mathcal{P}_{2 \pi}$ a nechť $f(x) = \frac{a_0}{2} + \sum_{k=1}^{\infty} a_k \cos(kx) + b_k \sin(kx)$, nechť navíc řada napravo konverguje stejnoměrně. Pak
+\begin{eqnarray}
+a_k & = & \frac{1}{\pi} \int_0^{2 \pi} f(x) \cos(kx) dx, \quad k \in \{0, 1, 2, \ldots\} \nonumber\\
+b_k & = & \frac{1}{\pi} \int_0^{2 \pi} f(x) \sin(kx) dx, \quad k \in \{1, 2, \ldots\} \nonumber
+\end{eqnarray}
+\end{vetal}
+
+\begin{proof}
+Idea důkazu je, že identitu pro $f(x)$ přenásobíme $\cos(kx)$ resp. $\sin(kx)$  a přeintegrujeme přes $[0, 2 \pi]$ a díky větě "Věta L 2" (! odpovídá značení na přednášce, nikoliv v tomto skriptu) mnoho členů vypadne.
+
+\begin{opakovani}
+$f_n \con f$ na $(a,b) \Rightarrow \int_a^b f_n \rightarrow \int_a^b f$
+\end{opakovani}
+
+\begin{pozorovani}
+$\sum_{k=1}^{\infty} \left( a_k \cos(kx) \sin(lx) + b_k \sin(kx) \sin(lx) \right)$ konverguje stejnoměrně.
+\end{pozorovani}
+
+$$\int_{0}^{2 \pi} f(x) \sin(lx) dx = \int_{0}^{2 \pi} \left[ \frac{a_0}{2} \sin(lx) + \sum \left( a_k \cos(kx) \sin(lx) + b_k \sin(kx) \sin(lx) \right) \right] dx = $$
+$$b_k \int_{0}^{2 \pi} \sin^2(lx) dx = b_k \pi \Rightarrow b_k = \frac{1}{\pi} \int_0^{2 \pi} f(x) \sin(lx) dx$$
+
+podobně přenásobím funkcí $\sin(lx)$ dostanu vzorec pro $a_k$ pro $k \in \mathbb{N}$.
+
+Přenásobím funkcí $\cos(0x) = 1$:
+
+$$\int_{0}^{2 \pi} 1 * f(x) dx = \int_{0}^{2 \pi} \frac{a_0}{2}+0+0+\ldots+0 \Rightarrow a_0 = \frac{1}{\pi} \int_{0}^{2 \pi} f(x) dx = \frac{1}{\pi} \int_0^{2 \pi} f(x) \cos(0x) dx$$
+
+\end{proof}
+
+\begin{definice}
+Nehchť $f \in \mathcal{P}_{2 \pi}$. Pak definujeme čísla
+
+\begin{eqnarray}
+a_k & = & \frac{1}{\pi} \int_{0}^{2 \pi} f(x) \cos(kx) dx, \quad k=0,1,\ldots \nonumber\\
+b_k & = & \frac{1}{\pi} \int_{0}^{2 \pi} f(x) \sin(kx) dx, \quad k=1,2,\ldots \nonumber
+\end{eqnarray}
+
+a nazveme je \emph{Fourierovými koeficienty} funkce $f$ a 
+
+$$a F_f = \frac{a_0}{2} + \sum_{k=1}^\infty a_k \cos(kx) + b_k \sin(kx)$$
+
+nazveme Fourierovou řadou funkce $f$.
+\end{definice}
+
+\begin{poznamka}
+\begin{itemize} \quad
+\item díky $2 \pi$-periodicitě lze funkci integrovat přes libovolný interval délky $2 \pi$ (velmi často $\int_{-\pi}^{\pi}$)
+\item Fourierovy řady lze zavést i pro funkce s periodou $l$, pak mají vzorce tvar
+\begin{eqnarray}
+F_f & = & \frac{a_0}{2} + \sum_{k=1}^{\infty} a_k \cos \left( \frac{2 k \pi}{l} x \right) + b_k \sin \left( \frac{2 k \pi}{l} x \right) \nonumber\\
+a_k & = & \frac{2}{l} \int_0^{l} f(x) \cos \left( \frac{2 k \pi}{l} x \right) dx \nonumber\\
+b_k & = & \frac{2}{l} \int_0^l f(x) \sin \left( \frac{2 k \pi}{l} x \right) dx \nonumber
+\end{eqnarray}
+\item někdy se pracuje s rozvoji vůči jinému systému než je trn trigoniometrický
+\item je-li $f$ lichá, pak platí $\forall k : a_k = 0$
+\item je-li $f$ sudá, pak platí $\forall k : b_k = 0$
+\item opecně neplatí $F_f = f$
+\end{itemize}
+\end{poznamka}
+
+\begin{priklad}
+Rozviňte funkci $f(x) = x^2$ do Fourierovy řady na $(-\pi, \pi)$.
+\end{priklad}
+
+Funkce $f$ je sudá $\Rightarrow \forall k b_k = 0$.
+
+\begin{eqnarray}
+a_0 & = & \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) dx = \frac{2}{\pi} \int_0^{\pi} x^2 dx = \frac{2}{\pi} \left[ \frac{x^3}{3} \right]_0^\pi = \frac{2}{3} \pi^2 \nonumber\\
+a_k & = & \frac{2}{\pi} \int_{0}^{\pi} x^2 \cos (kx) dx = \frac{2}{\pi} \left( \left[x^2 \frac{\sin (kx)}{k} \right]_0^\pi - \int_0^\pi 2x \frac{\sin (kx)}{k} dx \right) \nonumber\\
+& = & \frac{2}{\pi} \left( 0 - 0 - \frac{2}{k} \int_0^\pi x \sin (kx) dx \right) = \frac{4}{k^2 \pi} \left( \left[ x \frac{\cos (kx)}{k} \right]_0^\pi - \int_0^\pi 1 * \frac{\cos(kx)}{k} dx \right) \nonumber\\
+& = & \frac{4}{k^2 \pi} \left( \pi \cos (k \pi) - 0 - 0 \right) = \frac{4}{k^2} \cos (k \pi) = \frac{4}{k^2} (-1)^k \nonumber
+\end{eqnarray}
+
+$$F_f(x) = \frac{1}{3} \pi^2 + \sum_{k=1}^{\infty} \frac{4}{k^2} (-1)^k \cos (kx)$$
+
+\begin{definice}
+Nechť $n \in \mathbb{N}$. Pak \emph{Dirichletovým jádrem} nazveme funkci
+$$D_n(x) = \frac{1}{2}+\cos(x)+\cos(2x)+\ldots+\cos(nx)$$
+\end{definice}
+
+\begin{dusledek}
+\begin{enumerate}
+\item $D_n$ je spojitá funkce, sudá, $2 \pi$-periodická, $D_n(0) = n + \frac{1}{2}$
+\item $\int_{-\pi}^\pi D_n(x) dx = \pi$
+\item $D_n(x) = \frac{\sin \left( n + \frac{1}{2} x \right)}{2 \sin \frac{x}{2}}, \quad \forall x \in \mathbb{R} \backslash \{ 2 k \pi \}_{k \in \mathbb{Z}}$
+\end{enumerate}
+\end{dusledek}
+
+\begin{proof}
+\begin{enumerate}
+\item č
+\end{enumerate}
+\end{proof}
+
+\begin{vetal}[vlastnosti Dirichletova jádra]
+Pro Dirichletovo jádro $D_n$ platí
+\begin{enumerate}
+\item $D_n$ je spojitá, sudá, $2 \pi$-periodická funkce
+\item $\int_{-\infty}^{\infty} D_n (x) dx = \pi$
+\item $D_n(x) = \frac{\sin \left( n + \frac{1}{2} \right) x}{2 \sin \left( \frac{x}{2} \right)}$, $\forall x \in \mathbb{R} \backslash \bigcup_{k \in \mathbb{Z}} \{ 2k \pi \}$
+\end{enumerate}
+\end{vetal}
+
+\begin{vetal}[částečné součty Fourierovy řady]
+Nechť $f \in \mathcal{P}_{2 \pi}$ a $F_f$ je Fourierova řada pro $f$. Potom pro částečné součty $s_n(x) = \frac{a_0}{2} + \sum_{k=1}^{n} (a_k \cos ( kx) + b_k \sin ( kx ))$ platí
+$$s_n(x) = \frac{1}{\pi} \int_{-pi}^\pi f(x+z)D_n(y)dy = \frac{1}{\pi} \int_0^\pi \left( f(x+y) + f(x-y) \right) D_n(y) dy$$
+\end{vetal}
+
+\begin{vetat}[Riemann-Lebesqueovo lemma]
+Nechť $[a,b] \subset \mathbb{R}$ a $f \in R([a,b])$. Potom
+$$\lim_{t \rightarrow \infty} \int_a^b f(x) \cos(tx) dx = 0 \mathrm{a} \lim_{t \rightarrow \infty} \int_a^b f(x) \sin(tx) dx = 0$$
+Speciálně pro Fourierovy koeficienty funkce $f \in \mathcal{P}_{2 \pi}$ platí $a_k \rightarrow 0$ a $b_k \rightarrow 0$.
+\end{vetat}
+
+\begin{vetat}[Diniho kriterium]
+Nechť $f \int \mathcal{P}_{2 \pi}$ a $x \in \mathbb{R}$. Nechť existují vlastní limity $f(x+) = \lim_{y \rightarrow x+} f(y)$ a $f(x-) = \lim_{y \rightarrow x-} f(y)$ a nechť existují vlastní limity
+$$\lim_{y \rightarrow x+} \frac{f(y)-f(x+)}{y-x} \quad \mathrm{a} \quad \lim_{y \rightarrow x-} \frac{f(y)-f(x-)}{y-x}$$
+Potom Fourierova řada funkce $f$ konverguje v bodě $x$ k hodnotě $\frac{f(x+) + f(x-)}{2}$.
+\end{vetat}
+
+\begin{dusledek}
+Nechť $x \in \mathbb{R}$ a nechť pro $f \in \mathcal{P}_{2 \pi}$ existuje $f^\prime (x)$. Potom $f(x)=F_f(x)$.
+\end{dusledek}
+
+\begin{vetat}[Jordan-Dirichletovo kriterium - bez důkazu]
+Nechť $f \in \mathcal{P}_{2\pi}$ je po částech monotónní. Tedy nechť existuje konečně mnoho bodů $0=a_1 < a_2 < \ldots < a_m = 2 \pi$ tak, že $f$ je monotónní na $(a_i, a_{i+1})$ pro $i \in \{1, \ldots, m-1 \}$. Potom Fourierova řada funkce $f$ konverguje v bodě $x$ k hodnotě $\frac{f(x+) + f(x-)}{2}$ pro všechna $x \in \mathbb{R}$.
+\end{vetat}

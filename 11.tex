@@ -1,0 +1,78 @@
+\begin{definice}
+Nehcť $x_0 \in \mathbb{R}$ a $a_n \in \mathbb{R}$ pro $n \in \mathbb{N}_0$. Řadu funkcí $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ nazýváme \emph{mocninnou řadou} s koeficienty $a_n$ o středu $x_0$.
+\end{definice}
+
+\begin{definice}
+\emph{Poloměrem konvergence} mocninné řady $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ nazveme $$R = \sup \left\{ r \in [ 0,\infty ) : \sum_{n=0}^{\infty}  a_n ( x - x_0 )^n \textrm{ konverguje } \forall x \in [ x_0 - r; x_0 + r ] \right\}$$
+\end{definice}
+
+\begin{vetal}[o poloměru konvergence mocninné řady]
+Nechť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada a $R \in [ 0, \infty ]$ její poloměr konvergence. Pak řada konverguje obsolutně pro všechna $x$ taková, že $| x - x_0| < R$ a diverguje pro všechna $x$ taková, že $| x - x_0 | > R$.
+\end{vetal}
+
+\begin{vetal}[výpočet poloměru konvergence]
+Nechť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada a $R \in [ 0, \infty ]$ její poloměr konvergence. Pak platí
+$$R = \frac{1}{ \lim \sup_{n \rightarrow \infty} \sqrt[n]{| a_n |} }$$
+Pokud existuje $\lim_{n \rightarrow \infty} \frac{|a_n|}{|a_{n+1}|}$, pak $R = \lim_{n \rightarrow \infty} \frac{|a_n|}{|a_{n+1}|}$.
+\end{vetal}
+
+\begin{vetal}
+Nechť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada s poloměrem konvergence $R > 0$.  Pak řada konverguje lokálně stejnoměrně na $(x_0 - R, x_0 + R)$ (je-li $R=\infty$, pak na celém $\mathbb{R}$).
+\end{vetal}
+
+\begin{vetal}[o derivaci mocninné řady]
+Nechť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada s poloměrem konvergence $R > 0$. Pak $\sum_{n=1}^{\infty} n a_n (x-x_0)^{n-1}$ je také mocninná řada se stejným středem a poloměrem konvergence. Navíc pro $x \in ( x_0 - R, x_0 + R )$ ($\mathbb{R}$ pro $R = \infty$) platí
+$$ \left( \sum_{n=0}^{\infty} a_n (x-x_0)^n \right)' = \sum_{n=+}^{\infty} n a_n (x-x_0)^{n-1}$$
+\end{vetal}
+
+\begin{vetal}[o integrování mocninné řady]
+Nehcť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada s poloměrem konvergence $R > 0$. Pak $\sum_{n=0}^{\infty} \frac{a_n}{n+1} \left(x-x_0 \right)^{n+1}$ je také mocninná řada se stejným poloměrem konvergence. Navíc platí
+$$\int \sum_{n=0}^{\infty} a_n (x-x_0)^n dx = \sum_{n=1}^{\infty} \frac{a_n}{n+1} \left( x-x_0 \right)^{n+1} + C  \quad \textrm{na } \left( x_0 - R, x_0 + R \right)$$
+\end{vetal}
+
+\begin{vetat}[Abelova]
+Nechť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada s poloměrem konvergence $R > 0$. Nechť navíc $\sum_{n=0}^{\infty} a_n R^n$ konverguje. Potom řada $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ konverguje stejnoměrně na $[ x_0, x_0 + R ]$ a platí
+$$\sum_{n=0}^{\infty} a_n R^n = \lim_{r \rightarrow R_-} \sum_{n=0}^{\infty} a_n r^n$$
+\end{vetat}
+
+\begin{proof}
+Předpokládejme bez újmy na obecnosti, že $x_0 = 0$. Označme $t_N = \sum_{n=N+1}^{\infty} a_n R^n$. Víme, že $\sum a_n R^n$ konverguje, tedy
+$$\forall \varepsilon>0 \quad \exists n_0 \quad \forall n \geq n_0 \quad : \quad |t_N| < \varepsilon$$
+\begin{eqnarray}
+a_n & = & a_n R^n \left( \frac{x}{R} \right)^n \nonumber\\
+& = & - t_N \left( \left( \frac{x}{R} \right)^n - \left( \frac{x}{R} \right)^{n+1} \right) + t_{n-1} \left( \frac{x}{R} \right)^n - t_n \left( \frac{x}{R} \right)^{n+1} \nonumber
+\end{eqnarray}
+Sečteme od $N$ do $N+k$
+$$\sum_{n=N}^{N+k} a_n x^n = \left[ \sum_{n=N}^{N+k} -t_n \left( \left( \frac{x}{R} \right)^n - \left( \frac{x}{R} \right)^{n+1} \right) \right] + t_{N-1} \left( \frac{x}{R} \right)^n - t_{N+k} \left( \frac{x}{R} \right)^{n+k+1}$$
+Protože $x \in [0, R]$, tak $\left( \frac{x}{R} \right)^n \in [0,1]$. Dále platí $\left( \frac{x}{R} \right)^{n} - \left( \frac{x}{R} \right)^{n+1} \geq 0$.
+\begin{eqnarray}
+\left|\sum_{n=N}^{N+k} a_n x^n \right| & \leq & \sum_{n=N}^{N+k} |t_n| \left( \left( \frac{x}{R} \right)^{n} - \left( \frac{x}{R} \right)^{n+1} \right) + |t_{N-1}| + |t_{N+k}| \nonumber\\
+& \leq & \epsilon \sum_{n=N}^{N+k} |t_n| \left( \left( \frac{x}{R} \right)^{n} - \left( \frac{x}{R} \right)^{n+1} \right) + 2 \varepsilon \nonumber\\
+& = & \varepsilon \left( \left( \frac{x}{R} \right)^{N} - \left( \frac{x}{R} \right)^{N+k+1} \right) + 2 \varepsilon \nonumber\\
+& \leq & 3 \varepsilon \nonumber
+\end{eqnarray}
+Z \emph{BC} podmínky pro stejnoměrnou konvergenci řady dostaneme $\sum_{n=0}^{\infty} a_n x^n \con$ na $[0, R]$
+Z MO věty dostaneme
+$$\lim_{n \rightarrow \infty} \lim_{r \rightarrow R_-} \sum_{n=0}^{N} a_n R^n = \lim_{r \rightarrow R_-} \lim_{n \rightarrow \infty} \sum_{n=0}^{N} a_n R^n$$
+$$\lim_{n \rightarrow \infty} \lim_{r \rightarrow R_-} \sum_{n=0}^{N} a_n R^n = \lim_{n \rightarrow \infty} \sum_{n=0}^{N} a_n R^n = \sum_{n=0}^{\infty} a_n R^n$$
+$$\lim_{r \rightarrow R_-} \lim_{n \rightarrow \infty} \sum_{n=0}^{N} a_n R^n = \lim_{r \rightarrow R_-} \sum_{n=0}^{\infty} a_n r^n$$
+\end{proof}
+
+\begin{priklad}
+Sečtěte $\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{3n-2}$
+\end{priklad}
+
+\begin{proof}[Řešení]
+Nechť $f(x) = \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{3n-2} x^{3n-2}$. To je mocninná řada poloměrem konvergence $R=1$. Podle Laibnitze $f(1) = \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{3n-2}$ konverguje. 
+
+Tedy podle Abelovy věty $\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{3n-2} = \lim_{x \rightarrow 1_-} f(x)$
+
+Dle věty o derivaci mocninné řady máme $\forall x \in (-1, 1)$
+$$f'(x) = \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{3n-2} (3n-2) x^{3n-3} = \sum_{n=1}^{\infty} \left( -x^3 \right)^{n-1} = \frac{1}{1+x^3}$$
+$$f(x) = \int \frac{1}{1+x^3} dx = \ldots = \frac{1}{3} \ln(x+1) - \frac{1}{6} \ln(x^2-x+1) + \frac{1}{\sqrt{3}} \arctan \left( \frac{2x-1}{\sqrt{3}} \right) + C$$
+$$0 = f(0) = \frac{1}{3} 0 - \frac{1}{6} 0 + \frac{1}{\sqrt{3}} \arctan \left( - \frac{1}{\sqrt{3}} \right) + C \Rightarrow C = \frac{1}{\sqrt{3}} \arctan \left( \frac{1}{\sqrt{3}} \right)$$
+\begin{eqnarray}
+\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{3n-2} & = & \lim_{x \rightarrow 1_-} \left( \frac{1}{3} \ln(x+1) - \frac{1}{6} \ln(x^2-x+1) + \frac{1}{\sqrt{3}} \arctan \left( \frac{2x-1}{\sqrt{3}} \right) \frac{1}{\sqrt{3}} \arctan \left( \frac{1}{\sqrt{3}} \right) \right) \nonumber\\
+& = & \frac{1}{3} \ln(2) + \frac{2}{\sqrt{3}} \arctan \left( \frac{1}{\sqrt{3}} \right) \nonumber
+\end{eqnarray}
+\end{proof}
