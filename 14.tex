@@ -1,0 +1,26 @@
+\begin{definice}
+\emph{Metrickým prostorem} budeme rozumět dvojici $(P, \varrho)$, kde $P$ je množina bodů a $\varrho : P \times P \rightarrow \mathbb{R}$ splňuje 
+
+\begin{enumerate}
+\item $\forall x,y \in P \textrm{ : } \varrho(x,y) = 0 \Leftrightarrow x = y$
+\item $\forall x,y \in P \textrm{ : } \varrho(x,y) = \varrho(y,x) \qquad \textrm{(symetrie)}$
+\item $\forall x,y,z \in P \textrm{ : } \varrho(x,z) \leq \varrho(x,y) + \varrho(x,z) \qquad \textrm{(trojúhelníková nerovnost)}$
+\end{enumerate}
+Funkce $\varrho$ nazýváme \emph{metrika}.
+\end{definice}
+
+\begin{definice}
+Nechť $(P, \varrho)$ je metrický prostor a $\{ x_n \}_{n=1}^\infty$ je posloupnost prvků $P$ a $x \in P$. Řekneme, že $\{ x_n \}_{n=1}^{\infty}$ \emph{konverguje k $x$ (v $(P, \varrho)$)}, pokud $\lim_{n \rightarrow \infty} \varrho(x_n, x) = 0$. Značíme $\lim_{n \rightarrow \infty} x_n = x$, nebo $x_n \overset{\varrho}{\rightarrow} x$.
+\end{definice}
+
+\begin{definice}
+Nechť $(P, \varrho)$ je metrický prostor v $K \subset P$. Řekneme, že $K$ je \emph{kompaktní}, jestliže z každé posloupnosti prvků $K$ lze vybrat konvergentní podposloupnost s limitou v $K$.
+\end{definice}
+
+\begin{vetabd}[charakterizace kompaktních množin $\mathbb{R}^n$]
+Množina $K \subset \mathbb{R}^n$ je kompaktní, přávě když je omezená a uzavřená.
+\end{vetabd}
+
+\begin{vetal}[nabývání extrémů na kompaktu]
+Nechť $(P, \varrho)$ je metrický prostor a $K \subset P$ je kompaktní. Nechť $f \textrm{ : } K \rightarrow \mathbb{R}$ je spojitá. Pak $f$ nabývá na $K$ svého maxima i minima. Speciálně je tedy $f$ na $K$ omezená.
+\end{vetal}

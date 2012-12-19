@@ -12,6 +12,10 @@
 \addtolength{\textheight}{1in}
 \addtolength{\voffset}{-1in}
 
+
+\usepackage{sectsty}
+    \sectionfont{\MakeUppercase\rmfamily\center\underline}
+
 \newcounter{vety}
 \newtheorem*{definice}{Definice}
 \newtheorem{vetal}[vety]{Věta L}
@@ -74,5 +78,15 @@
 \subsection{Reziduová věta a její aplikace}
 
 \input{13.3.tex}
+
+\pagebreak
+\setcounter{vety}{0}
+\section{Metrické prostory II}
+
+\input{14.tex}
+
+\subsection{Úplné metrické prostory}
+
+\input{14.2.tex}
 
 \end{document}

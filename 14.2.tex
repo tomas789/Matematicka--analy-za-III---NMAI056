@@ -1,0 +1,44 @@
+\begin{definice}
+Nechť $(P, \varrho)$ je metrický prostor a nechť $x_n \in P, n \in \mathbb{N}$, je posloupnost bodů z $P$. Posloupnost $\{ x_n \}_{n \in \mathbb{N}}$ nazveme \emph{cauchyovskou}, pokud
+$$\forall \varepsilon > 0 \textrm{ } \exists n_0 \in \mathbb{N} \textrm{ } \forall m,n \geq n_0 \textrm{ : } \varrho(x_n, x_m) < \varepsilon$$
+Posloupnost $\{ x_n \}_{n in \mathbb{N}}$ nezveme \emph{konvergentní}, pokud existuje $x \in P$ tak, že
+$$\lim_{n \rightarrow \infty} \varrho (x_n, x) = 0$$
+Řekneme, že $(P, \varrho)$ je \emph{úplný}, pokud je každá cauchzovská poslouopnost konvergentní.
+\end{definice}
+
+\begin{vetal}[úplnost $\mathbb{R}^n$]
+Metrický prostor $(\mathbb{R}, |.|)$ je úplný.
+\end{vetal}
+
+\begin{priklad}
+\begin{enumerate}
+\item Metrický prostor $(Q, |.|)$ není úplný.
+\item Metrický prostor všech spojitých funkcí $C([0, 1])$ s metrikou
+$$\varrho_1(f,g) = (R) \int_0^1 |f(x) - g(x)| dx$$
+není úplný.
+\item Metrický prostor všech Lebesqueovsky integrovatelných funkcí $L([0,1])$ s metrikou
+$$\varrho(f,g) = (L) \int_0^1 |f(x)-g(x)|dx$$
+je úplný
+\end{enumerate}
+\end{priklad}
+
+\begin{vetat}[úplnost spojitých funkcí]
+Metrický prostor spojitých funkcí $(C([0,1]), \varrho)$ se supremovou metrikou
+$$\varrho(f,g) = \sup_{x \in [0,1]} |f(x) - g(x)|$$
+je úplný
+\end{vetat}
+
+\begin{vetat}[Banachova věta o kontrakci]
+Nechť $(P, \varrho)$ je úplný metrický prostor a $K < 1$. Nechť $T \textrm{ : } P \rightarrow P$ je zobrazení takové, že 
+$$\varrho(Tx, Ty) \leq K \varrho(x,y) \quad \forall x,y \in P$$
+Pak existuje právě jeden bod $x_0 \in P$ tak, že $T(x_0)=x_0$
+\end{vetat}
+
+\begin{vetat}[o zúplnění metrického prostoru]
+Nechť $(Q, \varrho)$ je metrický prostor. Pak existuje úplný metrický prostor $(P, \sigma)$ tak, že $Q \subset P$ a 
+$$\sigma(x,y) = \varrho(x,y) \quad \forall x,y \in Q$$
+\end{vetat}
+
+\begin{vetal}[úplnost a uzavřená podmnožina]
+Nechť $(P, \varrho)$ je úplný metrický prostor a $F \subset P$ je uzavřená podmnožina. Pak je metrický prostor $(F, \varrho)$ úplný.
+\end{vetal}

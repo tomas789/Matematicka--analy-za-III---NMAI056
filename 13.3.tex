@@ -28,3 +28,26 @@ Podle Cauchyovy věty $\int_\varphi F(z) dz = 0$. Tedy
 & = & 2 \pi i \sum_{z_0 \in P} res_{z_0} f ind_\varphi z_0 \nonumber
 \end{eqnarray}
 \end{proof}
+
+\subsubsection*{Pravidla pro výpočet rezidua}
+
+\begin{enumerate}
+\item Je-li $h$ holomorfní na okolí $a$ a $g$ má v $a$ jednoduchý pól, pak
+$$res_a(hg) = h(a) res_a (g)$$
+\item Jsou-li $h$, $g$ holomorfní na okolí $a$ a $g$ má v $a$ jednoduchý kořen, pak 
+$$res_a \left( \frac{h}{g} \right) = \frac{h(a)}{g \prime (a)}$$
+\item Má-li $f$ v $a$ pól násobnosti $n$, pak lze reziduum spočítat za pomoci derivování řádu $(n-1)$ jako
+$$res_a(f) = \lim_{z \rightarrow a} \frac{1}{(n-1)!} \left[ (z-a)^n f(z) \right]^{(n-1)}$$
+\end{enumerate}
+
+\subsubsection*{Výpočet integrálů za pomoci reziduové věty:}
+
+Nechť $Q$ je racionální funkce.
+
+\begin{enumerate}
+\item $\int_0^{2\pi} Q(\cos(t), \sin(t))dt$
+\item $\int_{-\infty}^\infty Q(x) dx$
+\item $\int_{-\infty}^{\infty} Q(x) \sin(x) dx$
+\item $\int_{-\infty}^{\infty} Q(x) \cos(x) dx$
+\item $\int_0^{\infty} Q(x) x^{p-1} dx$
+\end{enumerate}
