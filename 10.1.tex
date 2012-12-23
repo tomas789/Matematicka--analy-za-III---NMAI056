@@ -18,7 +18,7 @@ $$f_n \con f na J \Leftrightarrow \lim_{n \rightarrow \inf} \sup \{ |f_n(x) = f(
 \end{vetal}
 \begin{proof}
 Důkaz:
-$f_n \rightrightarrows f <=> \forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall n \qeg n_0 \forall x \in J: |f_n(x) - f(x)| < \epsilon
+$f_n \rightrightarrows f \leftrightarrow \forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall n \qeg n_0 \forall x \in J: |f_n(x) - f(x)| < \epsilon
 \Leftrightarrow
 \forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall n \geq n_0 : \sup \{|f_n(x) - f(x)|; x\in J} \leq \epsilon
 \Leftrightarrow
@@ -30,6 +30,21 @@ $f_n \rightrightarrows f <=> \forall \epsilon > 0 \exists n_0 \in \mathbb{N} \fo
 Nechť $f_n,f : J \rightarrow \mathbb{R}$. Pak
 $$f_n \con f na J \Leftrightarrow \forall \epsilon > 0 \exists n_0 \forall m,n \geq n_0 \forall x \in J : | f_n(x) - f_m(x)| < \epsilon$$
 \end{vetat}
+\begin{proof}
+Důkaz:
+"$\Rightarrow$" 
+Nechť $\epsilon > 0.$ Zvolme $n_0$ z def. $f_n \rightrightarrows f.$ 
+Nyní $\forall x \in J \exists m,n \geq n_0 |f_n(x) - f_m(x) | \leq |f_n(x) - f(x)| + |f(x) - f_m(x)| < \epsilon + \epsilon $
+"$\Leftarrow$"
+Nechť $x \in J$ je pevné. Platí $\forall \epsilon > 0 \exists n_0 \in mathbb{N} \forall m,n \geq n_0|f_n(x) - f_m(x)| < \epsilon$
+Tedy posloupnosť ${f_n(x)}_{n=1}^\infty$ splňuje BC podmínku pro konvergenci posloupnosti Teda existuje její limita, zn.: $f(x)$.
+Víme $\forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall m,n \geq n_0 \forall x \in J: |f_n(x)-f_m(x)|<\epsilon$
+Provedme $lim_{n \to \infty}$, dostaneme:
+$\forall \ epsilon > 0 \rightarrow n_0 \in \mathbb{N} \forall n \geq n_0 \forall x\ in J: |f_n(x) - f(x)| \leq \epsilon$
+$\Rightarrow$
+$f_n \rightrightarrow f$
+$\Box$
+\end{proof}
 
 \begin{vetat}[Moore-Osgood]
 Nechť $x_0$ je krajní bod intervalu J (může být i $\pm \infty$). Nechť $f, f_n : J \rightarrow \mathbb{R}$ splňují
