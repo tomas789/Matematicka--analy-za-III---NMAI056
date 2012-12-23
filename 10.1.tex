@@ -20,7 +20,10 @@ $$f_n \con f na J \Leftrightarrow \lim_{n \rightarrow \inf} \sup \{ |f_n(x) = f(
 Důkaz:
 $f_n \rightrightarrows f <=> \forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall n \qeg n_0 \forall x \in J: |f_n(x) - f(x)| < \epsilon
 \Leftrightarrow
-\forall 
+\forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall n \geq n_0 : \sup \{|f_n(x) - f(x)|; x\in J} \leq \epsilon
+\Leftrightarrow
+\lim_{n \to infty} sup{|f_n(x)-f(x)|;x \in J} = 0
+
 
 \end{proof}
 
