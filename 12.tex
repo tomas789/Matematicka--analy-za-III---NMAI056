@@ -175,16 +175,88 @@ Pro Dirichletovo jádro $D_n$ platí
 \end{enumerate}
 \end{vetal}
 
+\begin{proof}
+\begin{enumerate}
+\item plyne bezprostředně z definice
+\item $$\int_{-\pi}^\pi \cos(kx) dx = \left[ \frac{\sin(kx)}{k} \right]_{-\pi}^\pi = 0$$
+\item
+\begin{eqnarray}
+D_n(x) & = & \frac{1}{2} + Re \left( e^{ix} + e^{2ix} + \ldots + e^{nix} \right) = \frac{1}{2} + Re \left( e^{ix} \frac{1-e^{inx}}{1-e^{ix}} \right) \nonumber\\
+& = & \frac{1}{2} + Re \left( \frac{e^{ix} \left( 1-e^{inx} \right) \left( 1-e^{-ix} \right)}{\left( 1-e^{ix} \right) \left( 1-e^{-ix} \right)} \right) \nonumber\\
+& = & \frac{1}{2} + Re \left( \frac{e^{ix} \left( 1-e{-ix}-e{inx}+e{i(n-1)x} \right)}{2-e^{ix}-e^{-ix}} \right) \nonumber\\
+& = & \frac{1}{2} + Re \left( \frac{e^{ix} - 1 - e^{i(n+1)x} + e^{inx}}{2 - 2 \cos(x)} \right) \nonumber\\
+& = & \frac{1}{2} + \frac{\cos(x)-1-\cos(n+1)x + \cos(x)}{2-2\cos(x)} \nonumber\\
+& = & \frac{\cos(mx) - \cos(n+1)x}{2 - 2\cos(x)} \nonumber\\
+& = & \frac{-2 \sin \left( n + \frac{1}{2} \right) x \sin \frac{x}{2}}{4 \left( \sin \frac{x}{2} \right)^{2}} = \frac{\sin \left(n + \frac{1}{2} \right) x}{2 \sin \frac{x}{2}} \nonumber
+\end{eqnarray}
+\end{enumerate}
+
+Pozn.: Důkaz třetí rovnosti je až na znaménko, na přednášce nevyšel. Snad se má použít jiný součtový vzorec goniometrických funkcí (?). Pokud někdo víte, jak to má vyjít, dejte mi prosím vědět.
+\end{proof}
+
 \begin{vetal}[částečné součty Fourierovy řady]
 Nechť $f \in \mathcal{P}_{2 \pi}$ a $F_f$ je Fourierova řada pro $f$. Potom pro částečné součty $s_n(x) = \frac{a_0}{2} + \sum_{k=1}^{n} (a_k \cos ( kx) + b_k \sin ( kx ))$ platí
 $$s_n(x) = \frac{1}{\pi} \int_{-pi}^\pi f(x+z)D_n(y)dy = \frac{1}{\pi} \int_0^\pi \left( f(x+y) + f(x-y) \right) D_n(y) dy$$
 \end{vetal}
 
+\begin{proof}
+\begin{eqnarray}
+s_n(x) & = & \frac{a_0}{2} + \sum_{k=1}^{n} \left[ a_k \cos(kx) + b_k \sin(kx) \right] \nonumber\\
+& = & \frac{1}{\pi} \int_{-\pi}^\pi \left( \frac{1}{2} + \sum_{k=1}^n \left( \cos(ky) \sin(kx) + \sin(ky) \cos (kx) \right) f(y) dy \right) \nonumber\\
+& = & \frac{1}{\pi} \int_{-\pi}^\pi \left( \frac{1}{2} \cos(k(y-x))  \right) f(y) dy \nonumber\\
+& = & \frac{1}{\pi} \int_{-pi}^\pi D_n(y-x) f(y) dy \nonumber\\
+& = & \frac{1}{\pi} \int_{-\pi}^\pi D_n(t-x) f(t) dt \nonumber
+\end{eqnarray}
+
+substituce za $t-x=y$
+
+\begin{eqnarray}
+& = & \frac{1}{\pi} \int_{-\pi -x}^{\pi-x} f(x+y) dy = \frac{1}{\pi} \int_{-\pi}^\pi D_n(y) f(x+y) dy \nonumber
+\end{eqnarray}
+
+Dále platí 
+$$\int_{-\pi}^\pi = \int_{-\pi}^0 + \int_{0}^\pi$$
+
+Integrál $\int_{-\pi}^0$ spočteme substitucí $y \rightarrow -y$ (korektně bysme měli použít pomocnou proměnnou).
+
+$D_n(y)$ je sudá funkce, proto $f(x+y) \rightarrow f(x-y)$
+\end{proof}
+
 \begin{vetat}[Riemann-Lebesqueovo lemma]
+\label{Riemann-Lebesqueovo lemma}
 Nechť $[a,b] \subset \mathbb{R}$ a $f \in R([a,b])$. Potom
 $$\lim_{t \rightarrow \infty} \int_a^b f(x) \cos(tx) dx = 0 \mathrm{a} \lim_{t \rightarrow \infty} \int_a^b f(x) \sin(tx) dx = 0$$
 Speciálně pro Fourierovy koeficienty funkce $f \in \mathcal{P}_{2 \pi}$ platí $a_k \rightarrow 0$ a $b_k \rightarrow 0$.
 \end{vetat}
+
+\begin{proof}
+Nechť $[c,d] \subset [a,b]$ a $f(x) = \chi_{[c,d]}(x)$.
+
+\begin{equation}
+\chi_{[c,d]}(x) = \left\{ \begin{array}{ll}
+ 1 & x \in [c,d] \nonumber\\
+ 0 & \textrm{jinak}
+  \end{array} \right.
+\end{equation}
+
+$$\lim_{t \rightarrow \infty} \int_a^b \chi_{[c,d]}(x) \cos(tx) dx = \lim_{t \rightarrow \infty} \int_c^d \cos(tx)dx = \lim_{t \rightarrow \infty} \left[ \frac{\sin(tx)}{t} \right]_c^d = \lim_{t \rightarrow \infty} \frac{\sin(dt) - \sin(ct)}{t} = 0$$
+
+Tvrzení platí pro $\chi_{[c,d]}(x)$, tedy platí pro $\alpha \chi_{[c,d]}(x) \Rightarrow$ pro pevné dělení $D = a = x_0 < x_1 < \ldots < x_m = b$ a $\alpha_i$ platí tvrzení pro
+$$f(x) = \sum_{i=1}^m \alpha_i \chi_{[x_{i-1}, x_i]}(x)$$
+
+Nechť nyní $f \in R([a,b])$ a $\varepsilon > 0$. Pak $\exists \textrm{ dělení } D$, že $0 \leq (R) \int_a^b f(x) dy - s(f,D) < \varepsilon$
+
+Označme $$\alpha_i = \min_{x \in [x_{i-1}, x_i]} f(x) \textrm{ a } g(x) = \sum_{i=1}^m \alpha_i \chi_{[x_{i-1}, x_i]} (x)$$ t. j. $(R) \int_a^b g = s(f,D)$.
+
+Víme $\lim_{t \rightarrow \infty} \int_a^b g(x) \cos(tx) = 0$ tedy $\exists t_0 \textrm{ } \forall t \geq t_0 \textrm{ : } \left| \int_a^b g(x) \cos(tx) dx \right| < \varepsilon$
+
+Nyní pro $t \geq t_0$
+$$\left| \int_a^b f(x) \cos(tx) dx \right| \leq \left| \int_a^b (f(x)-g(x)) \cos(tx) dx \right| + \left| \int_a^b g(x) \cos(tx) dx \right| \leq$$
+Poznamenejme $f(x) \geq g(x) \Rightarrow f(x)-g(x) \geq 0 \textrm{ : } \left| \int F(x) \right| \leq \int \left| F(x) \right|$
+$$\leq \int_a^b (f(x)-g(x)) |\cos(tx)| dx + \varepsilon \leq \int_a^b f(x) dx - \int_a^b g(x) dx + \varepsilon < 2 \varepsilon$$
+
+Pro sinus budeme postupovat analogicky
+\end{proof}
 
 \begin{vetat}[Diniho kriterium]
 Nechť $f \int \mathcal{P}_{2 \pi}$ a $x \in \mathbb{R}$. Nechť existují vlastní limity $f(x+) = \lim_{y \rightarrow x+} f(y)$ a $f(x-) = \lim_{y \rightarrow x-} f(y)$ a nechť existují vlastní limity
@@ -195,6 +267,34 @@ Potom Fourierova řada funkce $f$ konverguje v bodě $x$ k hodnotě $\frac{f(x+)
 \begin{dusledek}
 Nechť $x \in \mathbb{R}$ a nechť pro $f \in \mathcal{P}_{2 \pi}$ existuje $f^\prime (x)$. Potom $f(x)=F_f(x)$.
 \end{dusledek}
+
+\begin{proof}
+Chceme $F_f(x) = \frac{f(x+) + f(x-)}{2}$, tedy $s_n(x) \overset{n \rightarrow \infty}{\rightarrow}$
+
+\begin{eqnarray}
+s_n(x) - \frac{f(x+)+f(x-)}{2} & = & \frac{1}{\pi} \int_0^\pi \left( f(x+y) + f(x-y) \right) D_n(y) dy - \frac{f(x+) + f(x-)}{2} \frac{2}{\pi} \int_0^\pi D_n(y)dy \nonumber\\
+& \overset{V5, VL4 (ii)}{=} & \frac{1}{\pi} \int_0^\pi \left( f(x+y) - f(x+) + f(x-y) - f(x-) \right) D_n(y) dy \nonumber\\
+& \overset{VL4(iii)}{=} & \frac{1}{\pi} \int_{0}^\pi \underbrace{\left( \frac{f(x+y) - f(x+) + f(x-y) - f(x-)}{2 \sin \left( \frac{y}{2} \right)} \right)}_{\textrm{pokud $\in R([0,\pi])$, pak VT\ref{Riemann-Lebesqueovo lemma} dokončí důkaz}} \sin \left( n + \frac{1}{2} \right)y dy \nonumber
+\end{eqnarray}
+
+Chceme $F(y) = \frac{f(x+y) - f(x+) + f(x-y) - f(x-)}{2 \sin \left( \frac{y}{2} \right)} \in R([0,\pi])$. 
+
+Existuje
+$$\lim_{y \rightarrow 0} F(y) = \lim_{x \rightarrow 0} \frac{y}{2 \sin \left( \frac{x}{2} \right)} \lim_{y \rightarrow 0} \left( \frac{f(x+y)-f(x+)}{y} + \frac{f(x-y)-f(x-)}{y} \right) = A \in \mathbb{R}$$
+
+\begin{tvrzeni}
+$h \in R([a,b])$ spojitá na $[a,b]$, $0 < \delta \leq g \leq D$. Pak $\frac{h}{g} \in R([a,b])$.
+\end{tvrzeni}
+
+Nechť $\varepsilon > 0 \textrm{ } \exists \delta > 0 \textrm{ } \forall y \in [0, \delta] \textrm{ : } |F(y)-A| < \varepsilon$
+
+Nyní $\delta$ je pevné a tedz dle tvrzení $F(y) \in R([\delta, \pi])$, $g(y) = 2 \sin \frac{y}{2}$.
+
+Tedy $\exists \overline{D}$ dělení $[\delta, \pi]$ že $S(F,\overline{D}) - s(f,\overline{D}) < \epsilon$.
+
+Nechť $D$ je dělení $[0,\pi]$ mající interval k $\overline{D}$ a interval k $[0, \delta]$. Pak 
+$$S(F, D)-s(f,D) = \left( \max_{x \in [0, \delta]} F(x) - \min_{x \in [0, \delta]} F(x) \right) \delta + S(F, \overline{D}) - s(F, \overline{D}) \leq 2 \varepsilon \delta + \varepsilon \leq \varepsilon (2 \pi + 1)$$
+\end{proof}
 
 \begin{vetat}[Jordan-Dirichletovo kriterium - bez důkazu]
 Nechť $f \in \mathcal{P}_{2\pi}$ je po částech monotónní. Tedy nechť existuje konečně mnoho bodů $0=a_1 < a_2 < \ldots < a_m = 2 \pi$ tak, že $f$ je monotónní na $(a_i, a_{i+1})$ pro $i \in \{1, \ldots, m-1 \}$. Potom Fourierova řada funkce $f$ konverguje v bodě $x$ k hodnotě $\frac{f(x+) + f(x-)}{2}$ pro všechna $x \in \mathbb{R}$.
