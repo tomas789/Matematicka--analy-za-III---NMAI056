@@ -17,9 +17,9 @@ Nechť $f_n, f:J \rightarrow \mathbb{R}$ pak
 $$f_n \con f na J \Leftrightarrow \lim_{n \rightarrow \inf} \sup \{ |f_n(x) = f(x)|; x \in J \} = 0$$
 \end{vetal}
 \begin{dukaz}
-$f_n \rightrightarrows f \leftrightarrow \forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall n \qeg n_0 \forall x \in J: |f_n(x) - f(x)| < \epsilon$
+$f_n \rightrightarrows f \leftrightarrow \forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall n \geq n_0 \forall x \in J: |f_n(x) - f(x)| < \epsilon$
 $\Leftrightarrow$
-$\forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall n \geq n_0 : \sup \{|f_n(x) - f(x)|; x\in J} \leq \epsilon$
+$\forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall n \geq n_0 : \sup \{ |f_n(x) - f(x) | : x \in J \} \leq \epsilon$
 $\Leftrightarrow$
 $\lim_{n \to infty} sup{|f_n(x)-f(x)|;x \in J} = 0$
 $\Box$
@@ -40,7 +40,7 @@ Víme $\forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall m,n \geq n_0 \for
 Provedme $lim_{n \to \infty}$, dostaneme:
 $\forall \ epsilon > 0 \rightarrow n_0 \in \mathbb{N} \forall n \geq n_0 \forall x\ in J: |f_n(x) - f(x)| \leq \epsilon$
 $\Rightarrow$
-$f_n \rightrightarrow f$
+$f_n \con f$
 $\Box$
 \end{dukaz}
 
