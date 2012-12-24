@@ -15,7 +15,6 @@ Značíme $f_n \con f$.
 \begin{vetal}[kritérium stejnoměrné konvergence]
 Nechť $f_n, f:J \rightarrow \mathbb{R}$ pak
 $$f_n \con f na J \Leftrightarrow \lim_{n \rightarrow \inf} \sup \{ |f_n(x) = f(x)|; x \in J \} = 0$$
-\end{vetal}
 \begin{dukaz}
 $f_n \rightrightarrows f \leftrightarrow \forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall n \geq n_0 \forall x \in J: |f_n(x) - f(x)| < \epsilon$
 $\Leftrightarrow$
@@ -24,11 +23,11 @@ $\Leftrightarrow$
 $\lim_{n \to infty} sup{|f_n(x)-f(x)|;x \in J} = 0$
 $\Box$
 \end{dukaz}
+\end{vetal}
 
 \begin{vetat}[Bolzano-Cauchyho podmínka pro stejnoměrnou konvergenci]
 Nechť $f_n,f : J \rightarrow \mathbb{R}$. Pak
 $$f_n \con f na J \Leftrightarrow \forall \epsilon > 0 \exists n_0 \forall m,n \geq n_0 \forall x \in J : | f_n(x) - f_m(x)| < \epsilon$$
-\end{vetat}
 \begin{dukaz}
 "$\Rightarrow$" 
 Nechť $\epsilon > 0.$ Zvolme $n_0$ z def. $f_n \rightrightarrows f.$ 
@@ -43,6 +42,7 @@ $\Rightarrow$
 $f_n \con f$
 $\Box$
 \end{dukaz}
+\end{vetat}
 
 \begin{vetat}[Moore-Osgood]
 Nechť $x_0$ je krajní bod intervalu J (může být i $\pm \infty$). Nechť $f, f_n : J \rightarrow \mathbb{R}$ splňují
@@ -52,10 +52,20 @@ Nechť $x_0$ je krajní bod intervalu J (může být i $\pm \infty$). Nechť $f,
 \end{enumerate}
 Pak existují $\lim_{n \rightarrow \infty} a_n$ a $\lim_{x \rightarrow x_0} f(x)$ a jsou si rovny, neboli:
 $$\lim_{n \rightarrow \infty} \lim_{x \rightarrow x_0} f_n(x) = \lim_{x \rightarrow x_0} \lim_{n \rightarrow \infty} f_n(x)$$
+\begin{dukaz}
+Víme, že $f_n \rightrightarrows$, tedy $f_n$ splňuje BC podmínku pro stejnoměrnou konvergenci:
+$\forall \epsilon < 0 \exists n_0 \forall m,n \geq n_0 \forall x \in J: |f_n(x) - f_m(x)| < \epsilon$
+Provedme $\lim_{x \to x_0}$, dostávame \forall \epsilon>0 \exists n_0 \forall m,n \geq n_0 : |a_n - a_m| \leq \epsilon$
+
+\end{dukaz}
 \end{vetat}
 
 \begin{dusledek}
 Nechť $f_n \con f$ na $I$ a nechť $f_n$ jsou na $I$ spojité. Pak $f$ je spojitá na $I$.
+\begin{dukaz}
+$\lim_{x \to x_0}f_n(x) = \lim_{x \to x_0} \lim_{n \to \infty}f_n(x) =$ MO $= \lim_{n \to \infty}\lim_{x \to x_0}f_n(x)=lim_{n \to \infty}f_n(x_0) = f(x_0)$
+$\Box$
+\end{dukaz}
 \end{dusledek}
 
 \begin{vetal}[o záměně limity a integrálu]
