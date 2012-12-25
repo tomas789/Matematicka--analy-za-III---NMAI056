@@ -15,20 +15,20 @@ Značíme $f_n \con f$.
 \begin{vetal}[kritérium stejnoměrné konvergence]
 Nechť $f_n, f:J \rightarrow \mathbb{R}$ pak
 $$f_n \con f na J \Leftrightarrow \lim_{n \rightarrow \inf} \sup \{ |f_n(x) = f(x)|; x \in J \} = 0$$
-\begin{dukaz}
+\end{vetal}
+\begin{proof}
 $f_n \rightrightarrows f \leftrightarrow \forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall n \geq n_0 \forall x \in J: |f_n(x) - f(x)| < \epsilon$
 $\Leftrightarrow$
 $\forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall n \geq n_0 : \sup \{ |f_n(x) - f(x) | : x \in J \} \leq \epsilon$
 $\Leftrightarrow$
 $\lim_{n \to infty} sup{|f_n(x)-f(x)|;x \in J} = 0$
-$\Box$
-\end{dukaz}
-\end{vetal}
+\end{proof}
 
 \begin{vetat}[Bolzano-Cauchyho podmínka pro stejnoměrnou konvergenci]
 Nechť $f_n,f : J \rightarrow \mathbb{R}$. Pak
 $$f_n \con f na J \Leftrightarrow \forall \epsilon > 0 \exists n_0 \forall m,n \geq n_0 \forall x \in J : | f_n(x) - f_m(x)| < \epsilon$$
-\begin{dukaz}
+\end{vetat}
+\begin{proof}
 "$\Rightarrow$" 
 Nechť $\epsilon > 0.$ Zvolme $n_0$ z def. $f_n \rightrightarrows f.$ 
 Nyní $\forall x \in J \exists m,n \geq n_0 |f_n(x) - f_m(x) | \leq |f_n(x) - f(x)| + |f(x) - f_m(x)| < \epsilon + \epsilon $
@@ -40,9 +40,7 @@ Provedme $lim_{n \to \infty}$, dostaneme:
 $\forall \epsilon > 0 \rightarrow n_0 \in \mathbb{N} \forall n \geq n_0 \forall x\ in J: |f_n(x) - f(x)| \leq \epsilon$
 $\Rightarrow$
 $f_n \con f$
-$\Box$
-\end{dukaz}
-\end{vetat}
+\end{proof}
 
 \begin{vetat}[Moore-Osgood]
 Nechť $x_0$ je krajní bod intervalu J (může být i $\pm \infty$). Nechť $f, f_n : J \rightarrow \mathbb{R}$ splňují
@@ -52,7 +50,8 @@ Nechť $x_0$ je krajní bod intervalu J (může být i $\pm \infty$). Nechť $f,
 \end{enumerate}
 Pak existují $\lim_{n \rightarrow \infty} a_n$ a $\lim_{x \rightarrow x_0} f(x)$ a jsou si rovny, neboli:
 $$\lim_{n \rightarrow \infty} \lim_{x \rightarrow x_0} f_n(x) = \lim_{x \rightarrow x_0} \lim_{n \rightarrow \infty} f_n(x)$$
-\begin{dukaz}
+\end{vetat}
+\begin{proof}
 Víme, že $f_n \rightrightarrows$, tedy $f_n$ splňuje BC podmínku pro stejnoměrnou konvergenci:
 $\forall \epsilon < 0 \exists n_0 \forall m,n \geq n_0 \forall x \in J: |f_n(x) - f_m(x)| < \epsilon$
 Provedme $\lim_{x \to x_0}$, dostávame $\forall \epsilon>0 \exists n_0 \forall m,n \geq n_0 : |a_n - a_m| \leq \epsilon$
@@ -63,22 +62,24 @@ Voľme $n_0 = max \{n_1,n_2\}$ pevné. Z $lim_{x \to x_0}f_{n_0}(x) = a_{n_0}$ p
 $\forall x \in B(x_0,\delta)$ na J, $|f_{n_0}(x) - a_n| < \epsilon$
 k zadanému $\epsilon$ jsme našel $\delta > 0$, že $\forall x \in B(x_0, \delta)$ na J.
 $|a - f(x)| \leq |a - a_{n_0}| + |a_{n_0} - f_{n_0}(x)| + |f_{n_0}(x) - f(x)| \leq \epsilon + \epsilon + \epsilon = 3\epsilon \Rightarrow a=lim_{x \to x_0}f(x)$
-$\Box$
-\end{dukaz}
-\end{vetat}
+\end{proof}
 
 \begin{dusledek}
 Nechť $f_n \con f$ na $I$ a nechť $f_n$ jsou na $I$ spojité. Pak $f$ je spojitá na $I$.
-\begin{dukaz}
-$\lim_{x \to x_0}f_n(x) = \lim_{x \to x_0} \lim_{n \to \infty}f_n(x) =$ MO $= \lim_{n \to \infty}\lim_{x \to x_0}f_n(x)=lim_{n \to \infty}f_n(x_0) = f(x_0)$
-$\Box$
-\end{dukaz}
 \end{dusledek}
+\begin{proof}
+$\lim_{x \to x_0}f_n(x) = \lim_{x \to x_0} \lim_{n \to \infty}f_n(x) =$ MO $= \lim_{n \to \infty}\lim_{x \to x_0}f_n(x)=lim_{n \to \infty}f_n(x_0) = f(x_0)$
+\end{proof}
 
 \begin{vetal}[o záměně limity a integrálu]
 Nechť funkce $f_n \con f$ na $[a,b]$ a nechť $f_n \in \mathbb{R} ([a,b])$. Pak $f \in \mathbb{R}([a,b])$ a 
 $$(R) \int_a^b f(x) dx = \lim_{n \rightarrow \infty} (R) \int_a^b f_n(x) dx$$
 \end{vetal}
+\begin{proof}
+
+
+
+\end{proof}
 
 \begin{vetat}[o záměně limity a derivace]
 Nechť funkce $f_n$, $n \in \mathbb{N}$, mají vlastní derivaci na intervalu $(a,b)$ a nechť:
