@@ -76,9 +76,11 @@ Nechť funkce $f_n \con f$ na $[a,b]$ a nechť $f_n \in \mathbb{R} ([a,b])$. Pak
 $$(R) \int_a^b f(x) dx = \lim_{n \rightarrow \infty} (R) \int_a^b f_n(x) dx$$
 \end{vetal}
 \begin{proof}
-
-
-
+Nechť $\epsilon > 0$. Z $f_n \con f \exists n_0 \forall n \geq n_0 \forall x \in J:
+$$|f_n(x) - f(x)| < \epsilon$$
+$$f_n(x) - \epsilon < f(x) < f_n(x) + \epsilon$$
+Nechť $n \geq n_0$ je pevné. Víme, že $f_n(x) \in R([a,b])$, tedy $\exists D$, že $S(f_n,D) - s(f_n,D)<\epsilon$
+Nyní $$S(f,D) - s(f,D) \leq S(f_n+\epsilon, D) - s(f_n-\epsilon,D) \leq S(f_n,D)+S(\epsilon,D) - s(f_n,D) - s(\epsilon,D) \leq S(f_n,D) - s(f_n,D) +\epsilon(b-a) - (-\epsilon)(b-a) < \epsilon +2\epsilon(b-a)$$
 \end{proof}
 
 \begin{vetat}[o záměně limity a derivace]
