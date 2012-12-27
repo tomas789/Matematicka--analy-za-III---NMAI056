@@ -14,14 +14,12 @@ Značíme $f_n \con f$.
 
 \begin{vetal}[kritérium stejnoměrné konvergence]
 Nechť $f_n, f:J \rightarrow \mathbb{R}$ pak
-$$f_n \con f na J \Leftrightarrow \lim_{n \rightarrow \inf} \sup \{ |f_n(x) = f(x)|; x \in J \} = 0$$
+$$f_n \con f na J \Leftrightarrow \lim_{n \rightarrow \infty} \sup \{ |f_n(x) - f(x)|; x \in J \} = 0$$
 \end{vetal}
 \begin{proof}
-$f_n \rightrightarrows f \leftrightarrow \forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall n \geq n_0 \forall x \in J: |f_n(x) - f(x)| < \epsilon$
-$\Leftrightarrow$
-$\forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall n \geq n_0 : \sup \{ |f_n(x) - f(x) | : x \in J \} \leq \epsilon$
-$\Leftrightarrow$
-$\lim_{n \to infty} sup{|f_n(x)-f(x)|;x \in J} = 0$
+$$ f_n \rightrightarrows f \Leftrightarrow \forall \epsilon > 0 \  \exists n_0 \in \mathbb{N} \  \forall n \geq n_0 \  \forall x \in J: |f_n(x) - f(x)| < \epsilon \Leftrightarrow$$
+$$\Leftrightarrow \forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall n \geq n_0 : \sup \{ |f_n(x) - f(x) | : x \in J \} \leq \epsilon \Leftrightarrow$$
+$$\Leftrightarrow \lim_{n \to \infty} sup\{|f_n(x)-f(x)|;x \in J\} = 0$$
 \end{proof}
 
 \begin{vetat}[Bolzano-Cauchyho podmínka pro stejnoměrnou konvergenci]
@@ -31,15 +29,14 @@ $$f_n \con f na J \Leftrightarrow \forall \epsilon > 0 \exists n_0 \forall m,n \
 \begin{proof}
 "$\Rightarrow$" 
 Nechť $\epsilon > 0.$ Zvolme $n_0$ z def. $f_n \rightrightarrows f.$ 
-Nyní $\forall x \in J \exists m,n \geq n_0 |f_n(x) - f_m(x) | \leq |f_n(x) - f(x)| + |f(x) - f_m(x)| < \epsilon + \epsilon $
+Nyní $$\forall x \in J \exists m,n \geq n_0 |f_n(x) - f_m(x) | \leq $$ $$\leq |f_n(x) - f(x)| + |f(x) - f_m(x)| < \epsilon + \epsilon $$
 "$\Leftarrow$"
-Nechť $x \in J$ je pevné. Platí $\forall \epsilon > 0 \exists n_0 \in mathbb{N} \forall m,n \geq n_0|f_n(x) - f_m(x)| < \epsilon$
-Tedy posloupnosť ${f_n(x)}_{n=1}^\infty$ splňuje BC podmínku pro konvergenci posloupnosti Teda existuje její limita, zn.: $f(x)$.
-Víme $\forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall m,n \geq n_0 \forall x \in J: |f_n(x)-f_m(x)|<\epsilon$
+Nechť $x \in J$ je pevné. Platí $$\forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall m,n \geq n_0|f_n(x) - f_m(x)| < \epsilon$$
+Tedy posloupnost ${f_n(x)}_{n=1}^\infty$ splňuje BC podmínku pro konvergenci posloupnosti. Teda existuje její limita, zn.: $f(x)$.
+Víme $$\forall \epsilon > 0 \exists n_0 \in \mathbb{N} \forall m,n \geq n_0 \forall x \in J: |f_n(x)-f_m(x)|<\epsilon$$
 Provedme $lim_{n \to \infty}$, dostaneme:
-$\forall \epsilon > 0 \rightarrow n_0 \in \mathbb{N} \forall n \geq n_0 \forall x\ in J: |f_n(x) - f(x)| \leq \epsilon$
-$\Rightarrow$
-$f_n \con f$
+$$\forall \epsilon > 0 \rightarrow n_0 \in \mathbb{N} \forall n \geq n_0 \forall x \in J: |f_n(x) - f(x)| \leq \epsilon \Rightarrow$$
+$$\Rightarrow f_n \con f$$
 \end{proof}
 
 \begin{vetat}[Moore-Osgood]
@@ -53,22 +50,26 @@ $$\lim_{n \rightarrow \infty} \lim_{x \rightarrow x_0} f_n(x) = \lim_{x \rightar
 \end{vetat}
 \begin{proof}
 Víme, že $f_n \rightrightarrows$, tedy $f_n$ splňuje BC podmínku pro stejnoměrnou konvergenci:
-$\forall \epsilon < 0 \exists n_0 \forall m,n \geq n_0 \forall x \in J: |f_n(x) - f_m(x)| < \epsilon$
-Provedme $\lim_{x \to x_0}$, dostávame $\forall \epsilon>0 \exists n_0 \forall m,n \geq n_0 : |a_n - a_m| \leq \epsilon$
-Tedy platí BC podmínka pro posloupnosť $a_n$, tedy existuje $\lim){n \to \infty}a_n = 0$
-Nechť $\epsilon > 0$. Z $\lim a_n = a$, $ \exists n_1 \forall n \geq n_1 |a-a_n| < \epsilon$
-                      Z $f_n \con f$, $ \exists n_2 \forall n \geq n_2 \forall x |f_n(x) - f(x)| < \epsilon$
-Voľme $n_0 = max \{n_1,n_2\}$ pevné. Z $lim_{x \to x_0}f_{n_0}(x) = a_{n_0}$ plyne $\exists \delta > 0$,
-$\forall x \in B(x_0,\delta)$ na J, $|f_{n_0}(x) - a_n| < \epsilon$
-k zadanému $\epsilon$ jsme našel $\delta > 0$, že $\forall x \in B(x_0, \delta)$ na J.
-$|a - f(x)| \leq |a - a_{n_0}| + |a_{n_0} - f_{n_0}(x)| + |f_{n_0}(x) - f(x)| \leq \epsilon + \epsilon + \epsilon = 3\epsilon \Rightarrow a=lim_{x \to x_0}f(x)$
+$$\forall \epsilon > 0 \exists n_0 \forall m,n \geq n_0 \forall x \in J: |f_n(x) - f_m(x)| < \epsilon $$
+Provedme $\lim_{x \to x_0}$, dostávame 
+$$\forall \epsilon>0 \exists n_0 \forall m,n \geq n_0 : |a_n - a_m| \leq \epsilon$$
+Tedy platí BC podmínka pro posloupnosť $a_n$, tedy existuje $\lim_{n \to \infty}a_n = a$
+Nechť $\epsilon > 0$. 
+\begin{enumerate}
+\item Z $\lim a_n = a$, $ \exists n_1 \forall n \geq n_1 |a - a_n| < \epsilon $
+\item Z $f_n \con f$, $ \exists n_2 \forall n \geq n_2 \forall x |f_n(x) - f(x)| < \epsilon$
+\end{enumerate}
+Voľme $n_0 = max \{n_1,n_2\}$ pevné. Z $lim_{x \to x_0}f_{n_0}(x) = a_{n_0}$ plyne 
+$$\hbox{$\exists \delta > 0, \forall x \in B(x_0,\delta)$ na J, $|f_{n_0}(x) - a_{n_0}| < \epsilon$}$$
+k zadanému $\epsilon$ jsem našel $\delta > 0$, že $\forall x \in B(x_0, \delta)$ na J.
+$$|a - f(x)| \leq |a - a_{n_0}| + |a_{n_0} - f_{n_0}(x)| + |f_{n_0}(x) - f(x)| \leq $$ $$\leq \epsilon + \epsilon + \epsilon = 3\epsilon \Rightarrow a=lim_{x \to x_0}f(x)$$
 \end{proof}
 
 \begin{dusledek}
 Nechť $f_n \con f$ na $I$ a nechť $f_n$ jsou na $I$ spojité. Pak $f$ je spojitá na $I$.
 \end{dusledek}
 \begin{proof}
-$\lim_{x \to x_0}f_n(x) = \lim_{x \to x_0} \lim_{n \to \infty}f_n(x) =$ MO $= \lim_{n \to \infty}\lim_{x \to x_0}f_n(x)=lim_{n \to \infty}f_n(x_0) = f(x_0)$
+$\lim_{x \to x_0}f(x) = \lim_{x \to x_0} \lim_{n \to \infty}f_n(x) =$ MO $= \lim_{n \to \infty}\lim_{x \to x_0}f_n(x)=lim_{n \to \infty}f_n(x_0) = f(x_0)$
 \end{proof}
 
 \begin{vetal}[o záměně limity a integrálu]
@@ -79,8 +80,12 @@ $$(R) \int_a^b f(x) dx = \lim_{n \rightarrow \infty} (R) \int_a^b f_n(x) dx$$
 Nechť $\epsilon > 0$. Z $f_n \con f \exists n_0 \forall n \geq n_0 \forall x \in J:$
 $$|f_n(x) - f(x)| < \epsilon$$
 $$f_n(x) - \epsilon < f(x) < f_n(x) + \epsilon$$
-Nechť $n \geq n_0$ je pevné. Víme, že $f_n(x) \in R([a,b])$, tedy $\exists D$, že $S(f_n,D) - s(f_n,D)<\epsilon$
-Nyní $$S(f,D) - s(f,D) \leq S(f_n+\epsilon, D) - s(f_n-\epsilon,D) \leq S(f_n,D)+S(\epsilon,D) - s(f_n,D) - s(\epsilon,D) \leq S(f_n,D) - s(f_n,D) +\epsilon(b-a) - (-\epsilon)(b-a) < \epsilon +2\epsilon(b-a)$$
+Nechť $n \geq n_0$ je pevné. Víme, že 
+$$\hbox{$f_n(x) \in \mathbb{R}([a,b])$, tedy $\exists D$, že $S(f_n,D) - s(f_n,D)<\epsilon$}$$
+Nyní
+$$S(f,D) - s(f,D) \leq S(f_n+\epsilon, D) - s(f_n-\epsilon,D) \leq S(f_n,D)+S(\epsilon,D) - s(f_n,D) - s(\epsilon,D) \leq $$ 
+$$ \leq S(f_n,D) - s(f_n,D) +\epsilon(b-a) - (-\epsilon)(b-a) <$$
+$$< \epsilon +2\epsilon(b-a)$$
 \end{proof}
 
 \begin{vetat}[o záměně limity a derivace]
@@ -91,3 +96,7 @@ Nechť funkce $f_n$, $n \in \mathbb{N}$, mají vlastní derivaci na intervalu $(
 \end{enumerate}
 Potom existuje funkce $f$ tak, že $f_n \conloc f$ na $(a,b)$, $f$ má vlastní derivaci a platí $f_n' \conloc f'$ na $(a,b)$.
 \end{vetat}
+\begin{proof}
+
+
+\end{proof}
