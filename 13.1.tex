@@ -22,27 +22,6 @@ existuje-li integrál na pravé straně. Tento integrál můžeme značit i $\in
 Nechť $f$ je holomorfní na otevřené množině $G \subset \mathbb{C}$ a $\Delta \subset G$ je trojúhelník. Pak $\int_{\delta \Delta} f(z) dz = 0$.
 \end{vetat}
 
-\begin{vetabd}[Cauchy]
-Nechť $f$ je holomorfní na otevřené množině $G \subset \mathbb{C}$. Nechť $\langle \varphi \rangle \subset G$ je uzavřená křivka taková, že vnitřek $\langle \varphi \rangle \subset G$ (tedy případné "díry" uvnitř G nejsou uvnitř $\langle \varphi \rangle$). Pak $\int_\varphi f(z)dz=0$.
-\end{vetabd}
-
-\begin{vetal}[Cauchyův vzorec]
-Nechť $f$ je holomorfní na kruhu $B(z_0, R)$ a $0<r<R$. Pro křivku $\varphi(t) = z_0 + r e^{it}$, $t \in [0,2\pi]$, platí
-
-\begin{equation}
-\frac{1}{2 \pi i} \int_\varphi \frac{f(z)}{z-s}  = \left\{ \begin{array}{ll}
- f(z) & \textrm{pro $|s-z_0| < r$} \nonumber\\
- 0 & \textrm{pro $| s-z_0 | > r$}
-  \end{array} \right.
-\end{equation}
-\end{vetal}
-
-\begin{vetat}[Liouville]
-\label{Liouville}
-
-Nechť $f$ je holomorfní a omezená na $\mathbb{C}$. Pak $f$ je konstantní.
-\end{vetat}
-
 \begin{proof}
 Sporem : nechť $\int_{\partial \triangle} f = M > 0$. Rozdělíme na čtyři trojúhelníky.
 
@@ -69,8 +48,33 @@ $$\left| \int_{\partial \triangle^K} f(z) dz \right| = \left| \int_{\partial \tr
 
 $\circledast$ : má primitivní funkci $f(z)z + f^\prime(z_0) \frac{(z-z_0)^2}{2}$ a $\partial \triangle_K$ je uzavřená křivka, tedy 
 $$\int_{\partial \triangle^K} \left[ f(z_0) + f^\prime (z_0) (z-z_0) \right] = 0$$
+
+$$\frac{M}{4^K} \leq \left| \int_{\partial \triangle^K} f(z) dz \right| = \left| \int_{\partial \triangle^K} \varepsilon (z-z_0) (z-z_0) dz \right| \leq \textrm{délka } \partial \triangle_K \sup_{z \in \partial \triangle_K} \left| \varepsilon (z-z_0) \right| \sup_{z \in \partial \triangle_K} \left| z-z_0 \right| $$
+$$ \leq \frac{c}{2^K} \varepsilon_K \frac{c}{2^K} \Rightarrow M \leq c^2 \varepsilon_K \overset{k \to \infty}{\rightarrow} 0 \Rightarrow M \leq 0$$
+
+a to je spor.
 \end{proof}
 
+\begin{vetabd}[Cauchy]
+Nechť $f$ je holomorfní na otevřené množině $G \subset \mathbb{C}$. Nechť $\langle \varphi \rangle \subset G$ je uzavřená křivka taková, že vnitřek $\langle \varphi \rangle \subset G$ (tedy případné "díry" uvnitř G nejsou uvnitř $\langle \varphi \rangle$). Pak $\int_\varphi f(z)dz=0$.
+\end{vetabd}
+
+\begin{vetal}[Cauchyův vzorec]
+Nechť $f$ je holomorfní na kruhu $B(z_0, R)$ a $0<r<R$. Pro křivku $\varphi(t) = z_0 + r e^{it}$, $t \in [0,2\pi]$, platí
+
+\begin{equation}
+\frac{1}{2 \pi i} \int_\varphi \frac{f(z)}{z-s}  = \left\{ \begin{array}{ll}
+ f(z) & \textrm{pro $|s-z_0| < r$} \nonumber\\
+ 0 & \textrm{pro $| s-z_0 | > r$}
+  \end{array} \right.
+\end{equation}
+\end{vetal}
+
+\begin{vetat}[Liouville]
+\label{Liouville}
+
+Nechť $f$ je holomorfní a omezená na $\mathbb{C}$. Pak $f$ je konstantní.
+\end{vetat}
 
 \begin{vetal}[Základní věta algebry]
 Každý nekonstantní polynom (s komplexními koeficienty) má v $\mathbb{C}$ alespoň jeden kořen.
