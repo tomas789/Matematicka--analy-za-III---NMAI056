@@ -22,11 +22,45 @@ existuje-li integrál na pravé straně. Tento integrál můžeme značit i $\in
 Nechť $f$ je holomorfní na otevřené množině $G \subset \mathbb{C}$ a $\Delta \subset G$ je trojúhelník. Pak $\int_{\delta \Delta} f(z) dz = 0$.
 \end{vetat}
 
+\begin{proof}
+Sporem : nechť $\int_{\partial \triangle} f = M > 0$. Rozdělíme na čtyři trojúhelníky.
+
+% TODO doplnit obrázek
+
+Sečteme $\int$ přes hranice $\triangle_1$, $\triangle_2$, $\triangle_3 + \triangle_4$ v opačném směru.
+
+Platí 
+$$\int_{\partial \triangle_4} f = \int_{\partial \triangle_1} f + \int_{\partial \triangle_2} f + \int_{\partial \triangle_3} f + \int_{\partial \triangle_4} f$$
+
+Tady $\exists \triangle_i \textrm{ : } \left| \int_{\partial \triangle_i} f \right| \geq \frac{M}{4}$. Tento trojúhelník opět rozdělíme na čtyři kusy. Dostaneme posloupnost trpjúhelníků $\triangle^K$ tak, že 
+$$\left| \int_{\partial \triangle^K} f \right| \geq \frac{M}{4^K}$$
+a
+$$(\textrm{obvod $\triangle^K$}) = \frac{\textrm{obvod $\triangle$}}{2^K}$$
+
+$\triangle^K$ uzavřené, zanořené do sebe $\Rightarrow$ 
+$$\exists x_0 \in \bigcap_{K=1}^{\infty} \triangle^K$$
+(důkaz přes konvergentní Cauchyovskou posloupnost)
+
+Funkce $f$ je diferencovatelná v $x_0$, tady $f(z) = f(z_0) + f^\prime(z_0)(z-z_0) + \varepsilon (z-z_0)(z-z_0)$
+$$\lim_{z \to z_0} \varepsilon (z-z_0) = 0$$
+
+$$\left| \int_{\partial \triangle^K} f(z) dz \right| = \left| \int_{\partial \triangle^K} \underbrace{f(z_0) + f^\prime (z_0)(z-z_0)}_\circledast + \varepsilon (z-z_0) (z-z_0) dz \right|$$
+
+$\circledast$ : má primitivní funkci $f(z)z + f^\prime(z_0) \frac{(z-z_0)^2}{2}$ a $\partial \triangle_K$ je uzavřená křivka, tedy 
+$$\int_{\partial \triangle^K} \left[ f(z_0) + f^\prime (z_0) (z-z_0) \right] = 0$$
+
+$$\frac{M}{4^K} \leq \left| \int_{\partial \triangle^K} f(z) dz \right| = \left| \int_{\partial \triangle^K} \varepsilon (z-z_0) (z-z_0) dz \right| \leq \textrm{délka } \partial \triangle_K \sup_{z \in \partial \triangle_K} \left| \varepsilon (z-z_0) \right| \sup_{z \in \partial \triangle_K} \left| z-z_0 \right| $$
+$$ \leq \frac{c}{2^K} \varepsilon_K \frac{c}{2^K} \Rightarrow M \leq c^2 \varepsilon_K \overset{k \to \infty}{\rightarrow} 0 \Rightarrow M \leq 0$$
+
+a to je spor.
+\end{proof}
+
 \begin{vetabd}[Cauchy]
 Nechť $f$ je holomorfní na otevřené množině $G \subset \mathbb{C}$. Nechť $\langle \varphi \rangle \subset G$ je uzavřená křivka taková, že vnitřek $\langle \varphi \rangle \subset G$ (tedy případné "díry" uvnitř G nejsou uvnitř $\langle \varphi \rangle$). Pak $\int_\varphi f(z)dz=0$.
 \end{vetabd}
 
 \begin{vetal}[Cauchyův vzorec]
+\label{Cauchyův vzorec}
 Nechť $f$ je holomorfní na kruhu $B(z_0, R)$ a $0<r<R$. Pro křivku $\varphi(t) = z_0 + r e^{it}$, $t \in [0,2\pi]$, platí
 
 \begin{equation}
@@ -37,10 +71,81 @@ Nechť $f$ je holomorfní na kruhu $B(z_0, R)$ a $0<r<R$. Pro křivku $\varphi(t
 \end{equation}
 \end{vetal}
 
+\begin{proof}
+\begin{enumerate}
+\item $|s-z_0| > r$
+
+pak $\frac{f(z)}{z-s}$ je holomorfní na $B(z_0, r + \varepsilon)$ dle Cauchyho věty
+
+$$\int_\varphi \frac{f(z)}{z-s} dz = 0$$
+
+\item $|s-z_0| < r$
+
+Definujme funkce 
+\begin{equation}
+F(z)  = \left\{ \begin{array}{ll}
+ \frac{f(z)-f(s)}{z-s} & \textrm{pro $z \neq s$} \nonumber\\
+ f^\prime(s) & \textrm{pro $z=s$}
+  \end{array} \right.
+\end{equation}
+
+Pak $F(z)$ je holomorfní na $B(z_0, R) \backslash \{ s \}$ a v $s$ spojitá. Dle Poznámky
+
+$$\int_\varphi F(z) dz = 0 = \int_\varphi \frac{f(z)}{z-s} dz - \int_\varphi \frac{f(s)}{z-s} dz$$
+\end{enumerate}
+\end{proof}
+
+
 \begin{vetat}[Liouville]
+\label{Liouville}
 Nechť $f$ je holomorfní a omezená na $\mathbb{C}$. Pak $f$ je konstantní.
 \end{vetat}
+
+\begin{proof}
+Nechť $\varphi (t) = R e^{it}$. Podle Věty \ref{Cauchyův vzorec} (Cauchyův vzorec) máme
+$$f(s) = \frac{1}{2 \pi i} \int_\varphi \frac{f(z)}{z-s}dz \qquad \circledcirc$$
+
+$(\int \quad)^\prime = (\int (\quad)^\prime)$. Poznámka p. doc. Hencla: "Vy to udělat nemůžete, já ano, protože jsem absolvoval přednášku z teorie míry a integrálu."
+
+Tedy $|f^\prime (s)| \leq \frac{1}{2 \pi} 2 \pi R \sup_{z \in \mathbb{C}} |f(z)| \frac{1}{| R - |s| |^2} \overset{R \to \infty}{\to} 0$
+
+$$f^\prime (s) = 0 \textrm{ } \forall s \in \mathbb{C} \Rightarrow \textrm{$f$ je konstantní}$$
+
+Nyní stačí ukázat, že mužeme udělat $(\int \quad)^\prime = (\int (\quad)^\prime)$.
+
+Připomeň: $F_n \con F$, pak $\int F_n \to \int F$ (pro $\mathbb{R} \to \mathbb{R}, také pro \mathbb{R} \to \mathbb{C}$)
+
+Lze použít i pro $\int_\varphi F = \int_\alpha^\beta F(\varphi(t)) \varphi^\prime (t) dt \Rightarrow \lim_{n \to \infty} \int F_n = \int \lim_{n \to \infty} F_n$
+
+$$f^\prime (s) = \lim_{h \to 0} \frac{f(s+h)-f(s)}{h} \overset{\circledcirc}{=} \lim_{h \to 0} \frac{1}{h} \left( \int_\varphi \frac{f(z)}{z-(s+h)} dz - \int_\varphi \frac{f(z)}{z-s} dz \right) = \lim_{h \to 0} \int_\varphi f(z) \frac{1}{h} \left( \frac{1}{z-(s+h)} - \frac{1}{z-s} \right) dz = \lim_{h \to 0} \int_\varphi f(z) \frac{1}{(z-(s+h))(z-s)} dz$$
+
+Pohle Heineho stačí 
+$$\lim_{n \to \infty} \int_\varphi \underbrace{f(z) \frac{1}{(z-(s+h_n))(z-s)}}_{F_n(z)} dz$$
+pro $h_n \to 0$
+
+!!! ZDE CHYBÍ KOUSEK !!!, potom $\lim \int = \int \lim_{n \to \infty} = \int_\varphi f(z) \frac{1}{(z-s)^2} dz$
+
+$F_n(z) \con F(z)
+
+$$|F_n(z)-F(z)| = |f(z)| \left| \frac{1}{(z-(s+h_n))(z-s)} - \frac{1}{(z-s)^2} \right| \leq \sup_{z \in \langle \varphi \rangle} |f(z)| \max \frac{1}{|z-s|} \frac{|h_n|}{|\underbrace{(z-(s+h_n))}_{\leq \frac{1}{2} (z-s)}(z-s)|}$$
+\end{proof}
+
 
 \begin{vetal}[Základní věta algebry]
 Každý nekonstantní polynom (s komplexními koeficienty) má v $\mathbb{C}$ alespoň jeden kořen.
 \end{vetal}
+
+\begin{proof}
+Sporem. Nechť $\forall z \in \mathbb{C} \textrm{ : } P(z) \neq 0$. Pak $\frac{1}{P(z)}$ he holomorfní funkce na $\mathbb{C}$.
+
+$$P(z) = a_n z^n + a_{n-1} z^{n-1} + \ldots + a_0 = a_n z^n \left( 1 + \frac{a_{n-1}}{a_n} \frac{1}{z} + \ldots + \frac{a_0}{a_n} \frac{1}{z^n} \right)$$
+
+$\exists R > 0 \textrm{ } \forall |Z| > R \textrm{ : }$
+
+$$\left( 1 + \frac{a_{n-1}}{a_n} \frac{1}{z} + \ldots + \frac{a_0}{a_n} \frac{1}{z^n} \right) > \frac{1}{2} \geq 1 - \frac{|a_{n-1}|}{|a_n|} \frac{1}{R} - \frac{|a_{n-2}|}{|a_n|} \frac{1}{R^2} - \ldots - \frac{|a_0|}{|a_n|} \frac{1}{R^n}$$
+
+Tedy 
+$$\left| \frac{1}{P(z)} \right| \leq \frac{1}{|a_n z^n| (\ldots)} \leq \frac{2}{|a_n| |z^n|}$$
+
+Tedy $\frac{1}{P(z)}$ je omezená holomorfní funkce, tedy dle Věty \ref{Liouville} je $\frac{1}{P(z)}$ konstantní a to je spor.
+\end{proof}
