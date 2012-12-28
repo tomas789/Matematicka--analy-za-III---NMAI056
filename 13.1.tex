@@ -70,6 +70,31 @@ Nechť $f$ je holomorfní na kruhu $B(z_0, R)$ a $0<r<R$. Pro křivku $\varphi(t
 \end{equation}
 \end{vetal}
 
+\begin{proof}
+\begin{enumerate}
+\item $|s-z_0| > r$
+
+pak $\frac{f(z)}{z-s}$ je holomorfní na $B(z_0, r + \varepsilon)$ dle Cauchyho věty
+
+$$\int_\varphi \frac{f(z)}{z-s} dz = 0$$
+
+\item $|s-z_0| < r$
+
+Definujme funkce 
+\begin{equation}
+F(z)  = \left\{ \begin{array}{ll}
+ \frac{f(z)-f(s)}{z-s} & \textrm{pro $z \neq s$} \nonumber\\
+ f^\prime(s) & \textrm{pro $z=s$}
+  \end{array} \right.
+\end{equation}
+
+Pak $F(z)$ je holomorfní na $B(z_0, R) \backslash \{ s \}$ a v $s$ spojitá. Dle Poznámky
+
+$$\int_\varphi F(z) dz = 0 = \int_\varphi \frac{f(z)}{z-s} dz - \int_\varphi \frac{f(s)}{z-s} dz$$
+\end{enumerate}
+\end{proof}
+
+
 \begin{vetat}[Liouville]
 \label{Liouville}
 
