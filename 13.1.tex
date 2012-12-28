@@ -60,6 +60,7 @@ Nechť $f$ je holomorfní na otevřené množině $G \subset \mathbb{C}$. Nechť
 \end{vetabd}
 
 \begin{vetal}[Cauchyův vzorec]
+\label{Cauchyův vzorec}
 Nechť $f$ je holomorfní na kruhu $B(z_0, R)$ a $0<r<R$. Pro křivku $\varphi(t) = z_0 + r e^{it}$, $t \in [0,2\pi]$, platí
 
 \begin{equation}
@@ -97,9 +98,38 @@ $$\int_\varphi F(z) dz = 0 = \int_\varphi \frac{f(z)}{z-s} dz - \int_\varphi \fr
 
 \begin{vetat}[Liouville]
 \label{Liouville}
-
 Nechť $f$ je holomorfní a omezená na $\mathbb{C}$. Pak $f$ je konstantní.
 \end{vetat}
+
+\begin{proof}
+Nechť $\varphi (t) = R e^{it}$. Podle Věty \ref{Cauchyův vzorec} (Cauchyův vzorec) máme
+$$f(s) = \frac{1}{2 \pi i} \int_\varphi \frac{f(z)}{z-s}dz \qquad \circledcirc$$
+
+$(\int \quad)^\prime = (\int (\quad)^\prime)$. Poznámka p. doc. Hencla: "Vy to udělat nemůžete, já ano, protože jsem absolvoval přednášku z teorie míry a integrálu."
+
+Tedy $|f^\prime (s)| \leq \frac{1}{2 \pi} 2 \pi R \sup_{z \in \mathbb{C}} |f(z)| \frac{1}{| R - |s| |^2} \overset{R \to \infty}{\to} 0$
+
+$$f^\prime (s) = 0 \textrm{ } \forall s \in \mathbb{C} \Rightarrow \textrm{$f$ je konstantní}$$
+
+Nyní stačí ukázat, že mužeme udělat $(\int \quad)^\prime = (\int (\quad)^\prime)$.
+
+Připomeň: $F_n \con F$, pak $\int F_n \to \int F$ (pro $\mathbb{R} \to \mathbb{R}, také pro \mathbb{R} \to \mathbb{C}$)
+
+Lze použít i pro $\int_\varphi F = \int_\alpha^\beta F(\varphi(t)) \varphi^\prime (t) dt \Rightarrow \lim_{n \to \infty} \int F_n = \int \lim_{n \to \infty} F_n$
+
+$$f^\prime (s) = \lim_{h \to 0} \frac{f(s+h)-f(s)}{h} \overset{\circledcirc}{=} \lim_{h \to 0} \frac{1}{h} \left( \int_\varphi \frac{f(z)}{z-(s+h)} dz - \int_\varphi \frac{f(z)}{z-s} dz \right) = \lim_{h \to 0} \int_\varphi f(z) \frac{1}{h} \left( \frac{1}{z-(s+h)} - \frac{1}{z-s} \right) dz = \lim_{h \to 0} \int_\varphi f(z) \frac{1}{(z-(s+h))(z-s)} dz$$
+
+Pohle Heineho stačí 
+$$\lim_{n \to \infty} \int_\varphi \underbrace{f(z) \frac{1}{(z-(s+h_n))(z-s)}}_{F_n(z)} dz$$
+pro $h_n \to 0$
+
+!!! ZDE CHYBÍ KOUSEK !!!, potom $\lim \int = \int \lim_{n \to \infty} = \int_\varphi f(z) \frac{1}{(z-s)^2} dz$
+
+$F_n(z) \con F(z)
+
+$$|F_n(z)-F(z)| = |f(z)| \left| \frac{1}{(z-(s+h_n))(z-s)} - \frac{1}{(z-s)^2} \right| \leq \sup_{z \in \langle \varphi \rangle} |f(z)| \max \frac{1}{|z-s|} \frac{|h_n|}{|\underbrace{(z-(s+h_n))}_{\leq \frac{1}{2} (z-s)}(z-s)|}$$
+\end{proof}
+
 
 \begin{vetal}[Základní věta algebry]
 Každý nekonstantní polynom (s komplexními koeficienty) má v $\mathbb{C}$ alespoň jeden kořen.
