@@ -43,6 +43,35 @@ Nechť $f$ je holomorfní na kruhu $B(z_0, R)$ a $0<r<R$. Pro křivku $\varphi(t
 Nechť $f$ je holomorfní a omezená na $\mathbb{C}$. Pak $f$ je konstantní.
 \end{vetat}
 
+\begin{proof}
+Sporem : nechť $\int_{\partial \triangle} f = M > 0$. Rozdělíme na čtyři trojúhelníky.
+
+% TODO doplnit obrázek
+
+Sečteme $\int$ přes hranice $\triangle_1$, $\triangle_2$, $\triangle_3 + \triangle_4$ v opačném směru.
+
+Platí 
+$$\int_{\partial \triangle_4} f = \int_{\partial \triangle_1} f + \int_{\partial \triangle_2} f + \int_{\partial \triangle_3} f + \int_{\partial \triangle_4} f$$
+
+Tady $\exists \triangle_i \textrm{ : } \left| \int_{\partial \triangle_i} f \right| \geq \frac{M}{4}$. Tento trojúhelník opět rozdělíme na čtyři kusy. Dostaneme posloupnost trpjúhelníků $\triangle^K$ tak, že 
+$$\left| \int_{\partial \triangle^K} f \right| \geq \frac{M}{4^K}$$
+a
+$$(\textrm{obvod $\triangle^K$}) = \frac{\textrm{obvod $\triangle$}}{2^K}$$
+
+$\triangle^K$ uzavřené, zanořené do sebe $\Rightarrow$ 
+$$\exists x_0 \in \bigcap_{K=1}^{\infty} \triangle^K$$
+(důkaz přes konvergentní Cauchyovskou posloupnost)
+
+Funkce $f$ je diferencovatelná v $x_0$, tady $f(z) = f(z_0) + f^\prime(z_0)(z-z_0) + \varepsilon (z-z_0)(z-z_0)$
+$$\lim_{z \to z_0} \varepsilon (z-z_0) = 0$$
+
+$$\left| \int_{\partial \triangle^K} f(z) dz \right| = \left| \int_{\partial \triangle^K} \underbrace{f(z_0) + f^\prime (z_0)(z-z_0)}_\circledast + \varepsilon (z-z_0) (z-z_0) dz \right|$$
+
+$\circledast$ : má primitivní funkci $f(z)z + f^\prime(z_0) \frac{(z-z_0)^2}{2}$ a $\partial \triangle_K$ je uzavřená křivka, tedy 
+$$\int_{\partial \triangle^K} \left[ f(z_0) + f^\prime (z_0) (z-z_0) \right] = 0$$
+\end{proof}
+
+
 \begin{vetal}[Základní věta algebry]
 Každý nekonstantní polynom (s komplexními koeficienty) má v $\mathbb{C}$ alespoň jeden kořen.
 \end{vetal}
