@@ -38,9 +38,26 @@ Nechť $f$ je holomorfní na kruhu $B(z_0, R)$ a $0<r<R$. Pro křivku $\varphi(t
 \end{vetal}
 
 \begin{vetat}[Liouville]
+\label{Liouville}
+
 Nechť $f$ je holomorfní a omezená na $\mathbb{C}$. Pak $f$ je konstantní.
 \end{vetat}
 
 \begin{vetal}[Základní věta algebry]
 Každý nekonstantní polynom (s komplexními koeficienty) má v $\mathbb{C}$ alespoň jeden kořen.
 \end{vetal}
+
+\begin{proof}
+Sporem. Nechť $\forall z \in \mathbb{C} \textrm{ : } P(z) \neq 0$. Pak $\frac{1}{P(z)}$ he holomorfní funkce na $\mathbb{C}$.
+
+$$P(z) = a_n z^n + a_{n-1} z^{n-1} + \ldots + a_0 = a_n z^n \left( 1 + \frac{a_{n-1}}{a_n} \frac{1}{z} + \ldots + \frac{a_0}{a_n} \frac{1}{z^n} \right)$$
+
+$\exists R > 0 \textrm{ } \forall |Z| > R \textrm{ : }$
+
+$$\left( 1 + \frac{a_{n-1}}{a_n} \frac{1}{z} + \ldots + \frac{a_0}{a_n} \frac{1}{z^n} \right) > \frac{1}{2} \geq 1 - \frac{|a_{n-1}|}{|a_n|} \frac{1}{R} - \frac{|a_{n-2}|}{|a_n|} \frac{1}{R^2} - \ldots - \frac{|a_0|}{|a_n|} \frac{1}{R^n}$$
+
+Tedy 
+$$\left| \frac{1}{P(z)} \right| \leq \frac{1}{|a_n z^n| (\ldots)} \leq \frac{2}{|a_n| |z^n|}$$
+
+Tedy $\frac{1}{P(z)}$ je omezená holomorfní funkce, tedy dle Věty \ref{Liouville} je $\frac{1}{P(z)}$ konstantní a to je spor.
+\end{proof}
