@@ -47,7 +47,7 @@ $$\sum_{n=N}^{N+k} a_n x^n = \left[ \sum_{n=N}^{N+k} -t_n \left( \left( \frac{x}
 Protože $x \in [0, R]$, tak $\left( \frac{x}{R} \right)^n \in [0,1]$. Dále platí $\left( \frac{x}{R} \right)^{n} - \left( \frac{x}{R} \right)^{n+1} \geq 0$.
 \begin{eqnarray}
 \left|\sum_{n=N}^{N+k} a_n x^n \right| & \leq & \sum_{n=N}^{N+k} |t_n| \left( \left( \frac{x}{R} \right)^{n} - \left( \frac{x}{R} \right)^{n+1} \right) + |t_{N-1}| + |t_{N+k}| \nonumber\\
-& \leq & \epsilon \sum_{n=N}^{N+k} |t_n| \left( \left( \frac{x}{R} \right)^{n} - \left( \frac{x}{R} \right)^{n+1} \right) + 2 \varepsilon \nonumber\\
+& \leq & \varepsilon \sum_{n=N}^{N+k} |t_n| \left( \left( \frac{x}{R} \right)^{n} - \left( \frac{x}{R} \right)^{n+1} \right) + 2 \varepsilon \nonumber\\
 & = & \varepsilon \left( \left( \frac{x}{R} \right)^{N} - \left( \frac{x}{R} \right)^{N+k+1} \right) + 2 \varepsilon \nonumber\\
 & \leq & 3 \varepsilon \nonumber
 \end{eqnarray}
