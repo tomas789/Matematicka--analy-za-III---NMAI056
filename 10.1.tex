@@ -3,10 +3,10 @@ Nechť $J \subset \mathbb{R}$ je interval a nechť máme $f : J \rightarrow \mat
 
 \begin{enumerate}
 \item \emph{konverguje bodově} k $f$ na $J$, pokud pro každé $x \in J$ platí $\lim_{n \rightarrow \infty} f_n(x) = f(x)$, neboli
-$$\forall x \in J \forall \varepsilon > 0 \exists n_0 \in \mathbb{N} \forall n \geq n_0 : |f_n(x) - f(x)| < \varepsilon$$
+$$\forall x \in J \textrm{ } \forall \varepsilon > 0 \textrm{ } \exists n_0 \in \mathbb{N} \textrm{ } \forall n \geq n_0 \textrm{ : } |f_n(x) - f(x)| < \varepsilon$$
 Značíme $f_n \rightarrow f$ na $J$.
 \item \emph{konverguje stejnoměrně} k $f$ na $J$, pokud
-$$\forall \varepsilon > 0 \exists n_0 \in \mathbb{N} \forall n \geq n_0 \forall x \in J : | f_n(x) - f(x) | < \varepsilon$$
+$$\forall \varepsilon > 0 \textrm{ } \exists n_0 \in \mathbb{N} \textrm{ } \forall n \geq n_0 \textrm{ } \forall x \in J \textrm{ : } | f_n(x) - f(x) | < \varepsilon$$
 Značíme $f_n \con f$.
 \item \emph{konverguje lokálně stejnoměrně}, pokud pro každý omezený uzavřený interval $[a, b] \subset J$ platí: $f_n \rightrightarrows f$ na $[a, b]$. Značíme $f_n \conloc f$
 \end{enumerate}
@@ -14,28 +14,32 @@ Značíme $f_n \con f$.
 
 \begin{vetal}[kritérium stejnoměrné konvergence]
 Nechť $f_n, f:J \rightarrow \mathbb{R}$ pak
-$$f_n \con f na J \Leftrightarrow \lim_{n \rightarrow \infty} \sup \{ |f_n(x) - f(x)|; x \in J \} = 0$$
+$$f_n \con f \textrm{ na } J \Leftrightarrow \lim_{n \rightarrow \infty} \sup \{ |f_n(x) - f(x)| \textrm{; } x \in J \} = 0$$
 \end{vetal}
+
 \begin{proof}
-$$ f_n \rightrightarrows f \Leftrightarrow \forall \varepsilon > 0 \  \exists n_0 \in \mathbb{N} \  \forall n \geq n_0 \  \forall x \in J: |f_n(x) - f(x)| < \varepsilon \Leftrightarrow$$
-$$\Leftrightarrow \forall \varepsilon > 0 \exists n_0 \in \mathbb{N} \forall n \geq n_0 : \sup \{ |f_n(x) - f(x) | : x \in J \} \leq \varepsilon \Leftrightarrow$$
-$$\Leftrightarrow \lim_{n \to \infty} sup\{|f_n(x)-f(x)|;x \in J\} = 0$$
+$$ f_n \rightrightarrows f \Leftrightarrow \forall \varepsilon > 0 \  \exists n_0 \in \mathbb{N} \  \forall n \geq n_0 \  \forall x \in J \textrm{ : } |f_n(x) - f(x)| < \varepsilon \Leftrightarrow$$
+$$\Leftrightarrow \forall \varepsilon > 0 \  \exists n_0 \in \mathbb{N} \  \forall n \geq n_0 \textrm{ : } \sup \{ |f_n(x) - f(x) | \textrm{; } x \in J \} \leq \varepsilon \Leftrightarrow$$
+$$\Leftrightarrow \lim_{n \to \infty} \sup\{|f_n(x)-f(x)| \textrm{; } x \in J\} = 0$$
 \end{proof}
 
 \begin{vetat}[Bolzano-Cauchyho podmínka pro stejnoměrnou konvergenci]
 Nechť $f_n,f : J \rightarrow \mathbb{R}$. Pak
-$$f_n \con f na J \Leftrightarrow \forall \varepsilon > 0 \exists n_0 \forall m,n \geq n_0 \forall x \in J : | f_n(x) - f_m(x)| < \varepsilon$$
+$$f_n \con f \textrm{ na } J \Leftrightarrow \forall \varepsilon > 0 \  \exists n_0 \  \forall m,n \geq n_0 \  \forall x \in J \textrm{ : } | f_n(x) - f_m(x)| < \varepsilon$$
 \end{vetat}
+
 \begin{proof}
 "$\Rightarrow$" 
-Nechť $\varepsilon > 0.$ Zvolme $n_0$ z def. $f_n \rightrightarrows f.$ 
-Nyní $$\forall x \in J \exists m,n \geq n_0 |f_n(x) - f_m(x) | \leq $$ $$\leq |f_n(x) - f(x)| + |f(x) - f_m(x)| < \varepsilon + \varepsilon $$
+Nechť $\varepsilon > 0$. Zvolme $n_0$ z def. $f_n \rightrightarrows f$. 
+Nyní 
+$$\forall x \in J \ \exists m,n \geq n_0 |f_n(x) - f_m(x) | \leq $$
+$$\leq |f_n(x) - f(x)| + |f(x) - f_m(x)| < \varepsilon + \varepsilon $$
 "$\Leftarrow$"
-Nechť $x \in J$ je pevné. Platí $$\forall \varepsilon > 0 \exists n_0 \in \mathbb{N} \forall m,n \geq n_0|f_n(x) - f_m(x)| < \varepsilon$$
-Tedy posloupnost ${f_n(x)}_{n=1}^\infty$ splňuje BC podmínku pro konvergenci posloupnosti. Teda existuje její limita, zn.: $f(x)$.
-Víme $$\forall \varepsilon > 0 \exists n_0 \in \mathbb{N} \forall m,n \geq n_0 \forall x \in J: |f_n(x)-f_m(x)|<\varepsilon$$
+Nechť $x \in J$ je pevné. Platí $$\forall \varepsilon > 0 \ \exists n_0 \in \mathbb{N} \ \forall m,n \geq n_0|f_n(x) - f_m(x)| < \varepsilon$$
+Tedy posloupnost ${f_n(x)}_{n=1}^\infty$ splňuje BC podmínku pro konvergenci posloupnosti. Tedy existuje její limita, zn.: $f(x)$.
+Víme $$\forall \varepsilon > 0 \ \exists n_0 \in \mathbb{N} \ \forall m,n \geq n_0 \ \forall x \in J \textrm{ : } |f_n(x)-f_m(x)|<\varepsilon$$
 Provedme $lim_{n \to \infty}$, dostaneme:
-$$\forall \varepsilon > 0 \rightarrow n_0 \in \mathbb{N} \forall n \geq n_0 \forall x \in J: |f_n(x) - f(x)| \leq \varepsilon \Rightarrow$$
+$$\forall \varepsilon > 0 \rightarrow n_0 \in \mathbb{N} \ \forall n \geq n_0 \ \forall x \in J: |f_n(x) - f(x)| \leq \varepsilon \Rightarrow$$
 $$\Rightarrow f_n \con f$$
 \end{proof}
 
