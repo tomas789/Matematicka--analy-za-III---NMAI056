@@ -34,6 +34,7 @@ Dle Dirichletova kriteria tato suma konverguje.
 \end{proof}
 
 \begin{vetal}[o ortogonalitě trigoniometrických funkcí]
+\label{o ortogonalitě trigoniometrických funkcí}
 Nechť $m, n \in \mathbb{N}$, pak
 \begin{eqnarray*}
 \int_{0}^{2 \pi} \sin (nx) \cos (mx) dx & = & 0 \\
@@ -80,7 +81,7 @@ b_k & = & \frac{1}{\pi} \int_0^{2 \pi} f(x) \sin(kx) dx, \quad k \in \{1, 2, \ld
 \end{vetal}
 
 \begin{proof}
-Idea důkazu je, že identitu pro $f(x)$ přenásobíme $\cos(kx)$ resp. $\sin(kx)$  a přeintegrujeme přes $[0, 2 \pi]$ a díky větě "Věta L 2" (! odpovídá značení na přednášce, nikoliv v tomto skriptu) mnoho členů vypadne.
+Idea důkazu je, že identitu pro $f(x)$ přenásobíme $\cos(kx)$ resp. $\sin(kx)$  a přeintegrujeme přes $[0, 2 \pi]$ a díky Věta L\ref{o ortogonalitě trigoniometrických funkcí} mnoho členů vypadne.
 
 \begin{opakovani}
 $f_n \con f$ na $(a,b) \Rightarrow \int_a^b f_n \rightarrow \int_a^b f$
@@ -90,8 +91,10 @@ $f_n \con f$ na $(a,b) \Rightarrow \int_a^b f_n \rightarrow \int_a^b f$
 $\sum_{k=1}^{\infty} \left( a_k \cos(kx) \sin(lx) + b_k \sin(kx) \sin(lx) \right)$ konverguje stejnoměrně.
 \end{pozorovani}
 
-$$\int_{0}^{2 \pi} f(x) \sin(lx) dx = \int_{0}^{2 \pi} \left[ \frac{a_0}{2} \sin(lx) + \sum \left( a_k \cos(kx) \sin(lx) + b_k \sin(kx) \sin(lx) \right) \right] dx = $$
-$$b_k \int_{0}^{2 \pi} \sin^2(lx) dx = b_k \pi \Rightarrow b_k = \frac{1}{\pi} \int_0^{2 \pi} f(x) \sin(lx) dx$$
+\begin{eqnarray*}
+\int_{0}^{2 \pi} f(x) \sin(lx) dx & = & \int_{0}^{2 \pi} \left[ \frac{a_0}{2} \sin(lx) + \sum \left( a_k \cos(kx) \sin(lx) + b_k \sin(kx) \sin(lx) \right) \right] dx \\
+& = & b_k \int_{0}^{2 \pi} \sin^2(lx) dx = b_k \pi \Rightarrow b_k = \frac{1}{\pi} \int_0^{2 \pi} f(x) \sin(lx) dx
+\end{eqnarray*}
 
 podobně přenásobím funkcí $\sin(lx)$ dostanu vzorec pro $a_k$ pro $k \in \mathbb{N}$.
 
@@ -103,16 +106,13 @@ $$\int_{0}^{2 \pi} 1 * f(x) dx = \int_{0}^{2 \pi} \frac{a_0}{2}+0+0+\ldots+0 \Ri
 
 \begin{definice}
 Nehchť $f \in \mathcal{P}_{2 \pi}$. Pak definujeme čísla
-
 \begin{eqnarray*}
 a_k & = & \frac{1}{\pi} \int_{0}^{2 \pi} f(x) \cos(kx) dx, \quad k=0,1,\ldots \\
 b_k & = & \frac{1}{\pi} \int_{0}^{2 \pi} f(x) \sin(kx) dx, \quad k=1,2,\ldots 
 \end{eqnarray*}
 
 a nazveme je \emph{Fourierovými koeficienty} funkce $f$ a 
-
-$$a F_f = \frac{a_0}{2} + \sum_{k=1}^\infty a_k \cos(kx) + b_k \sin(kx)$$
-
+$$F_f = \frac{a_0}{2} + \sum_{k=1}^\infty a_k \cos(kx) + b_k \sin(kx)$$
 nazveme Fourierovou řadou funkce $f$.
 \end{definice}
 
@@ -225,7 +225,7 @@ $D_n(y)$ je sudá funkce, proto $f(x+y) \rightarrow f(x-y)$
 \begin{vetat}[Riemann-Lebesqueovo lemma]
 \label{Riemann-Lebesqueovo lemma}
 Nechť $[a,b] \subset \mathbb{R}$ a $f \in R([a,b])$. Potom
-$$\lim_{t \rightarrow \infty} \int_a^b f(x) \cos(tx) dx = 0 \mathrm{a} \lim_{t \rightarrow \infty} \int_a^b f(x) \sin(tx) dx = 0$$
+$$\lim_{t \rightarrow \infty} \int_a^b f(x) \cos(tx) dx = 0 \textrm{ a } \lim_{t \rightarrow \infty} \int_a^b f(x) \sin(tx) dx = 0$$
 Speciálně pro Fourierovy koeficienty funkce $f \in \mathcal{P}_{2 \pi}$ platí $a_k \rightarrow 0$ a $b_k \rightarrow 0$.
 \end{vetat}
 
