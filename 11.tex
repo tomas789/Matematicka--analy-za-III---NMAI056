@@ -38,19 +38,19 @@ $$\sum_{n=0}^{\infty} a_n R^n = \lim_{r \rightarrow R_-} \sum_{n=0}^{\infty} a_n
 \begin{proof}
 Předpokládejme bez újmy na obecnosti, že $x_0 = 0$. Označme $t_N = \sum_{n=N+1}^{\infty} a_n R^n$. Víme, že $\sum a_n R^n$ konverguje, tedy
 $$\forall \varepsilon>0 \quad \exists n_0 \quad \forall n \geq n_0 \quad : \quad |t_N| < \varepsilon$$
-\begin{eqnarray}
-a_n & = & a_n R^n \left( \frac{x}{R} \right)^n \nonumber\\
-& = & - t_N \left( \left( \frac{x}{R} \right)^n - \left( \frac{x}{R} \right)^{n+1} \right) + t_{n-1} \left( \frac{x}{R} \right)^n - t_n \left( \frac{x}{R} \right)^{n+1} \nonumber
-\end{eqnarray}
+\begin{eqnarray*}
+a_n & = & a_n R^n \left( \frac{x}{R} \right)^n \\
+& = & - t_N \left( \left( \frac{x}{R} \right)^n - \left( \frac{x}{R} \right)^{n+1} \right) + t_{n-1} \left( \frac{x}{R} \right)^n - t_n \left( \frac{x}{R} \right)^{n+1} 
+\end{eqnarray*}
 Sečteme od $N$ do $N+k$
 $$\sum_{n=N}^{N+k} a_n x^n = \left[ \sum_{n=N}^{N+k} -t_n \left( \left( \frac{x}{R} \right)^n - \left( \frac{x}{R} \right)^{n+1} \right) \right] + t_{N-1} \left( \frac{x}{R} \right)^n - t_{N+k} \left( \frac{x}{R} \right)^{n+k+1}$$
 Protože $x \in [0, R]$, tak $\left( \frac{x}{R} \right)^n \in [0,1]$. Dále platí $\left( \frac{x}{R} \right)^{n} - \left( \frac{x}{R} \right)^{n+1} \geq 0$.
-\begin{eqnarray}
-\left|\sum_{n=N}^{N+k} a_n x^n \right| & \leq & \sum_{n=N}^{N+k} |t_n| \left( \left( \frac{x}{R} \right)^{n} - \left( \frac{x}{R} \right)^{n+1} \right) + |t_{N-1}| + |t_{N+k}| \nonumber\\
-& \leq & \varepsilon \sum_{n=N}^{N+k} |t_n| \left( \left( \frac{x}{R} \right)^{n} - \left( \frac{x}{R} \right)^{n+1} \right) + 2 \varepsilon \nonumber\\
-& = & \varepsilon \left( \left( \frac{x}{R} \right)^{N} - \left( \frac{x}{R} \right)^{N+k+1} \right) + 2 \varepsilon \nonumber\\
-& \leq & 3 \varepsilon \nonumber
-\end{eqnarray}
+\begin{eqnarray*}
+\left|\sum_{n=N}^{N+k} a_n x^n \right| & \leq & \sum_{n=N}^{N+k} |t_n| \left( \left( \frac{x}{R} \right)^{n} - \left( \frac{x}{R} \right)^{n+1} \right) + |t_{N-1}| + |t_{N+k}| \\
+& \leq & \varepsilon \sum_{n=N}^{N+k} |t_n| \left( \left( \frac{x}{R} \right)^{n} - \left( \frac{x}{R} \right)^{n+1} \right) + 2 \varepsilon \\
+& = & \varepsilon \left( \left( \frac{x}{R} \right)^{N} - \left( \frac{x}{R} \right)^{N+k+1} \right) + 2 \varepsilon \\
+& \leq & 3 \varepsilon 
+\end{eqnarray*}
 Z \emph{BC} podmínky pro stejnoměrnou konvergenci řady dostaneme $\sum_{n=0}^{\infty} a_n x^n \con$ na $[0, R]$
 Z MO věty dostaneme
 $$\lim_{n \rightarrow \infty} \lim_{r \rightarrow R_-} \sum_{n=0}^{N} a_n R^n = \lim_{r \rightarrow R_-} \lim_{n \rightarrow \infty} \sum_{n=0}^{N} a_n R^n$$
@@ -71,8 +71,8 @@ Dle věty o derivaci mocninné řady máme $\forall x \in (-1, 1)$
 $$f'(x) = \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{3n-2} (3n-2) x^{3n-3} = \sum_{n=1}^{\infty} \left( -x^3 \right)^{n-1} = \frac{1}{1+x^3}$$
 $$f(x) = \int \frac{1}{1+x^3} dx = \ldots = \frac{1}{3} \ln(x+1) - \frac{1}{6} \ln(x^2-x+1) + \frac{1}{\sqrt{3}} \arctan \left( \frac{2x-1}{\sqrt{3}} \right) + C$$
 $$0 = f(0) = \frac{1}{3} 0 - \frac{1}{6} 0 + \frac{1}{\sqrt{3}} \arctan \left( - \frac{1}{\sqrt{3}} \right) + C \Rightarrow C = \frac{1}{\sqrt{3}} \arctan \left( \frac{1}{\sqrt{3}} \right)$$
-\begin{eqnarray}
-\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{3n-2} & = & \lim_{x \rightarrow 1_-} \left( \frac{1}{3} \ln(x+1) - \frac{1}{6} \ln(x^2-x+1) + \frac{1}{\sqrt{3}} \arctan \left( \frac{2x-1}{\sqrt{3}} \right) \frac{1}{\sqrt{3}} \arctan \left( \frac{1}{\sqrt{3}} \right) \right) \nonumber\\
-& = & \frac{1}{3} \ln(2) + \frac{2}{\sqrt{3}} \arctan \left( \frac{1}{\sqrt{3}} \right) \nonumber
-\end{eqnarray}
+\begin{eqnarray*}
+\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{3n-2} & = & \lim_{x \rightarrow 1_-} \left( \frac{1}{3} \ln(x+1) - \frac{1}{6} \ln(x^2-x+1) + \frac{1}{\sqrt{3}} \arctan \left( \frac{2x-1}{\sqrt{3}} \right) \frac{1}{\sqrt{3}} \arctan \left( \frac{1}{\sqrt{3}} \right) \right) \\
+& = & \frac{1}{3} \ln(2) + \frac{2}{\sqrt{3}} \arctan \left( \frac{1}{\sqrt{3}} \right) 
+\end{eqnarray*}
 \end{proof}

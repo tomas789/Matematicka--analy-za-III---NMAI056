@@ -35,11 +35,11 @@ Dle Dirichletova kriteria tato suma konverguje.
 
 \begin{vetal}[o ortogonalitě trigoniometrických funkcí]
 Nechť $m, n \in \mathbb{N}$, pak
-\begin{eqnarray}
-\int_{0}^{2 \pi} \sin (nx) \cos (mx) dx & = & 0 \nonumber\\
-\int_{0}^{2 \pi} \sin (nx) \sin (mx) dx & = & \pi \textrm{ (pro $n=m$)}, 0 \textrm{ (pro $n \neq m$) } \nonumber\\
-\int_{0}^{2 \pi} \cos (nx) \cos (mx) dx & = & \pi \textrm{ (pro $n \neq m$)}, 0 \textrm{ (pro $n=m$)} \nonumber
-\end{eqnarray}
+\begin{eqnarray*}
+\int_{0}^{2 \pi} \sin (nx) \cos (mx) dx & = & 0 \\
+\int_{0}^{2 \pi} \sin (nx) \sin (mx) dx & = & \pi \textrm{ (pro $n=m$)}, 0 \textrm{ (pro $n \neq m$) } \\
+\int_{0}^{2 \pi} \cos (nx) \cos (mx) dx & = & \pi \textrm{ (pro $n \neq m$)}, 0 \textrm{ (pro $n=m$)} 
+\end{eqnarray*}
 \end{vetal}
 
 \emph{Poznámka} proč se věta jmenuje o ortogonalitě trigoniometrických funkcí? Vraťme se zpět k lineární algebře. Skalární součin vektorů $x$ a $y$ jsme definovali jako $\left\langle x,y \right\rangle = \sum_{i=0}^{n} x_i y_i$. Zcela ekvivalentně byl zaveden skalární součit funkcí $f$ a $g$ jako $\left\langle f, g \right\rangle = \int f(x) g(x) dx$. O vektorech řekneme, že jsou na sebe kolmé (ortogonální), pokud je jejich skalární součin roven nule. Nejinak je tomu i u skalárního součinu funkcí. 
@@ -48,11 +48,11 @@ Nechť $m, n \in \mathbb{N}$, pak
 
 \begin{proof}
 
-\begin{eqnarray}
-\sin \alpha \sin \beta & = & \frac{1}{2} \left( \cos (\alpha - \beta) - \cos (\alpha + \beta) \right) \nonumber\\
-\cos \alpha \cos \beta & = & \frac{1}{2} \left( \cos (\alpha - \beta) + \cos (\alpha + \beta) \right) \nonumber\\
-\sin \alpha \cos \beta & = & \frac{1}{2} \left( \cos (\alpha - \beta) + \sin (\alpha + \beta) \right) \nonumber
-\end{eqnarray}
+\begin{eqnarray*}
+\sin \alpha \sin \beta & = & \frac{1}{2} \left( \cos (\alpha - \beta) - \cos (\alpha + \beta) \right) \\
+\cos \alpha \cos \beta & = & \frac{1}{2} \left( \cos (\alpha - \beta) + \cos (\alpha + \beta) \right) \\
+\sin \alpha \cos \beta & = & \frac{1}{2} \left( \cos (\alpha - \beta) + \sin (\alpha + \beta) \right) 
+\end{eqnarray*}
 
 $$\int_{0}^{2 \pi} \sin (nx) \cos(mx) = \int_{0}^{2 \pi} \left[ \frac{1}{2} \cos \left( (n-m)x \right) - \frac{1}{2} \left( (n+m)x \right) \right] = $$
 Pro $n \neq m$
@@ -73,10 +73,10 @@ Zbylé rovnosti analogicky.
 
 \begin{vetal}[Fourierovy vzorce]
 Nechť $f \in \mathcal{P}_{2 \pi}$ a nechť $f(x) = \frac{a_0}{2} + \sum_{k=1}^{\infty} a_k \cos(kx) + b_k \sin(kx)$, nechť navíc řada napravo konverguje stejnoměrně. Pak
-\begin{eqnarray}
-a_k & = & \frac{1}{\pi} \int_0^{2 \pi} f(x) \cos(kx) dx, \quad k \in \{0, 1, 2, \ldots\} \nonumber\\
-b_k & = & \frac{1}{\pi} \int_0^{2 \pi} f(x) \sin(kx) dx, \quad k \in \{1, 2, \ldots\} \nonumber
-\end{eqnarray}
+\begin{eqnarray*}
+a_k & = & \frac{1}{\pi} \int_0^{2 \pi} f(x) \cos(kx) dx, \quad k \in \{0, 1, 2, \ldots\} \\
+b_k & = & \frac{1}{\pi} \int_0^{2 \pi} f(x) \sin(kx) dx, \quad k \in \{1, 2, \ldots\} 
+\end{eqnarray*}
 \end{vetal}
 
 \begin{proof}
@@ -104,10 +104,10 @@ $$\int_{0}^{2 \pi} 1 * f(x) dx = \int_{0}^{2 \pi} \frac{a_0}{2}+0+0+\ldots+0 \Ri
 \begin{definice}
 Nehchť $f \in \mathcal{P}_{2 \pi}$. Pak definujeme čísla
 
-\begin{eqnarray}
-a_k & = & \frac{1}{\pi} \int_{0}^{2 \pi} f(x) \cos(kx) dx, \quad k=0,1,\ldots \nonumber\\
-b_k & = & \frac{1}{\pi} \int_{0}^{2 \pi} f(x) \sin(kx) dx, \quad k=1,2,\ldots \nonumber
-\end{eqnarray}
+\begin{eqnarray*}
+a_k & = & \frac{1}{\pi} \int_{0}^{2 \pi} f(x) \cos(kx) dx, \quad k=0,1,\ldots \\
+b_k & = & \frac{1}{\pi} \int_{0}^{2 \pi} f(x) \sin(kx) dx, \quad k=1,2,\ldots 
+\end{eqnarray*}
 
 a nazveme je \emph{Fourierovými koeficienty} funkce $f$ a 
 
@@ -120,11 +120,11 @@ nazveme Fourierovou řadou funkce $f$.
 \begin{itemize} \quad
 \item díky $2 \pi$-periodicitě lze funkci integrovat přes libovolný interval délky $2 \pi$ (velmi často $\int_{-\pi}^{\pi}$)
 \item Fourierovy řady lze zavést i pro funkce s periodou $l$, pak mají vzorce tvar
-\begin{eqnarray}
-F_f & = & \frac{a_0}{2} + \sum_{k=1}^{\infty} a_k \cos \left( \frac{2 k \pi}{l} x \right) + b_k \sin \left( \frac{2 k \pi}{l} x \right) \nonumber\\
-a_k & = & \frac{2}{l} \int_0^{l} f(x) \cos \left( \frac{2 k \pi}{l} x \right) dx \nonumber\\
-b_k & = & \frac{2}{l} \int_0^l f(x) \sin \left( \frac{2 k \pi}{l} x \right) dx \nonumber
-\end{eqnarray}
+\begin{eqnarray*}
+F_f & = & \frac{a_0}{2} + \sum_{k=1}^{\infty} a_k \cos \left( \frac{2 k \pi}{l} x \right) + b_k \sin \left( \frac{2 k \pi}{l} x \right) \\
+a_k & = & \frac{2}{l} \int_0^{l} f(x) \cos \left( \frac{2 k \pi}{l} x \right) dx \\
+b_k & = & \frac{2}{l} \int_0^l f(x) \sin \left( \frac{2 k \pi}{l} x \right) dx 
+\end{eqnarray*}
 \item někdy se pracuje s rozvoji vůči jinému systému než je trn trigoniometrický
 \item je-li $f$ lichá, pak platí $\forall k : a_k = 0$
 \item je-li $f$ sudá, pak platí $\forall k : b_k = 0$
@@ -138,12 +138,12 @@ Rozviňte funkci $f(x) = x^2$ do Fourierovy řady na $(-\pi, \pi)$.
 
 Funkce $f$ je sudá $\Rightarrow \forall k b_k = 0$.
 
-\begin{eqnarray}
-a_0 & = & \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) dx = \frac{2}{\pi} \int_0^{\pi} x^2 dx = \frac{2}{\pi} \left[ \frac{x^3}{3} \right]_0^\pi = \frac{2}{3} \pi^2 \nonumber\\
-a_k & = & \frac{2}{\pi} \int_{0}^{\pi} x^2 \cos (kx) dx = \frac{2}{\pi} \left( \left[x^2 \frac{\sin (kx)}{k} \right]_0^\pi - \int_0^\pi 2x \frac{\sin (kx)}{k} dx \right) \nonumber\\
-& = & \frac{2}{\pi} \left( 0 - 0 - \frac{2}{k} \int_0^\pi x \sin (kx) dx \right) = \frac{4}{k^2 \pi} \left( \left[ x \frac{\cos (kx)}{k} \right]_0^\pi - \int_0^\pi 1 * \frac{\cos(kx)}{k} dx \right) \nonumber\\
-& = & \frac{4}{k^2 \pi} \left( \pi \cos (k \pi) - 0 - 0 \right) = \frac{4}{k^2} \cos (k \pi) = \frac{4}{k^2} (-1)^k \nonumber
-\end{eqnarray}
+\begin{eqnarray*}
+a_0 & = & \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) dx = \frac{2}{\pi} \int_0^{\pi} x^2 dx = \frac{2}{\pi} \left[ \frac{x^3}{3} \right]_0^\pi = \frac{2}{3} \pi^2 \\
+a_k & = & \frac{2}{\pi} \int_{0}^{\pi} x^2 \cos (kx) dx = \frac{2}{\pi} \left( \left[x^2 \frac{\sin (kx)}{k} \right]_0^\pi - \int_0^\pi 2x \frac{\sin (kx)}{k} dx \right) \\
+& = & \frac{2}{\pi} \left( 0 - 0 - \frac{2}{k} \int_0^\pi x \sin (kx) dx \right) = \frac{4}{k^2 \pi} \left( \left[ x \frac{\cos (kx)}{k} \right]_0^\pi - \int_0^\pi 1 * \frac{\cos(kx)}{k} dx \right) \\
+& = & \frac{4}{k^2 \pi} \left( \pi \cos (k \pi) - 0 - 0 \right) = \frac{4}{k^2} \cos (k \pi) = \frac{4}{k^2} (-1)^k 
+\end{eqnarray*}
 
 $$F_f(x) = \frac{1}{3} \pi^2 + \sum_{k=1}^{\infty} \frac{4}{k^2} (-1)^k \cos (kx)$$
 
@@ -180,15 +180,15 @@ Pro Dirichletovo jádro $D_n$ platí
 \item plyne bezprostředně z definice
 \item $$\int_{-\pi}^\pi \cos(kx) dx = \left[ \frac{\sin(kx)}{k} \right]_{-\pi}^\pi = 0$$
 \item
-\begin{eqnarray}
-D_n(x) & = & \frac{1}{2} + Re \left( e^{ix} + e^{2ix} + \ldots + e^{nix} \right) = \frac{1}{2} + Re \left( e^{ix} \frac{1-e^{inx}}{1-e^{ix}} \right) \nonumber\\
-& = & \frac{1}{2} + Re \left( \frac{e^{ix} \left( 1-e^{inx} \right) \left( 1-e^{-ix} \right)}{\left( 1-e^{ix} \right) \left( 1-e^{-ix} \right)} \right) \nonumber\\
-& = & \frac{1}{2} + Re \left( \frac{e^{ix} \left( 1-e{-ix}-e{inx}+e{i(n-1)x} \right)}{2-e^{ix}-e^{-ix}} \right) \nonumber\\
-& = & \frac{1}{2} + Re \left( \frac{e^{ix} - 1 - e^{i(n+1)x} + e^{inx}}{2 - 2 \cos(x)} \right) \nonumber\\
-& = & \frac{1}{2} + \frac{\cos(x)-1-\cos(n+1)x + \cos(x)}{2-2\cos(x)} \nonumber\\
-& = & \frac{\cos(mx) - \cos(n+1)x}{2 - 2\cos(x)} \nonumber\\
-& = & \frac{-2 \sin \left( n + \frac{1}{2} \right) x \sin \frac{x}{2}}{4 \left( \sin \frac{x}{2} \right)^{2}} = \frac{\sin \left(n + \frac{1}{2} \right) x}{2 \sin \frac{x}{2}} \nonumber
-\end{eqnarray}
+\begin{eqnarray*}
+D_n(x) & = & \frac{1}{2} + Re \left( e^{ix} + e^{2ix} + \ldots + e^{nix} \right) = \frac{1}{2} + Re \left( e^{ix} \frac{1-e^{inx}}{1-e^{ix}} \right) \\
+& = & \frac{1}{2} + Re \left( \frac{e^{ix} \left( 1-e^{inx} \right) \left( 1-e^{-ix} \right)}{\left( 1-e^{ix} \right) \left( 1-e^{-ix} \right)} \right) \\
+& = & \frac{1}{2} + Re \left( \frac{e^{ix} \left( 1-e{-ix}-e{inx}+e{i(n-1)x} \right)}{2-e^{ix}-e^{-ix}} \right) \\
+& = & \frac{1}{2} + Re \left( \frac{e^{ix} - 1 - e^{i(n+1)x} + e^{inx}}{2 - 2 \cos(x)} \right) \\
+& = & \frac{1}{2} + \frac{\cos(x)-1-\cos(n+1)x + \cos(x)}{2-2\cos(x)} \\
+& = & \frac{\cos(mx) - \cos(n+1)x}{2 - 2\cos(x)} \\
+& = & \frac{-2 \sin \left( n + \frac{1}{2} \right) x \sin \frac{x}{2}}{4 \left( \sin \frac{x}{2} \right)^{2}} = \frac{\sin \left(n + \frac{1}{2} \right) x}{2 \sin \frac{x}{2}} 
+\end{eqnarray*}
 \end{enumerate}
 
 Pozn.: Důkaz třetí rovnosti je až na znaménko, na přednášce nevyšel. Snad se má použít jiný součtový vzorec goniometrických funkcí (?). Pokud někdo víte, jak to má vyjít, dejte mi prosím vědět.
@@ -200,19 +200,19 @@ $$s_n(x) = \frac{1}{\pi} \int_{-pi}^\pi f(x+z)D_n(y)dy = \frac{1}{\pi} \int_0^\p
 \end{vetal}
 
 \begin{proof}
-\begin{eqnarray}
-s_n(x) & = & \frac{a_0}{2} + \sum_{k=1}^{n} \left[ a_k \cos(kx) + b_k \sin(kx) \right] \nonumber\\
-& = & \frac{1}{\pi} \int_{-\pi}^\pi \left( \frac{1}{2} + \sum_{k=1}^n \left( \cos(ky) \sin(kx) + \sin(ky) \cos (kx) \right) f(y) dy \right) \nonumber\\
-& = & \frac{1}{\pi} \int_{-\pi}^\pi \left( \frac{1}{2} \cos(k(y-x))  \right) f(y) dy \nonumber\\
-& = & \frac{1}{\pi} \int_{-pi}^\pi D_n(y-x) f(y) dy \nonumber\\
-& = & \frac{1}{\pi} \int_{-\pi}^\pi D_n(t-x) f(t) dt \nonumber
-\end{eqnarray}
+\begin{eqnarray*}
+s_n(x) & = & \frac{a_0}{2} + \sum_{k=1}^{n} \left[ a_k \cos(kx) + b_k \sin(kx) \right] \\
+& = & \frac{1}{\pi} \int_{-\pi}^\pi \left( \frac{1}{2} + \sum_{k=1}^n \left( \cos(ky) \sin(kx) + \sin(ky) \cos (kx) \right) f(y) dy \right) \\
+& = & \frac{1}{\pi} \int_{-\pi}^\pi \left( \frac{1}{2} \cos(k(y-x))  \right) f(y) dy \\
+& = & \frac{1}{\pi} \int_{-pi}^\pi D_n(y-x) f(y) dy \\
+& = & \frac{1}{\pi} \int_{-\pi}^\pi D_n(t-x) f(t) dt 
+\end{eqnarray*}
 
 substituce za $t-x=y$
 
-\begin{eqnarray}
-& = & \frac{1}{\pi} \int_{-\pi -x}^{\pi-x} f(x+y) dy = \frac{1}{\pi} \int_{-\pi}^\pi D_n(y) f(x+y) dy \nonumber
-\end{eqnarray}
+\begin{eqnarray*}
+& = & \frac{1}{\pi} \int_{-\pi -x}^{\pi-x} f(x+y) dy = \frac{1}{\pi} \int_{-\pi}^\pi D_n(y) f(x+y) dy 
+\end{eqnarray*}
 
 Dále platí 
 $$\int_{-\pi}^\pi = \int_{-\pi}^0 + \int_{0}^\pi$$
@@ -232,12 +232,12 @@ Speciálně pro Fourierovy koeficienty funkce $f \in \mathcal{P}_{2 \pi}$ platí
 \begin{proof}
 Nechť $[c,d] \subset [a,b]$ a $f(x) = \chi_{[c,d]}(x)$.
 
-\begin{equation}
+\begin{equation*}
 \chi_{[c,d]}(x) = \left\{ \begin{array}{ll}
- 1 & x \in [c,d] \nonumber\\
+ 1 & x \in [c,d] \\
  0 & \textrm{jinak}
   \end{array} \right.
-\end{equation}
+\end{equation*}
 
 $$\lim_{t \rightarrow \infty} \int_a^b \chi_{[c,d]}(x) \cos(tx) dx = \lim_{t \rightarrow \infty} \int_c^d \cos(tx)dx = \lim_{t \rightarrow \infty} \left[ \frac{\sin(tx)}{t} \right]_c^d = \lim_{t \rightarrow \infty} \frac{\sin(dt) - \sin(ct)}{t} = 0$$
 
@@ -248,7 +248,7 @@ Nechť nyní $f \in R([a,b])$ a $\varepsilon > 0$. Pak $\exists \textrm{ dělen�
 
 Označme $$\alpha_i = \min_{x \in [x_{i-1}, x_i]} f(x) \textrm{ a } g(x) = \sum_{i=1}^m \alpha_i \chi_{[x_{i-1}, x_i]} (x)$$ t. j. $(R) \int_a^b g = s(f,D)$.
 
-Víme $\lim_{t \rightarrow \infty} \int_a^b g(x) \cos(tx) = 0$ tedy $\exists t_0 \textrm{ } \forall t \geq t_0 \textrm{ : } \left| \int_a^b g(x) \cos(tx) dx \right| < \varepsilon$
+Víme $\lim_{t \rightarrow \infty} \int_a^b g(x) \cos(tx) = 0$ tedy $\exists t_0 \ \forall t \geq t_0 \textrm{ : } \left| \int_a^b g(x) \cos(tx) dx \right| < \varepsilon$
 
 Nyní pro $t \geq t_0$
 $$\left| \int_a^b f(x) \cos(tx) dx \right| \leq \left| \int_a^b (f(x)-g(x)) \cos(tx) dx \right| + \left| \int_a^b g(x) \cos(tx) dx \right| \leq$$
@@ -271,11 +271,11 @@ Nechť $x \in \mathbb{R}$ a nechť pro $f \in \mathcal{P}_{2 \pi}$ existuje $f^\
 \begin{proof}
 Chceme $F_f(x) = \frac{f(x+) + f(x-)}{2}$, tedy $s_n(x) \overset{n \rightarrow \infty}{\rightarrow}$
 
-\begin{eqnarray}
-s_n(x) - \frac{f(x+)+f(x-)}{2} & = & \frac{1}{\pi} \int_0^\pi \left( f(x+y) + f(x-y) \right) D_n(y) dy - \frac{f(x+) + f(x-)}{2} \frac{2}{\pi} \int_0^\pi D_n(y)dy \nonumber\\
-& \overset{V5, VL4 (ii)}{=} & \frac{1}{\pi} \int_0^\pi \left( f(x+y) - f(x+) + f(x-y) - f(x-) \right) D_n(y) dy \nonumber\\
-& \overset{VL4(iii)}{=} & \frac{1}{\pi} \int_{0}^\pi \underbrace{\left( \frac{f(x+y) - f(x+) + f(x-y) - f(x-)}{2 \sin \left( \frac{y}{2} \right)} \right)}_{\textrm{pokud $\in R([0,\pi])$, pak VT\ref{Riemann-Lebesqueovo lemma} dokončí důkaz}} \sin \left( n + \frac{1}{2} \right)y dy \nonumber
-\end{eqnarray}
+\begin{eqnarray*}
+s_n(x) - \frac{f(x+)+f(x-)}{2} & = & \frac{1}{\pi} \int_0^\pi \left( f(x+y) + f(x-y) \right) D_n(y) dy - \frac{f(x+) + f(x-)}{2} \frac{2}{\pi} \int_0^\pi D_n(y)dy \\
+& \overset{V5, VL4 (ii)}{=} & \frac{1}{\pi} \int_0^\pi \left( f(x+y) - f(x+) + f(x-y) - f(x-) \right) D_n(y) dy \\
+& \overset{VL4(iii)}{=} & \frac{1}{\pi} \int_{0}^\pi \underbrace{\left( \frac{f(x+y) - f(x+) + f(x-y) - f(x-)}{2 \sin \left( \frac{y}{2} \right)} \right)}_{\textrm{pokud $\in R([0,\pi])$, pak VT\ref{Riemann-Lebesqueovo lemma} dokončí důkaz}} \sin \left( n + \frac{1}{2} \right)y dy 
+\end{eqnarray*}
 
 Chceme $F(y) = \frac{f(x+y) - f(x+) + f(x-y) - f(x-)}{2 \sin \left( \frac{y}{2} \right)} \in R([0,\pi])$. 
 
@@ -286,7 +286,7 @@ $$\lim_{y \rightarrow 0} F(y) = \lim_{x \rightarrow 0} \frac{y}{2 \sin \left( \f
 $h \in R([a,b])$ spojitá na $[a,b]$, $0 < \delta \leq g \leq D$. Pak $\frac{h}{g} \in R([a,b])$.
 \end{tvrzeni}
 
-Nechť $\varepsilon > 0 \textrm{ } \exists \delta > 0 \textrm{ } \forall y \in [0, \delta] \textrm{ : } |F(y)-A| < \varepsilon$
+Nechť $\varepsilon > 0 \ \exists \delta > 0 \ \forall y \in [0, \delta] \textrm{ : } |F(y)-A| < \varepsilon$
 
 Nyní $\delta$ je pevné a tedz dle tvrzení $F(y) \in R([\delta, \pi])$, $g(y) = 2 \sin \frac{y}{2}$.
 
