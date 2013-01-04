@@ -84,3 +84,11 @@ $$\varrho (f_x, f_z) = \sup_{y \in Q} | \sigma (x,y) - \sigma (z,y) | \overset{\
 \begin{vetal}[úplnost a uzavřená podmnožina]
 Nechť $(P, \varrho)$ je úplný metrický prostor a $F \subset P$ je uzavřená podmnožina. Pak je metrický prostor $(F, \varrho)$ úplný.
 \end{vetal}
+
+\begin{proof}
+\textbf{Připomeň: } Charakterizace úplných množin: $F \subset F \textrm{uzavřená}$, $x_n \in F$ a $x_n \overset{P}{\to} x_0$ pak $x_0 \in F$. 
+
+"Když je množina uzavřená, pak se z ní nelze vykonvergovat ven"
+
+Chceme $(F, \varrho)$ je úplný. Nechť $x_n \in F$ je cauchyovská v $(P, \varrho)\Rightarrow x_n$ je cauchyovská v $(P, \varrho) \overset{\textrm{P je úplný}}{\Rightarrow} \exists x_0 \in P \textrm{ : } x_n \to x_0 \overset{\textrm{Připomeň}}{\Rightarrow} x_0 \in F$ tedy $(F, \varrho)$ je úplný.
+\end{proof}
