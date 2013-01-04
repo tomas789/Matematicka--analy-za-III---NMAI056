@@ -29,15 +29,48 @@ je úplný
 \end{vetat}
 
 \begin{vetat}[Banachova věta o kontrakci]
+\label{Banachova věta o kontrakci}
 Nechť $(P, \varrho)$ je úplný metrický prostor a $K < 1$. Nechť $T \textrm{ : } P \rightarrow P$ je zobrazení takové, že 
 $$\varrho(Tx, Ty) \leq K \varrho(x,y) \quad \forall x,y \in P$$
 Pak existuje právě jeden bod $x_0 \in P$ tak, že $T(x_0)=x_0$
 \end{vetat}
 
+\begin{proof}
+\textbf{jednoznačnost: } Nechť $T(x_0) = x_0$ a $T(\tilde{x}_0) = \tilde{x}_0$, $x_0 \neq \tilde{x}_0$. Pak 
+$$K \varrho (x_0, \tilde{x}_0) \geq \varrho (T(x_0),T(\tilde{x}_0)) = \varrho (x_0, \tilde{x}_0) \Rightarrow K \geq 1$$
+a to je spor.
+
+\textbf{existence: } Zvolme $x_1 \in P$ libovolně a položme $x_{k+1} = T(x_k)$. Tvrdíme, že je cauchyovská.
+$$\varrho( x_{k+1}, x_k ) = \varrho (T(x_k), T(x_{k-1})) \leq K \varrho (x_k,x_{k-1}) \leq K^2 \varrho (x_{k-1},x_{k-2}) \leq \ldots \leq K^{k-1} \varrho (x_2, x_1)$$
+
+Nechť $m,n \geq n_0$ a navíc $m > n$
+$$\varrho (x_m, x_n) \leq \varrho (x_m, x_{m-1}) + \varrho (x_{m-1}, x_{m-2}) + \ldots + \varrho (x_{n+1}, x_n) $$
+$$\leq K^{m-2} \varrho (x_2, x_1) + \ldots + K^{n-1} \varrho (x_2, x_1) \leq K^{n-1} \varrho (x_2, x_1) \frac{1}{1-K} \overset{x \to \infty}{\to} 0$$
+
+Z toho dostaneme cauchyho vlastnost $x_2$. Z úplnosti $P$ $\exists x_0 \textrm{ : } x_n \overset{P}{\to} x_0$. Tvrdím $T(x_0)=x_0$
+\begin{eqnarray*}
+x_{n+1} & = & T(x_n) \\
+\lim_{n \to \infty} \quad x_0 & = & T(x_0)
+\end{eqnarray*}
+
+$x_n \to x_0 \textrm{ : } \varrho (x_m, x_0) \to 0$, $\varrho (T(x_n), T(x_0)) \leq K \varrho (x_n, x_0) \to 0$
+\end{proof}
+
+\begin{poznamka}
+Věta T\ref{Banachova věta o kontrakci} se používá například v \emph{fractal compression}. Touto metodou se však dosahuje horších výsledků než například konpresí \emph{JPEG} a proto se v praxi nepoužívá.
+\end{poznamka}
+
+
+
 \begin{vetat}[o zúplnění metrického prostoru]
 Nechť $(Q, \varrho)$ je metrický prostor. Pak existuje úplný metrický prostor $(P, \sigma)$ tak, že $Q \subset P$ a 
 $$\sigma(x,y) = \varrho(x,y) \quad \forall x,y \in Q$$
 \end{vetat}
+
+\begin{proof}
+
+\end{proof}
+
 
 \begin{vetal}[úplnost a uzavřená podmnožina]
 Nechť $(P, \varrho)$ je úplný metrický prostor a $F \subset P$ je uzavřená podmnožina. Pak je metrický prostor $(F, \varrho)$ úplný.
