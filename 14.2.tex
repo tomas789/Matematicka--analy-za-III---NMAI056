@@ -68,7 +68,16 @@ $$\sigma(x,y) = \varrho(x,y) \quad \forall x,y \in Q$$
 \end{vetat}
 
 \begin{proof}
+Položme $P = C(Q)$ s metrikou $\varrho (f,g) = \sup_{y \in Q} | f(x)-g(x) |$. 
 
+\begin{poznamka} 
+Důkaz je analogický a důkazu věty o úplnosti $C([0,1])$
+\end{poznamka}
+
+$x \in Q \textrm{ <$\cdots$> } f_x(y) = \varrho(x,y) \in C(Q)$. 
+
+Pro $x \neq z$ a $f_x \neq f_z$ chceme $\sigma (x,z) = \varrho (f_x, f_z)$
+$$\varrho (f_x, f_z) = \sup_{y \in Q} | \sigma (x,y) - \sigma (z,y) | \overset{\textrm{$\triangle$ nerovnost}}{\leq} \sigma (x,z) \Rightarrow \varrho (f_x, f_z) = \sigma(x,z)$$ 
 \end{proof}
 
 
