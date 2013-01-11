@@ -92,3 +92,87 @@ Nechť $(P, \varrho)$ je úplný metrický prostor a $F \subset P$ je uzavřená
 
 Chceme $(F, \varrho)$ je úplný. Nechť $x_n \in F$ je cauchyovská v $(P, \varrho)\Rightarrow x_n$ je cauchyovská v $(P, \varrho) \overset{\textrm{P je úplný}}{\Rightarrow} \exists x_0 \in P \textrm{ : } x_n \to x_0 \overset{\textrm{Připomeň}}{\Rightarrow} x_0 \in F$ tedy $(F, \varrho)$ je úplný.
 \end{proof}
+
+\begin{definice}
+Nechť $(P, \varrho)$ je úplný metrický prostor. Řekneme, že množina $V \subset P$ je hustá, pokud pro každé $x \in P$ a $r > 0$ platí $B(x,r) \cap V \neq 0$
+\end{definice}
+
+\begin{vetat}[Baire]
+\label{Baire}
+Nechť $(P, \varrho)$ je úplný metrický prostor. Potom průnik každého spočetného systému hustých otevřených podmnožin $P$ je množina hustá v P.
+\end{vetat}
+
+\begin{proof}
+$V_1$, $V_2$, $V_3$, $\ldots$ jsou otevřené husté množiny. Nechť $x \in P$, $r > 0$ chceme 
+$$B(x,r) \cap \bigcap_{i=1}^\infty V_i \neq \emptyset$$ 
+
+$V_1$ je hustá $\exists x_1 \in V_1 \cap B(x,r)$. Toto je otevřená množina $\Rightarrow \exists r > 0 \textrm{ : } B(x_1, r_1) \subset V_1 \cap B(x,r)$
+
+$V_2$ je hustá $\exists x_2 \in V_2 \cap B(x_1,r_1)$. Toto je otevřená množina $\Rightarrow \exists r_2 > 0 \textrm{ : } B(x_2, r_2) \subset V_2 \cap B(x_1,r_1) (\cap V_1)$
+
+A v tomto smyslu dále.
+
+Nyní budeme postupovat mat. indukcí: $V_k$ je hustá $\exists x \in V_k \cap B(x_{k-1}, r_{k-1})$ toto je otevřená množina $\Rightarrow \exists x_k > 0 \textrm{ : } B(x_k,r_k) \subset V_k \cap B(x_{k-1}, r_{k-1}) \cap V_1 \cap V_2 \cap \ldots \cap V_{k-1}$.
+
+Bez újmy na obecnosti $r_k \to 0$. Nyní $\forall m,n \geq n_0 \ x_m,x_n \in B(x_{n_0}, r_{n_0}) \Rightarrow \varrho (x_m, x_n) < 2 r_{n_0} \quad (<\varepsilon)$.
+Z tohoto snadno plyne cauchyho vlastnost pro $x_n$. $P$ je úplný $\Rightarrow \exists x_0, x_n \to x_0$. Nyní 
+$$x_0 \in B(x,r) \cap \bigcap_{i=1}^\infty V_i$$
+\end{proof}
+
+
+\begin{vetat}[existence nediferencovatelné funkce]
+Existuje funkce $f \in C([0,1])$, která není diferencovatelná v žádném bodě.
+\end{vetat}
+
+\begin{proof}
+Nechť 
+$$A_n = \left\{ f \in C([0,1]) \textrm{ : } \exists t \in [0,1] \ \forall s \in [0,1]  \textrm{ : } |f(t)-f(s)| \leq n |s-t| \right\}$$
+$$V_n = C([0,1]) \backslash A_n$$
+
+Budeme dokazovat
+\begin{enumerate}
+\item \label{existence nediferencovatelné funkce - a} $A_n$ je uzavřená $\Rightarrow V_n$ je otevřená
+\item \label{existence nediferencovatelné funkce - b} $f$ je diferencovatelná v $t \ \Rightarrow \exists n \textrm{ : } f \in A_n \ (f \notin V_n)$
+\item \label{existence nediferencovatelné funkce - c} $V_n$ je hustá
+\end{enumerate}
+
+Pak z Věta T\ref{Baire} plyne $\bigcap_{n=1}^\infty V_n \neq \emptyset$. Nechť $f \in \bigcap_{n=1}^\infty V_n$, pak není diferencovatelná podle \ref{existence nediferencovatelné funkce - b}.
+
+\ref{existence nediferencovatelné funkce - a} : chceme $f_k \in A_n$, $f_k \to f$, pak $f \in A_n$. $n$ je pevné.
+$$f_k \in A_n \ \exists t_k \ \forall s \in [0,1] \textrm{ : } |f_k(t_k) - f_k(s)| \leq n |t_k-s|$$
+$\exists$ podposloupnost $t_{k_l} \to t \in [0,1]$. BÚNO $t_k \to t$ (z původní posloupnosti vyškrtám členy pro které my to neplatí a z původní $t_{k_l}$ dostanu $t_k$ shodnou).
+
+Nechť $s \in [0,1]$
+\begin{eqnarray*}
+|f(t)-f(s)| & \leq & |f(t)-f_k(t)|+|f_k(t)-f_k(t_k)|+|f_k(t_k)-f_k(s)|+|f_k(s)-f(s)| \\
+& \leq & |f(t)-f_k(t)|+n|t-t_k| + n|t_k-s|+|f_k(s)-f(x)| \\
+& \overset{k \to \infty}{\to} & 0 + n0 + n|t-s|+0
+\end{eqnarray*}
+
+Tedy $\forall s \textrm{ : } |f(t)-f(s)| \leq n|t-s| \Rightarrow f \in A_n$
+
+\ref{existence nediferencovatelné funkce - b} : Mějme pevnou $f$ v t, $f^\prime(t)=a$. Pak 
+$$\exists \delta > 0 \ \forall x \in [t-\delta, t+\delta] \cap [0,1] \textrm{ : } \left| \frac{f(x)-f(t)}{x-t} - a \right| < 1 $$
+$$\Rightarrow \frac{f(x)-f(t)}{x-t} \in (a-1,a+1) \Rightarrow |f(x)-f(a)| \leq (|a|+1)|x-t|$$
+
+Nechť $x \in [0,1] \backslash [t-\delta,t+\delta]$
+$$|f(x)-f(t)| \leq 2 \sup_{[0,1]} |f| \frac{\delta}{\delta} \leq \frac{2 \sup_{[0,1]} |f|}{\delta} |x-t|$$
+
+Zvolme $n > \max \left\{ |a|+1, \frac{2 \sup |f|}{\delta} \right\}$. Pak $f \in A_n$
+
+\ref{existence nediferencovatelné funkce - c} : Nechť $g \in C([0,1])$, $r > 0$. Chceme $\exists f \in B(g,r) \cap V_n$, $n$ je pevné. $g$ je stejnoměrně spojitá, tedy $\exists \delta > 0 \ \forall x,y \in [0,1] \ |x-y| < \delta \Rightarrow |g(x)-g(y)| < \frac{r}{10}$.
+
+Zkonstruujme funkci $z$ ("zubatice"). $z^\prime = \pm a$, $a > 3n$.
+
+Položme $f = g + z$, pak $f \in B(g,r)$
+$$\varrho (f,g) = \sup |g + z + h| = \sup |z| = \frac{r}{2}$$
+Pro spor: nechť $f \neq V_n$, tedy $f \in A_n$. Tedy máme $t \in [0,1]$ z definice $A_n$. Nyní nalezneme $s \in [0,1] \textrm{ : } |s-t| < \delta$
+$$|z(t)-z(s)| \geq \frac{r}{2} \geq 3 n |t-s|$$
+Nyní
+$$|f(t)-f(s)| \geq |z(t)-z(s)|-|g(t)-g(s)| \geq \frac{r}{2} - \frac{r}{10} \geq 2 n |t-s| \Rightarrow f \notin A_n$$
+a to je spor.
+\end{proof}
+
+
+
+
