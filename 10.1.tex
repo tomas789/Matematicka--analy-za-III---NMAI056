@@ -68,13 +68,13 @@ Nechť $\varepsilon > 0$.
 \item Z $f_n \con f$, $ \exists n_2 \ \forall n \geq n_2 \ \forall x |f_n(x) - f(x)| < \varepsilon$
 \end{enumerate}
 
-Zvolme $n_0 = max \{n_1,n_2\}$ pevné. Z $lim_{x \to x_0}f_{n_0}(x) = a_{n_0}$ plyne 
+Zvolme $n_0 = \max \{n_1,n_2\}$ pevné. Z $\lim_{x \to x_0}f_{n_0}(x) = a_{n_0}$ plyne 
 $$\exists \delta > 0 \ \forall x \in B(x_0,\delta) \textrm{ na } J \textrm{ : } |f_{n_0}(x) - a_{n_0}| < \varepsilon$$
 
 K zadanému $\varepsilon$ jsem našel $\delta > 0$, že $\forall x \in B(x_0, \delta)$ na J.
 \begin{eqnarray*}
 |a - f(x)| & \leq & |a - a_{n_0}| + |a_{n_0} - f_{n_0}(x)| + |f_{n_0}(x) - f(x)| \\
-& \leq & \varepsilon + \varepsilon + \varepsilon = 3\varepsilon \Rightarrow a=lim_{x \to x_0}f(x)
+& \leq & \varepsilon + \varepsilon + \varepsilon = 3\varepsilon \Rightarrow a=\lim_{x \to x_0}f(x)
 \end{eqnarray*}
 
 \end{proof}
