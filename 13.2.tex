@@ -3,6 +3,7 @@ Nehcť $z_0 \in \mathbb{R}$ a $a_n \in \mathbb{C}$ pro $n \in \mathbb{N}_0$. Řa
 \end{definice}
 
 \begin{vetat}[o rozvoji do Taylorovy řady]
+\label{o rozvoji do Taylorovy řady}
 Nechť $f$ je holomorfní na kruhu $B(z_0, R)$. Pak existuje právě jedna mocninná řada s poloměrem konvergence alespoň $R$, že na $B(z_0, R)$ platí
 $$f(z) = \sum_{n=0}^\infty a_n (z-z_0)^n$$
 Navíc platí $a_n = \frac{f^{(n)}(z_0)}{n!}$ pro všechna $n \in \mathbb{N}_0$.
@@ -24,6 +25,24 @@ Nechť $G \subset \mathbb{C}$ je oblast a $f, g$ jsou holomorfní na $G$. Předp
 $$M = \left\{ z \in G : f(z)=g(z) \right\} $$
 má hromadný bod v $G$, neboli existují $z_n \in M$ a $z_0 \in G$ takové, že $z_n \stackrel{n \rightarrow \infty}{\rightarrow} z_0$. Pak $f=g$ na $G$.
 \end{vetal}
+
+\begin{dusledek}
+$\sin^2 (z) + \cos^2 (z) = 1$ platí $\forall z \in \mathbb{C}$, neboť platí na $\mathbb{R}$ - reálná osa $\to$ úsečka
+\end{dusledek}
+
+\begin{proof}
+Bez újmy na obecnosti předpokládejme $g=0$ a $z_0=0$ (jinak posuneme oblast).
+
+Nechť $f(z) = \sum_{n=1}^\infty a_n z^n$ (lze dle věty \ref{o rozvoji do Taylorovy řady})
+
+Pokud $a_n = 0$, $\forall n \Rightarrow \surd$
+
+Nechť $\exists n_0 \textrm{ : } a_n \neq 0$, první takové. 
+$$f(z) = a_{n_0} z^{n_0} + a_{n_0 + 1} z^{n_0 + 1} + \ldots = z^{n_0} \left( a_{n_0} + \underbrace{a_{n_0 + 1} z + \ldots}_{\lim_{z \to 0} = 0 \textrm{ ze spojitosti}} \right)$$
+
+Tedy k $\varepsilon = \frac{|a_{n_0}|}{2} \ \exists \delta \ \forall z \textrm{ : } |z| < \delta (a_{n_0 + 1} z + \ldots) < \frac{|a_{n_0}|}{2}$, tedy $|f(z)| > |z|^{n_0} \frac{|a_{n_0}|}{2}$ spec. $f \neq 0$ na $B(0, \delta) \backslash \{ 0 \}$ spor s $0$ je hromadný bod $\{ f = g = 0 \}$ (1. člen $a_{n_0}$ je nenulový)
+\end{proof}
+
 
 \begin{definice}
 Řekneme, že funkce $f$ má v bodě $z_0$ pól násobnosti nejvýše $k \in \mathbb{N}$, je-li funkce 
