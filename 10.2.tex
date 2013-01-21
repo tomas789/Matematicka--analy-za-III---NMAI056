@@ -5,10 +5,24 @@
 \begin{vetal}[nutná podmínka stejnoměrné konvergence řady]
 Nechť $\sum_{n=1}^{\infty} u_k (x)$ je řada funkcí definovaná na intervalu $J$. Pokud $\sum_{k=1}^{\infty} u_n \con$ na $J$, pak posloupnost funkcí $u_n (x) \con 0$ na $J$.
 \end{vetal}
+\begin{proof}
+Víme, že $s_n(x) \con $ , tedy splňuje BS podmínku. 
+$\forall \varepsilon > 0 \exists n_0  \forall m \geq n_0$ a $ m = n+1 \forall x \in J :$
+$$\varepsilon > |s_{n+1}(x) - s_n(x)| = |\sum_{k=1}^{n+1} u_k(x) - \sum_{k=1}^{n}u_k(x)| = |u_{n+1} - 0|$$
+To je definice: $$ u_n \con 0$$
+\end{proof}
 
 \begin{vetal}[Weirstrassovo kritérium]
 Nechť $\sum_{k=1}^{\infty} u_n (x)$ je řada funkcí definovaná na intervalu $J$. Pokud pro $a_n := \sup \{ | u_n (x) |; x \in J \}$ platí, že číselná řada $\sum_{n=1}^{\infty} a_n$ konverguje, pak $\sum_{n=1}^{\infty} u_n \con$ na $J$.
 \end{vetal}
+\begin{proof}
+Víme, že $\sum a_n $ K $\Rightarrow $ je splněna BC podmínka pro konvergenci řad.
+Tedy $\forall \varepsilon > 0 \exists n_0 \forall m,n \geq n_0 :|\sum_{k = n}^m a_k| < \varepsilon$. \newline
+Chceme ukázat $\sum u_k \con$ k tomu oveříme BC podmínku pro $\con$ funkcí.\newline
+$s_n(x) = \sum_{k=1}^n u_k(x)$ .K $\varepsilon > 0$ volme $n_0$ z BC podmínky, pak $\forall m,n \geq n_0$
+$$ |s_n(x) - s_m(x)| = |\sum_{k=n+1}^m u_k(x)| \leq \sum_{k=n+1}^m |u_k(x)| \leq \sum_{k=n+1}^m a_k < "BC" < \varepsilon $$
+Tedy $$\sum u_n \con $$
+\end{proof}
 
 \begin{vetal}[o spojitosti a derivování řad funkcí]
 Nechť $\sum_{n=1}^{\infty} u_n (x)$ je řada funkcí definovaná na intervalu $(a,b)$.
@@ -22,6 +36,13 @@ Nechť $\sum_{n=1}^{\infty} u_n (x)$ je řada funkcí definovaná na intervalu $
 \end{enumerate}
 Potom je funkce $F(x) = \sum_{n=1}^{\infty} u_n (x)$ dobře definovaná diferencovatelná a navíc $\sum_{n=1}^{\infty} u_n (x) \conloc F(x)$ a $\sum_{n=1}^{\infty} u'_n (x) \conloc F'(x)$ na $(a,b)$.
 \end{vetal}
+\begin{proof}
+\begin{enumerate}
+\newline
+\item Použijeme důsledek MO na $s_n(x) $. $u_k $ spojité $\Rightarrow s-n$ spojité, $s_n \con F \Rightarrow F$ spojitá.
+\item Použijeme o zámene limity a derivace(V5) na $s_n(x)$. Resp. túto větu použijeme na každém $[c,d] \subset (a,b)$
+\end{enumerate}
+\end{proof}
 
 Vraťme se ke konvergenci obyčejných řad. Následující kritérium bude užitečné v kapitole Fourierovy řady. Existuje i varianta tohoto tvrzení pro stejnoměrnou konvergenci, tu však nebudeme potřebovat.
 
