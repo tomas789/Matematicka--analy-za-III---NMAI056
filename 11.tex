@@ -39,9 +39,14 @@ Pokud $|x-x_0| > R$ , pak
 $$\lim_{n \to \infty} \frac{|a_{n+1}(x-x_0)^{n+1}|}{a_n(x-x_0)^n|} = \frac{1}{R}|x-x_0|>1 \Rightarrow \textrm{řada diverguje.}$$
 \end{proof}
 
-\begin{vetal}
+\begin{vetal}[o stejnoměrné konvergenci mocniné řady]
 Nechť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada s poloměrem konvergence $R > 0$.  Pak řada konverguje lokálně stejnoměrně na $(x_0 - R, x_0 + R)$ (je-li $R=\infty$, pak na celém $\mathbb{R}$).
 \end{vetal}
+
+\begin{proof}
+Nechť $r < R$, chceme $\sum \con \textrm{ na } [x_0-r,x_0+r]$. Z věty 1 víme absolutní konvergenci rady $\sum a_n.r^n$. Na $ \sum a_n(x-x_0)^n$ použijeme Weirstrassovo kritérium.
+$$b_n = \sup_{x \in[x_0-r, x_0+r]} |a_n(x-x_0)^n| = |a_n|r^n \textrm{ a } \sum b_n \Rightarrow \sum a_n(x-x_0)^n \con \textrm{ na } [x_0-r, x_0+r]$$
+\end{proof}
 
 \begin{vetal}[o derivaci mocninné řady]
 Nechť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada s poloměrem konvergence $R > 0$. Pak $\sum_{n=1}^{\infty} n a_n (x-x_0)^{n-1}$ je také mocninná řada se stejným středem a poloměrem konvergence. Navíc pro $x \in ( x_0 - R, x_0 + R )$ ($\mathbb{R}$ pro $R = \infty$) platí
@@ -52,6 +57,15 @@ $$ \left( \sum_{n=0}^{\infty} a_n (x-x_0)^n \right)' = \sum_{n=+}^{\infty} n a_n
 Nehcť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada s poloměrem konvergence $R > 0$. Pak $\sum_{n=0}^{\infty} \frac{a_n}{n+1} \left(x-x_0 \right)^{n+1}$ je také mocninná řada se stejným poloměrem konvergence. Navíc platí
 $$\int \sum_{n=0}^{\infty} a_n (x-x_0)^n dx = \sum_{n=1}^{\infty} \frac{a_n}{n+1} \left( x-x_0 \right)^{n+1} + C  \quad \textrm{na } \left( x_0 - R, x_0 + R \right)$$
 \end{vetal}
+
+\begin{proof}
+$$R = \frac{1}{\limsup \sqrt[n]{|a_n|}} \Rightarrow R = \frac{1}{\limsup \sqrt[n]{ \frac{|a_n|}{n+1}}} \Rightarrow R = \frac{1}{\limsup \sqrt[n+1]{ \frac {|a_n|}{n+1}}}$$
+Tedy skutečně má řada $\sum \frac{a_n}{n+1}(x-x_0)^{n+1}$ stejný poloměr konvergence a střed.
+Podle věty 3 $\sum a_n (x-x_0)^n $ konverguje $\conloc$ na $(x_0-R, x_0+R)$.
+Podle věty o zámene lim a integrálu použité na částečné součty řady dostaneme: $\forall [c,d] \subset (x_0-R,x_0+R) $
+$$\int_c^d \sum a_n(x-x_0)^n = \sum \int_c^d a_n(x-x_0)^n = \sum \frac{a_n}{n+1} \big[ (x-x_0)^{n+1} \big]_c^d $$
+Funkce jsou spojité, z rovnosti integrálu plyne rovnost primitivních funkcí.
+\end{proof}
 
 \begin{vetat}[Abelova]
 Nechť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada s poloměrem konvergence $R > 0$. Nechť navíc $\sum_{n=0}^{\infty} a_n R^n$ konverguje. Potom řada $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ konverguje stejnoměrně na $[ x_0, x_0 + R ]$ a platí
