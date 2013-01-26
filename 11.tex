@@ -49,6 +49,7 @@ $$b_n = \sup_{x \in[x_0-r, x_0+r]} |a_n(x-x_0)^n| = |a_n|r^n \textrm{ a } \sum b
 \end{proof}
 
 \begin{vetal}[o derivaci mocninné řady]
+\label{o derivaci mocninné řady}
 Nechť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada s poloměrem konvergence $R > 0$. Pak $\sum_{n=1}^{\infty} n a_n (x-x_0)^{n-1}$ je také mocninná řada se stejným středem a poloměrem konvergence. Navíc pro $x \in ( x_0 - R, x_0 + R )$ ($\mathbb{R}$ pro $R = \infty$) platí
 $$ \left( \sum_{n=0}^{\infty} a_n (x-x_0)^n \right)' = \sum_{n=1}^{\infty} n a_n (x-x_0)^{n-1}$$
 \end{vetal}
@@ -61,6 +62,21 @@ Tedy poloměr konvergence formální derivace je stejný. Dle předchozí věty 
 $$\left( \sum_{n=0}^\infty a_n (x-x_0)^n \right)^\prime = \sum_{n=1}^\infty n a_n (x-x_0)^{n-1}$$
 \end{proof}
 
+\begin{priklad}
+Sečtěte $\sum_{n=1}^\infty n^2 \left( \frac{1}{2} \right)^n$ :
+\end{priklad}
+
+Uvažme $\sum_{n=0}^\infty z^n = \frac{1}{1-z}$, $R = \frac{1}{\limsup_{n \to \infty} \sqrt[n]{1}}$, na $(-1, 1)$ mohu derivovat. Podle Věta L\ref{o derivaci mocninné řady} : 
+\begin{eqnarray*}
+\sum_{n=1}^\infty n z^{n-1} & = & \frac{1}{(1-z)^2} \\
+\sum_{n=1}^\infty n z^n & = & \frac{z}{(1-z)^2}
+\end{eqnarray*}
+Opět aplikuji Věta L\ref{o derivaci mocninné řady}
+\begin{eqnarray*}
+\sum_{n=1}^\infty n^2 z^{n-1} & = & - \frac{z+1}{(z-1)^3} \\
+\sum_{n=1}^\infty n^2 z^n & = & - \frac{z(z+1)}{(z-1)^3}
+\end{eqnarray*}
+a dosadím $z = \frac{1}{2}$
 
 \begin{vetal}[o integrování mocninné řady]
 Nehcť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada s poloměrem konvergence $R > 0$. Pak $\sum_{n=0}^{\infty} \frac{a_n}{n+1} \left(x-x_0 \right)^{n+1}$ je také mocninná řada se stejným poloměrem konvergence. Navíc platí
