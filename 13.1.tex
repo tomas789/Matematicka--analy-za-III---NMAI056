@@ -117,7 +117,10 @@ Připomeň: $F_n \con F$, pak $\int F_n \to \int F$ (pro $\mathbb{R} \to \mathbb
 
 Lze použít i pro $\int_\varphi F = \int_\alpha^\beta F(\varphi(t)) \varphi^\prime (t) dt \Rightarrow \lim_{n \to \infty} \int F_n = \int \lim_{n \to \infty} F_n$
 
-$$f^\prime (s) = \lim_{h \to 0} \frac{f(s+h)-f(s)}{h} \overset{\circledcirc}{=} \lim_{h \to 0} \frac{1}{h} \left( \int_\varphi \frac{f(z)}{z-(s+h)} dz - \int_\varphi \frac{f(z)}{z-s} dz \right) = \lim_{h \to 0} \int_\varphi f(z) \frac{1}{h} \left( \frac{1}{z-(s+h)} - \frac{1}{z-s} \right) dz = \lim_{h \to 0} \int_\varphi f(z) \frac{1}{(z-(s+h))(z-s)} dz$$
+\begin{eqnarray*}
+f^\prime (s) & = & \lim_{h \to 0} \frac{f(s+h)-f(s)}{h} \overset{\circledcirc}{=} \lim_{h \to 0} \frac{1}{h} \left( \int_\varphi \frac{f(z)}{z-(s+h)} dz - \int_\varphi \frac{f(z)}{z-s} dz \right) \\
+& = & \lim_{h \to 0} \int_\varphi f(z) \frac{1}{h} \left( \frac{1}{z-(s+h)} - \frac{1}{z-s} \right) dz = \lim_{h \to 0} \int_\varphi f(z) \frac{1}{(z-(s+h))(z-s)} dz
+\end{eqnarray*}
 
 Pohle Heineho stačí 
 $$\lim_{n \to \infty} \int_\varphi \underbrace{f(z) \frac{1}{(z-(s+h_n))(z-s)}}_{F_n(z)} dz$$
