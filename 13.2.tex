@@ -15,6 +15,28 @@ Jako u reálných mocninných řad lze na kruhu konvergence prohazovat $\sum$ a 
 Je-li $f$ holomorfní na $G$, pak na $G$ existují derivace všech řádů $f^{(k)}$ pro $k \in \mathbb{N}$.
 \end{dusledek}
 
+\begin{proof}
+\underline{jednoznačnost}: 
+\begin{eqnarray*}
+f(z) & = & \sum_{n=1}^\infty a_n (z-z_0)^n \\
+f^\prime(z) & = & \sum_{n=1}^\infty a_n n (z-z_0)^{n-1}
+\end{eqnarray*}
+$f(z)$ k-krát zderivujeme. Připomeňmě, že pro mocninnou řadu platí $(\sum)^\prime = (\sum ^\prime)$ ze stejnoměrné konvergence.
+\begin{eqnarray*}
+f^{(k)}(z) & = & \sum_{n=k}^\infty a_n n (n-1) \ldots (n-k+1)(z-z_0)^{n-k}
+\end{eqnarray*}
+dosadíme $z=z_0$ : $f^{(k)}(z_0) = a_k k!$ ($n=k$)
+
+\underline{existence} :
+$f$ je holomorfní na $B(z_0, R)$, nechť $0 < r < R$ je pevné a $\varphi (t) = z_0 + re^{it}$. Nechť $z \in B(z_0, r)$. Z Cauchyova vzorce : $f(z) = \frac{1}{2 \pi i} \int_\varphi \frac{f(s)}{s-z} ds$.
+$$\frac{1}{s-z} = \frac{1}{(s-z_0)-(z-z_0)} = \frac{1}{s-z} \frac{1}{1 - \frac{z-z_0}{s-z_0}} \overset{|z-z_0|<|s-z_0|=r}{=} \frac{1}{s-z_0} \sum_{n=0}^\infty \left( \frac{z-z_0}{s-z_0} \right)^n$$
+$$\frac{1}{2 \pi i} \int_\varphi \sum_{n=0}^\infty f(s) \frac{(z-z_0)^n}{(s-z_0)^{n+1}} ds \overset{\sum \con \textrm{ na } \langle \varphi \rangle = S(z_0, r)}{=} \frac{1}{2 \pi i} \sum_{n=0}^\infty (z-z_0)^n \int_\varphi \frac{f(s)}{(s-z_0)^{n+1}} ds$$
+$$a_n = \frac{1}{2 \pi i} \int_\varphi \frac{f(s)}{(s-z_0)^{n+1}}$$
+$$\sup_{s \in \langle \varphi \rangle} \left| f(s) \frac{(z-z_0)^n}{(s-z_0)^{n+1}} \right| \leq \max_{\langle \varphi \rangle} \frac{1}{r} q^n \quad \textrm{pro } q = \frac{|z-z_0|}{|s-z_0|} < 1$$
+$$\sum \max f \frac{1}{r} q^n \textrm{ konverguje } \overset{Weirstrass}{\Rightarrow} \sum \con$$
+\end{proof}
+
+
 \begin{definice}
 Množina $G \subset \mathbb{C}$ se nazývá \emph{oblast}, pokud je otevřená a souvislá. Tedy pokud platí
 $$\forall A, B \in G \textrm{ otevrene v } G, G=A \cup B, A \cap B = \emptyset \Rightarrow A = \emptyset \textrm{ nebo } B = \emptyset$$
@@ -66,3 +88,15 @@ Nechť $M \subset G \subset \mathbb{C}$ je konečná množina. Řekneme, že fun
 Nehcť $f$ je holomorfní na mezikruží $B(z_0, R) \backslash \overline{B(z_0, r)}$, $0 < r < R$. Pak existují jednoznačně určená čísla $a_k \in \mathbb{C}$, $k \in \mathbb{Z}$, že platí 
 $$f(z) = \sum_{k= - \infty}^\infty a_k (z-z_0)^k \textrm{ pro všechna } z \in B(z_0, R) \backslash \overline{B(z_0, r)}$$
 \end{vetat}
+
+\begin{proof}
+Platí Cauchyho vzorec pro mezikruží:
+$$f(z) = \frac{1}{2 \pi i} \int_{\varphi_R} \frac{f(s)}{s-z} ds - \frac{1}{2 \pi i} \int_{\varphi_r} \frac{f(s)}{s-z} ds$$
+
+\begin{equation*}
+F(z) = \left\{ \begin{array}{ll}
+ \frac{f(s)-f(z)}{s-z} & \textrm{pro $s \neq z$} \\
+ 0 & \textrm{pro $z=z_0$}
+  \end{array} \right.
+\end{equation*}
+\end{proof}
