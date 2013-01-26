@@ -46,7 +46,15 @@ Nechť $Q$ je racionální funkce.
 
 \begin{enumerate}
 \item $\int_0^{2\pi} Q(\cos(t), \sin(t))dt$
-\item $\int_{-\infty}^\infty Q(x) dx$
+
+substituce $e^{it} = z$, $\cos(t) = \frac{z + \frac{1}{z}}{2}$, $\sin(t) = \frac{z-\frac{1}{z}}{2i}$, $\frac{dz}{dt} = e^{it}i$
+
+\item $\int_{-\infty}^\infty R(x) dx$
+$$\left| \int_{\varphi_1} R(z) dz \right| \leq \pi R \frac{c}{R^2} \overset{R \to \infty}{\to} 0$$
+
+$R = \frac{P}{Q}$, stupeň $Q$ $\geq$ stupeň $P + 2$, $\forall t \in \mathbb{R} \textrm{ : } R(t) \neq \infty$
+$$\int_{-\infty}^\infty R(t) dt = 2 \pi i \sum_{ \{ z_0 \in \mathbb{C} \textrm{ : } R(z_0) = \infty \} } \textrm{res}_{z_0} R(z)$$
+
 \item $\int_{-\infty}^{\infty} Q(x) \sin(x) dx$
 \item $\int_{-\infty}^{\infty} Q(x) \cos(x) dx$
 \item $\int_0^{\infty} Q(x) x^{p-1} dx$

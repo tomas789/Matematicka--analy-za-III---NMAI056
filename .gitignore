@@ -4,3 +4,5 @@ skripta.pdf
 skripta.synctex.gz
 texput.log
 *.log
+obrazky*
+!obrazky.mp
