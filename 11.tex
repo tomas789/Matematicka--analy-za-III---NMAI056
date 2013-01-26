@@ -16,7 +16,7 @@ Nyní
 $$|a_n(x-x_0|^n = |a_n r^n \frac{(x-x_0)^n}{r^n}| \leq |a_nr^n|. \left( \frac{|x-x_0|}{r} \right)^n \leq K \frac{|x-x_0|^n}{r^n} $$
 $|x-x_o|<r$, tedy geometrická řada $\sum K. \left( \frac{|x-x_0|}{r} \right)^n$ konverguje. Ze srovnávacího kritéria $\sum a_n(x-x_o)^n$ konverguje.
 Nechť $|x-x_o|>R$. Tvrdím, že $\sum a_n(x-x_o)^n$ diverguje. Jinak bychom našli $y: R< |y-x_0| < |x-x_0|$. Analogicky předchozí části důkazu:
-$$\sum a_n(x-x_0)^n \textrm{ konverguje } \Rightarrow \sum a_n(y-x_0)^n \textrm{ absolutne konverguje } \rightarrow \textrm{ spor s definici } R$$
+$$\sum a_n(x-x_0)^n \textrm{ konverguje } \Rightarrow \sum a_n(y-x_0)^n \textrm{ absolutně konverguje } \rightarrow \textrm{ spor s definicí } R$$
 \end{proof}
 
 \begin{vetal}[výpočet poloměru konvergence]
@@ -50,8 +50,17 @@ $$b_n = \sup_{x \in[x_0-r, x_0+r]} |a_n(x-x_0)^n| = |a_n|r^n \textrm{ a } \sum b
 
 \begin{vetal}[o derivaci mocninné řady]
 Nechť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada s poloměrem konvergence $R > 0$. Pak $\sum_{n=1}^{\infty} n a_n (x-x_0)^{n-1}$ je také mocninná řada se stejným středem a poloměrem konvergence. Navíc pro $x \in ( x_0 - R, x_0 + R )$ ($\mathbb{R}$ pro $R = \infty$) platí
-$$ \left( \sum_{n=0}^{\infty} a_n (x-x_0)^n \right)' = \sum_{n=+}^{\infty} n a_n (x-x_0)^{n-1}$$
+$$ \left( \sum_{n=0}^{\infty} a_n (x-x_0)^n \right)' = \sum_{n=1}^{\infty} n a_n (x-x_0)^{n-1}$$
 \end{vetal}
+
+\begin{proof}
+Je vidět, že se jedná o mocninnou řadu se středem $x_0$ a koeficienty $\tilde{a}_n = (n+1)a_{n+1}$
+$$R = \frac{1}{\limsup_{n \to \infty} \sqrt[n]{|a_n|}} \Rightarrow R = \frac{1}{\limsup_{n \to \infty} \sqrt[n]{n |a_n|}} \overset{\textrm{limita složené funkce}}{\Rightarrow} R = \frac{1}{\limsup_{n \to \infty} \sqrt[n-1]{n |a_n|}}$$
+
+Tedy poloměr konvergence formální derivace je stejný. Dle předchozí věty na $(x_0 - R, x_0 + R) \textrm{ : } \sum n a_n (x-x_0)^{n-1} \conloc$, v $x=x_0$ konverguje, tedy mohu použít větu o derivování řad funkcí (Věta L\ref{o spojitosti a derivování řad funkcí}) a dostaneme
+$$\left( \sum_{n=0}^\infty a_n (x-x_0)^n \right)^\prime = \sum_{n=1}^\infty n a_n (x-x_0)^{n-1}$$
+\end{proof}
+
 
 \begin{vetal}[o integrování mocninné řady]
 Nehcť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada s poloměrem konvergence $R > 0$. Pak $\sum_{n=0}^{\infty} \frac{a_n}{n+1} \left(x-x_0 \right)^{n+1}$ je také mocninná řada se stejným poloměrem konvergence. Navíc platí
