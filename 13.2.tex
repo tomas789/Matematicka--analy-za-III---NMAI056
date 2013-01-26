@@ -95,8 +95,20 @@ $$f(z) = \frac{1}{2 \pi i} \int_{\varphi_R} \frac{f(s)}{s-z} ds - \frac{1}{2 \pi
 
 \begin{equation*}
 F(z) = \left\{ \begin{array}{ll}
- \frac{f(s)-f(z)}{s-z} & \textrm{pro $s \neq z$} \\
- 0 & \textrm{pro $z=z_0$}
+ \frac{f(s)-f(z)}{s-z} & \textrm{pro $s \neq z$, $F$ holomorfní na $B_R \backslash B_r$ a spojitá v $z$} \\
+ f^\prime(z) & \textrm{pro $z=z_0$, $\Rightarrow \int_{\varphi_1} F(z) = 0 = \int_{\varphi_2} F(z) dz$}
   \end{array} \right.
 \end{equation*}
+
+sečtením $\int_{\varphi_R} F - \int_{\varphi_r} F = 0$
+$$\int_{\varphi_R} \frac{f(s)}{s-z} ds - f(z) \underbrace{\int_{\varphi_R} \frac{1}{s-z} ds}_{2 \pi i} - \int_{\varphi_r} \frac{f(s)}{s-z} ds + f(z) \underbrace{\int_{\varphi_r} \frac{1}{s-z} ds}_{0} \Rightarrow \textrm{Cauchyův vzorec pro mezikruží}$$
+$$2 \pi i f(z) = \int_{\varphi_R} \frac{f(s)}{s-z} ds - \int_{\varphi_r} \frac{f(s)}{s-z} ds$$
+$$\frac{1}{s-z} = \frac{1}{s-z_0} \sum_{n=0}^\infty \left( \frac{z-z_0}{s-z_0} \right)^n \to \int_{\varphi_R} \frac{f(s)}{s-z} = \sum_{k=0}^\infty a_k (z-z_0)^k \quad \textrm{viz důkaz věty \ref{o rozvoji do Taylorovy řady}}$$
+
+na $\varphi_r$ : $|z-z_0| > |z-s|$ $\forall s \in \langle \varphi_r \rangle$
+$$\frac{1}{s-z} = \frac{1}{(s-z_0)-(z-z_0)} = \frac{-1}{z-z_0} \frac{1}{1 - \frac{s-z_0}{z-z_0}} = - \frac{1}{z-z_0} \sum_{n=0}^\infty \left( \frac{s-z_0}{z-z_0} \right)^n = \sum_{k=-1}^{-\infty} (z-z_0)^k \frac{1}{(s-z_0)^{k+1}}$$
+Nyní
+$$- \int_{\varphi_r} \frac{f(s)}{s-z} ds = \int_{\varphi_r} \sum_{k=-1}^{-\infty} (z-z_0)^k \frac{1}{(s-z_0)^{k+1}} f(s) ds \overset{\circledast}{=} \sum_{k=-1}^{-\infty} (z-z_0)^{k} \int_{\varphi_r} \frac{f(s)}{(s-z_0)^{k+1}} ds$$
+
+$\circledast$ analogicky jako předtím $\sum \con$ z Weirstrasse
 \end{proof}
