@@ -1,0 +1,51 @@
+Tato část slouží jako opakování klíčových pojmů z přednášek Matematická analýza I a II.
+
+\begin{definice}
+Řekneme, že číslo $s$ je \emph{supremum} množiny $M$ (značíme $s = \sup M$) jestliže
+\begin{enumerate}
+\item pro každé $x \in M$ je $x \leq s$ a
+\item je-li $y \leq s$, existuje $x \in M$ takové, že $y < s$.
+\end{enumerate}
+
+Podobně řekneme, že číslo $i$ je \emph{infimem} množiny $M$ (označení $i = \inf M$) jestliže
+\begin{enumerate}
+\item pro každé $x \in M$ je $x \geq i$ a
+\item je-li $y \leq i$, existuje $x \in M$ takové, že $y > x$.
+\end{enumerate}
+\end{definice}
+
+\begin{definice}
+Buď $f$ reálná funkce s definičním oborem $D$, nechť $a$ je buď v $D$ nebo na kraji některého z intervalů, z nichž je $D$ sestaveno. Řekneme, že \emph{limita funkce $f$ v bodě $a$} je $b$, označení
+$$\lim_{x \to a} f(x) = b$$
+jestliže platí formule
+$$\forall \varepsilon > 0 \ \exists \delta > 0 \textrm{ tak, že } 0 < |x-a| < \delta, x \in D \Rightarrow |f(x) - b| < \varepsilon$$
+\end{definice}
+
+\begin{definice}
+Buď $(a_n)$ posloupnost reálných čísel. \emph{Limer inferior} této posloupnosti, označení
+$$\liminf_n a_n$$
+je číslo (konečené nebo nekonečené)
+$$\sup_n \inf_{k \geq n} a_k$$
+\end{definice}
+
+
+\begin{definice}
+Nechť $x_0$ je vnitřní bod definičního oboru funkce $f$. \emph{Derivací funkce $f$ v bodě $x_0$} rozumíme číslo
+$$f^\prime(x_0) = \lim_{h \to 0} \frac{f(x_0+h) - f(x_0)}{h}$$
+\end{definice}
+
+\begin{definice}
+Buď $f(x)$ funkce, pak $F(x)$ nazveme \emph{primitivní funkcí} k funkci $f(x)$, pokud platí
+$$F^\prime(x) = f(x)$$
+\end{definice}
+
+\begin{definice}
+Buď $f(x_1, \ldots, x_n)$ reálná funkce $n$ proměnných. \emph{Parciální derivací} reálné funkce podle $k$-té proměnné v bodě $(x_1^0, \ldots, x_n^0)$ rozumíme derivaci funkce $\varphi(x) = f(x_1^0, \ldots, x_{k-1}^0, x, x_{k+1}^0, x_n^0)$ v bodě $x_k^0$. Označení
+$$\frac{\partial f(x_1^0, \ldots, x_n^0)}{\partial x_k}, \frac{\partial}{\partial x_k} f(x_1^0, \ldots, x_n^0)$$
+\end{definice}
+
+\begin{definice}
+Řekneme, že \emph{$f$ má v bodě $(x_1, \ldots, x_n)$ totální diferenciál}, existují-li reálná čísla $A_1, \ldots, A_n$ a funkce $\mu$ definovaná v nějakém okolí bodu $\vec o = (0, \ldots, 0)$ taková, že $\lim_{\vec h \to \vec o} \mu (\vec h) = \vec o$ a že v tomto okolí platí
+$$f(x_1 + h_1, \ldots, x_n + h_n) - f(x_1, \ldots, x_n) = \sum_{j=1}^n A_j h_j + || \vec h || \cdot \mu(\vec h)$$
+\end{definice}
+
