@@ -37,6 +37,20 @@ $$\varrho(f,g) = \sup_{x \in [0,1]} |f(x) - g(x)|$$
 je úplný
 \end{vetat}
 
+\begin{proof}
+Nechť $f_n$ je cauchyovská posloupnost, tedy 
+$$\forall \varepsilon > 0 \ \exists n_0 \ \forall m,n \geq n_0 \ \forall x \in [0,1] \textrm{ : } |f_m(x) - f_n(x)| < \varepsilon \quad \circledast$$
+
+Pro pevné $x \in [0,1]$ $\forall \varepsilon > 0 \ \exists n_0 \ \forall m,n \geq 0 \textrm{ : } |\underbrace{f_n(x)}_{a_n} - \underbrace{f_m(x)}_{a_m}| < \varepsilon$. Tedy posloupnost reálných čísel $f_n(x)$ je cauchyovská. Z BC-podmínky plyne, že existuje její limita $f(x) \in \mathbb{R}$.
+
+V $\circledast$ proveďme 
+$$\lim_{m \to \infty} \textrm{ : } \forall \varepsilon > 0 \ \exists n_0 \ \forall n \geq n_0 \ \forall x \in [0,1] \textrm{ : } |f_n(x)-f(x)| \leq \varepsilon$$
+$$\Leftrightarrow f_n(x) \con f(x) \textrm{ \& } f_n \textrm{ spojité} \Rightarrow f \textrm{ je spojitá}$$
+$$\forall \varepsilon > 0 \ \exists n_0 \ \forall n \geq n_0 \textrm{ : } \varrho (f_n,f) \leq \varepsilon$$
+$$\Rightarrow f_n \overset{\varrho}{\to} f, \textrm{tedy $C[0,1]$ je úplný}$$
+\end{proof}
+
+
 \begin{vetat}[Banachova věta o kontrakci]
 \label{Banachova věta o kontrakci}
 Nechť $(P, \varrho)$ je úplný metrický prostor a $K < 1$. Nechť $T \textrm{ : } P \rightarrow P$ je zobrazení takové, že 
