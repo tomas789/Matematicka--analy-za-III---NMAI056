@@ -66,3 +66,25 @@ Nechť $M \subset G \subset \mathbb{C}$ je konečná množina. Řekneme, že fun
 Nehcť $f$ je holomorfní na mezikruží $B(z_0, R) \backslash \overline{B(z_0, r)}$, $0 < r < R$. Pak existují jednoznačně určená čísla $a_k \in \mathbb{C}$, $k \in \mathbb{Z}$, že platí 
 $$f(z) = \sum_{k= - \infty}^\infty a_k (z-z_0)^k \textrm{ pro všechna } z \in B(z_0, R) \backslash \overline{B(z_0, r)}$$
 \end{vetat}
+\begin{proof}
+Platí Cauchyův vzorec pro mezikruží:
+$$f(z) = \frac{1}{2\pi i}\int_{\varphi R}\frac{f(s)}{s-z}ds - \frac{1}{2\pi i} \int_{\varphi r} \frac{f(s)}{s-z}ds$$
+Nechť
+\begin{equation}
+F(z) = \left\{ \begin{array}{ll}
+ \frac{f(s) - f(z)}{z-s}  & s \neq z \textrm{ F holomorfní na } B \setminus B \textrm{a spojitá v } z \nonumber\\
+ f'(z) & s=z \Rightarrow \int_{\varphi_1} F(z) = 0 = \int_{\varphi_2}F(z) dz
+  \end{array} \right.
+\end{equation}
+Sečtením $\int_{\varphi_R}F - \int_{\varphi_r} F = 0 $
+
+$$\int_{\varphi_R} \frac{f(s)}{s-z} ds - f(z) \underbrace{\int_{\varphi_R} \frac{1}{s-z} ds}_{2\pi i}  - \int_{\varphi_r} \frac{f(s)}{s-z} + f(z) \underbrace{\int_{\varphi_r} \frac{1}{s-z} ds}_{0\textrm{, [$z$ mimo kruh $Br$]}} \Rightarrow \textrm{Cauchyův vzorec pro mezikruží}$$
+$$f(z)2\pi i = \int_{\varphi_R}  \frac{f(s)}{s-z} ds - \int_{\varphi_r} \frac{f(s)}{s-z} ds $$
+$$\frac{1}{s-z} = \frac{1}{s- z_0} \sum_{n=0}^\infty \left( \frac{z-z_0}{s-z_0} \right)^n \rightarrow \int = \sum_{k=0}^\infty a_k (z-z_0)^k \textrm{ viz dk. V6}$$
+na $ \varphi_r : |z-z_0| > |z-s| \forall s \in <\varphi_r>$
+$$\frac{1}{z-s} = \frac{1}{(s-z_0)-(z-z_0)} = \frac{-1}{z-z_0} \frac{1}{1-\left(\frac{s-z_0}{z-z_0}\right)} = - \frac{1}{z-z_0} \sum_{n =0}^\infty {\left(\frac{s-z_0}{z-z_0}\right)}^n = -\sum_{k= -1}^{-\infty} (z-z_0)^k \frac{1}{(s-z_0)^{k+1}} $$
+Nyní 
+$$-\int_{\varphi_r} \frac{f(s)}{s-z}ds = \int_{\varphi_r} \sum_{k=-1}^{-\infty} (z-z_0)^k \frac{1}{(s-z_0)^{k+1}}F(s)\textrm{ } ds = \ast \sum_{k=-1}^{-\infty} (z-z_0)^k \int_{\varphi_r} \frac{F(s)}{(s-z_0)^{k+1}}ds  $$
+$\ast$ Analogicky jako predtím, dle Weirsstrassova kritérie:
+$$\sum \con$$
+\end{proof}
