@@ -24,3 +24,12 @@ Množina $K \subset \mathbb{R}^n$ je kompaktní, přávě když je omezená a uz
 \begin{vetal}[nabývání extrémů na kompaktu]
 Nechť $(P, \varrho)$ je metrický prostor a $K \subset P$ je kompaktní. Nechť $f \textrm{ : } K \rightarrow \mathbb{R}$ je spojitá. Pak $f$ nabývá na $K$ svého maxima i minima. Speciálně je tedy $f$ na $K$ omezená.
 \end{vetal}
+
+\begin{proof}
+Z definice suprema :
+$$\exists x_n \in K \textrm { : } \lim_{n \to \infty} f(x_n) = \sup_{x \in K} f(x)$$
+$K$ je kompaktní interval, tedy $\exists x_{n_k} \to x_n \in K$. Z Heineho věty (Heine: $y_n \to y$, $f$ spojitá $\Rightarrow$ $f(x_n) \to f(y)$) a spojitosti $f$ dostáváme 
+$$\lim_{k \to \infty} \underbrace{f(x_{n_k})}_{\sup_{x \in K} f(x)} = f(x_0)$$
+Tedy v $x_0$ nabývá $f$ maxima. Pro minimum analogicky
+\end{proof}
+
