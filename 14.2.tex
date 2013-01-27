@@ -10,6 +10,15 @@ $$\lim_{n \rightarrow \infty} \varrho (x_n, x) = 0$$
 Metrický prostor $(\mathbb{R}, |.|)$ je úplný.
 \end{vetal}
 
+\begin{proof}
+\underline{Připomeňme:} $x_n$ je konvergentní v $\mathbb{R}$ $\Leftrightarrow$ splňuje BC-podmínku, tedy $\forall \varepsilon > 0 \ \exists n_0 \ \forall m,k \geq n_0 \textrm{ : } |x_m - x_k| < \varepsilon$
+
+Nechť $y_k$ je cauchyovská posloupnost v $\mathbb{R}^n$, chceme dokázat $\exists y \in \mathbb{R}^n \textrm{ : } y_k \overset{k \to \infty}{\to} y$ (to jest $y_k = (y_k^1, \ldots, y_k^n) \overset{\textrm{po složkách}}{\to} (y^1, \ldots, y^n)$).
+
+$|y_k^1 - y_m^1| \leq |y_k - y_m|$ dostaneme, že $y_k^1$ je cauchyovská v $\mathbb{R}$. Z BC-podmínky plyne existence $y^1 \in \mathbb{R}$ tak, že $y_k^1 \overset{\textrm{v }\mathbb{R}}{\to} y^1$. Analogicky nalezneme $y^2, \ldots, y^n \in \mathbb{R}$ tak, že $\forall i \in \{ 2, \ldots, n \} \textrm{ : } y_k^i \to y^i$, tedy $y_k \overset{\textrm{v } \mathbb{R}}{\to} y$, protože konvergence v $\mathbb{R}^n$ je konvergence pro $k \to \infty$ po složkách.
+\end{proof}
+
+
 \begin{priklad}
 \begin{enumerate}
 \item Metrický prostor $(Q, |.|)$ není úplný.
