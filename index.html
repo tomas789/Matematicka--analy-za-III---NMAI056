@@ -24,7 +24,7 @@
 
         <ul>
           <li><a href="files/skriptum-analyza-latest.pdf">Předkompilované <strong>PDF</strong></a></li>
-          <li><a href="files/skriptum-analyza-source-latest.zip">Zdrojové kódy <strong>ZIP archiv</strong></a></li>
+          <li><a href="https://nodeload.github.com/tomas789/Matematicka--analy-za-III---NMAI056/zip/master">Zdrojové kódy <strong>ZIP archiv</strong></a></li>
           <li><a href="https://github.com/tomas789/Matematicka--analy-za-III---NMAI056">Zobrazit na <strong>GitHub</strong></a></li>
         </ul>
       </header>
@@ -44,7 +44,11 @@
 <p><b>(krok 2)</b> již máte zdrojové kódy. Nyní z nich vygenerujte výsledné PDF. Můžete použít Váš oblibený editor s vestavěnou podporou pro LaTex (zde je nutno postupovat individuálně) nebo kód přeložit přímo pomocí: </p>
 
 <pre><code>$ cd adresar_se_zdrojovymy_kody
-pdflatex skripta.tex</code></pre>
+$ mpost obrazky.mp
+$ pdflatex skripta.tex
+$ pdflatex skripta.tex</code></pre>
+
+<p>Příkaz pdflatex je nutné provést dvakrát kvůli správnému navázání křížových odkazů v dokumentu</p>
 
 <p>Pokud LaTeX v průběhu překladu zastaví a bude vyčkávat na řádce začínající otazníkem, jednoduše pokračujte stiskem klávesy Enter. Výsledná skripta by se měla nyní nacházet ve stejném adresáři jako soubor skripta.tex a měla by se jmenovat skripta.pdf</p>
 
