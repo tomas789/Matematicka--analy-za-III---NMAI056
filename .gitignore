@@ -6,3 +6,5 @@ texput.log
 *.log
 obrazky*
 !obrazky.mp
+*-eps-converted-to.pdf
+*.swp
