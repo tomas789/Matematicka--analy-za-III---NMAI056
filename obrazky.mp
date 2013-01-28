@@ -153,4 +153,69 @@ dotlabel.urt(btex $z$ etex, (origin shifted dir(40)*1.6cm));
 
 endfig;
 
+beginfig(8);
+
+numeric u; u:=3;
+path p;
+
+draw (-58*u, 0) -- (58*u, 0);
+draw (0, -2*u) -- (0, 33*u);
+
+label.lrt("0", origin);
+label.lrt(btex $\pi$ etex, (18*u, 0));
+label.lrt(btex $-\pi$ etex, (-18*u, 0));
+label.rt(btex $\pi^2$ etex, (0, 17*17/u));
+
+label(btex $f(x) = x^2$ etex, origin) rotated 70 shifted (45, 40);
+
+for i:=0 step 1 until 4 :
+	draw (-36*u+i*18*u, 2) -- (-36*u+i*18*u, -2);
+endfor;
+
+draw (-2, 17*17/u) -- (2, 17*17/u);
+
+
+p := (for i=-18 step 1 until 17 : (i, i*i) .. endfor (18, 18*18)) yscaled .3 xscaled 3;
+
+draw p;
+draw p shifted(36*u, 0);
+draw p shifted(-36*u,0);
+
+
+endfig;
+
+beginfig(9);
+
+numeric u; u:=3;
+path p;
+
+draw (-36*u, 0) -- (72*u, 0);
+draw (0, -2*u) -- (0, 17*17*2/u+3);
+
+label.lrt("0", origin);
+label.lrt(btex $\pi$ etex, (18*u, 0));
+label.lrt(btex $-\pi$ etex, (-18*u, 0));
+label.rt(btex $4 \pi^2$ etex, (0, 17*17*2/u));
+
+label(btex $f(x) = x^2$ etex, origin) rotated 55 shifted (60, 40);
+
+for i:=0 step 1 until 6 :
+	draw (-36*u+i*18*u, 2) -- (-36*u+i*18*u, -2);
+endfor;
+
+draw (-2, 17*17*2/u) -- (2, 17*17*2/u);
+
+p := (for i=0 step 1 until 35 : (i, i*i) .. endfor (36, 36*36)) yscaled .15 xscaled 3;
+
+draw p;
+draw p shifted(36*u, 0);
+draw p shifted(-36*u,0);
+
+
+dotlabel.rt(btex $[0, 2 \pi^2]$ etex, (0, 17*17/u));
+dotlabel.rt(btex $[2 \pi, 2 \pi^2]$ etex, (36*u, 17*17/u));
+dotlabel.rt(btex $[0, 2 \pi^2]$ etex, (0, 17*17/u));
+
+endfig;
+
 end;
