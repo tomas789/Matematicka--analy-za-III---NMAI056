@@ -60,19 +60,19 @@ R := 2cm;
 r := 0.4cm;
 ep := 0.05cm;
 
-drawarrow (-R,ep){up} .. (0,R+ep);
-draw      (0,R+ep){right} .. (R,ep);
-draw      (R,ep) -- (r,ep);
-drawarrow (r,ep){up} .. (0,r+ep);
-draw      (0,r+ep){left} .. (-r,ep);
-draw      (-r,ep) -- (-R,ep);
+path p;
+p := (-R,0) -- (-r,0){up} .. (r,0) -- (R,0){up} .. cycle;
 
-draw      (-R,0) -- (-r,0);
-drawarrow (-r,0){down} .. (0,-r);
-draw      (0,-r){right} .. (r,0);
-draw      (r,0) -- (R,0);
-drawarrow (R,0){down} .. (0,-R);
-draw      (0,-R){left} .. (-R,0);
+draw p;
+draw p rotated 180 shifted (0, -ep);
+
+drawarrow subpath(1,1.5) of p;
+drawarrow subpath(3,3.3) of p;
+drawarrow subpath(3.3,3.7) of p;
+
+drawarrow subpath(1,1.5) of p rotated 180 shifted (0,-ep);
+drawarrow subpath(3,3.3) of p rotated 180 shifted (0,-ep);
+drawarrow subpath(3.3,3.7) of p rotated 180 shifted (0,-ep);
 
 label(btex $\varphi_1$ etex, (R,1.3cm));
 label(btex $\varphi_2$ etex, (R,-1.3cm));
@@ -139,6 +139,17 @@ label.rt(btex $\frac{r}{2}$ etex, (4.3cm,1cm));
 label.rt(btex $-\frac{r}{2}$ etex, (4.3cm,-cm));
 
 label(btex $z(x)$ etex, (3.2cm,0.5cm));
+
+endfig;
+
+beginfig(7);
+
+draw fullcircle scaled 2cm;
+draw fullcircle scaled 3.5cm shifted (.3cm,.1cm);
+
+dotlabel.lft(btex $z_0$ etex, origin);
+dotlabel.urt(btex $s$ etex, (origin shifted dir(30)*cm));
+dotlabel.urt(btex $z$ etex, (origin shifted dir(40)*1.6cm));
 
 endfig;
 

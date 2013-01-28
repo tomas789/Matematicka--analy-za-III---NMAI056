@@ -115,6 +115,9 @@ $$2 \pi i f(z) = \int_{\varphi_R} \frac{f(s)}{s-z} ds - \int_{\varphi_r} \frac{f
 $$\frac{1}{s-z} = \frac{1}{s-z_0} \sum_{n=0}^\infty \left( \frac{z-z_0}{s-z_0} \right)^n \to \int_{\varphi_R} \frac{f(s)}{s-z} = \sum_{k=0}^\infty a_k (z-z_0)^k \quad \textrm{viz důkaz věty \ref{o rozvoji do Taylorovy řady}}$$
 
 na $\varphi_r$ : $|z-z_0| > |z-s|$ $\forall s \in \langle \varphi_r \rangle$
+\begin{figure}[!h] \begin{center}
+\includegraphics{obrazky.7}
+\end{center} \end{figure}
 $$\frac{1}{s-z} = \frac{1}{(s-z_0)-(z-z_0)} = \frac{-1}{z-z_0} \frac{1}{1 - \frac{s-z_0}{z-z_0}} = - \frac{1}{z-z_0} \sum_{n=0}^\infty \left( \frac{s-z_0}{z-z_0} \right)^n = \sum_{k=-1}^{-\infty} (z-z_0)^k \frac{1}{(s-z_0)^{k+1}}$$
 Nyní
 $$- \int_{\varphi_r} \frac{f(s)}{s-z} ds = \int_{\varphi_r} \sum_{k=-1}^{-\infty} (z-z_0)^k \frac{1}{(s-z_0)^{k+1}} f(s) ds \overset{\circledast}{=} \sum_{k=-1}^{-\infty} (z-z_0)^{k} \int_{\varphi_r} \frac{f(s)}{(s-z_0)^{k+1}} ds$$
