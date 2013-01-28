@@ -8,7 +8,7 @@ Cílem je danou $f \in \mathcal{P}_{2 \pi}$ rozvinout do trigoniometrické řady
 \item zjistit, zda-li je řada rovna původní funkci
 \end{enumerate}
 
-\begin{vetabd}
+\begin{vetabd}[Abel-Diricheltovo kritérium]
 Nechť $\{ a_n \}_{n \in \mathbb{N}}$ je posloupnost reálných čísel a $\{ b_n \}_{n=1}^{\infty}$ je nerostoucí posloupnost reálných čísel. Jestliže buď
 \begin{enumerate}
 \item[(A)] $\sum_{n=1}^{\infty} a_n$ je konvergentní, nebo
@@ -107,7 +107,7 @@ $$\int_{0}^{2 \pi} 1 \cdot f(x) dx = \int_{0}^{2 \pi} \frac{a_0}{2}+0+0+\ldots+0
 \end{proof}
 
 \begin{definice}
-Nehchť $f \in \mathcal{P}_{2 \pi}$. Pak definujeme čísla
+Nechť $f \in \mathcal{P}_{2 \pi}$. Pak definujeme čísla
 \begin{eqnarray*}
 a_k & = & \frac{1}{\pi} \int_{0}^{2 \pi} f(x) \cos(kx) dx, \quad k=0,1,\ldots \\
 b_k & = & \frac{1}{\pi} \int_{0}^{2 \pi} f(x) \sin(kx) dx, \quad k=1,2,\ldots 
@@ -285,7 +285,7 @@ Chceme $F_f(x) = \frac{f(x+) + f(x-)}{2}$, tedy $s_n(x) \overset{n \rightarrow \
 \begin{eqnarray*}
 s_n(x) - \frac{f(x+)+f(x-)}{2} & = & \frac{1}{\pi} \int_0^\pi \left( f(x+y) + f(x-y) \right) D_n(y) dy - \frac{f(x+) + f(x-)}{2} \frac{2}{\pi} \int_0^\pi D_n(y)dy \\
 & \overset{V5, VL4 (ii)}{=} & \frac{1}{\pi} \int_0^\pi \left( f(x+y) - f(x+) + f(x-y) - f(x-) \right) D_n(y) dy \\
-& \overset{VL4(iii)}{=} & \frac{1}{\pi} \int_{0}^\pi \underbrace{\left( \frac{f(x+y) - f(x+) + f(x-y) - f(x-)}{2 \sin \left( \frac{y}{2} \right)} \right)}_{\textrm{pokud $\in R([0,\pi])$, pak VT\ref{Riemann-Lebesqueovo lemma} dokončí důkaz}} \sin \left( n + \frac{1}{2} \right)y dy 
+& \overset{VL4(iii)}{=} & \frac{1}{\pi} \int_{0}^\pi \underbrace{\left( \frac{f(x+y) - f(x+) + f(x-y) - f(x-)}{2 \sin \left( \frac{y}{2} \right)} \right)}_{\textrm{pokud $\in R([0,\pi])$, pak Věta T\ref{Riemann-Lebesqueovo lemma} dokončí důkaz}} \sin \left( n + \frac{1}{2} \right)y dy 
 \end{eqnarray*}
 
 Chceme $F(y) = \frac{f(x+y) - f(x+) + f(x-y) - f(x-)}{2 \sin \left( \frac{y}{2} \right)} \in R([0,\pi])$. 
