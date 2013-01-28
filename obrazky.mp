@@ -1,3 +1,9 @@
+verbatimtex
+%&latex 
+\documentclass{article} 
+\begin{document}
+etex
+
 beginfig(1);
 
 pair A, B, C;
@@ -83,6 +89,56 @@ draw (2cm,0.65cm) -- (3cm,0.25cm);
 
 draw (1cm,0.45cm) withpen pencircle scaled 2;
 draw (2cm,0.725cm) withpen pencircle scaled 2;
+
+endfig;
+
+beginfig(5);
+
+draw (-3cm,0) -- (3cm,0);
+
+path p;
+p := (-2cm,1cm) -- (-1cm,0) -- (1cm,2cm);
+
+draw p;
+draw p shifted (1cm,0);
+
+label.bot("Q", (2.5cm,0));
+dotlabel.bot("X", (-1cm,0));
+dotlabel.bot("Y", (0,0));
+
+path xy;
+xy := (-1cm,-.5cm) -- (0,-.5cm);
+
+drawarrow xy;
+drawarrow reverse xy;
+label.bot("a", (-.5cm,-.5cm));
+
+xy := (.5cm,.5cm) -- (.5cm,1.5cm);
+
+drawarrow xy;
+drawarrow reverse xy;
+label.rt("a", (.5cm,1.1cm));
+
+endfig;
+
+beginfig(6);
+
+draw (-2.5*cm,0) -- (4.5*cm,0);
+
+path zub;
+zub := (0,0) -- (.5*cm,1cm) -- (1.5*cm,-cm) -- (2cm,0);
+
+draw zub shifted (-2*cm,0);
+draw zub;
+draw zub shifted (2cm,0);
+
+draw (-2.3*cm,1cm) -- (4.3*cm,1cm) dashed (evenly scaled 1mm);
+draw (-2.3*cm,-cm) -- (4.3*cm,-cm) dashed (evenly scaled 1mm);
+
+label.rt(btex $\frac{r}{2}$ etex, (4.3cm,1cm));
+label.rt(btex $-\frac{r}{2}$ etex, (4.3cm,-cm));
+
+label(btex $z(x)$ etex, (3.2cm,0.5cm));
 
 endfig;
 
