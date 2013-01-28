@@ -102,7 +102,7 @@ podobně přenásobím funkcí $\sin(lx)$ dostanu vzorec pro $a_k$ pro $k \in \m
 
 Přenásobím funkcí $\cos(0x) = 1$:
 
-$$\int_{0}^{2 \pi} 1 * f(x) dx = \int_{0}^{2 \pi} \frac{a_0}{2}+0+0+\ldots+0 \Rightarrow a_0 = \frac{1}{\pi} \int_{0}^{2 \pi} f(x) dx = \frac{1}{\pi} \int_0^{2 \pi} f(x) \cos(0x) dx$$
+$$\int_{0}^{2 \pi} 1 \cdot f(x) dx = \int_{0}^{2 \pi} \frac{a_0}{2}+0+0+\ldots+0 \Rightarrow a_0 = \frac{1}{\pi} \int_{0}^{2 \pi} f(x) dx = \frac{1}{\pi} \int_0^{2 \pi} f(x) \cos(0x) dx$$
 
 \end{proof}
 
@@ -154,20 +154,6 @@ Nechť $n \in \mathbb{N}$. Pak \emph{Dirichletovým jádrem} nazveme funkci
 $$D_n(x) = \frac{1}{2}+\cos(x)+\cos(2x)+\ldots+\cos(nx)$$
 \end{definice}
 
-\begin{dusledek}
-\begin{enumerate}
-\item $D_n$ je spojitá funkce, sudá, $2 \pi$-periodická, $D_n(0) = n + \frac{1}{2}$
-\item $\int_{-\pi}^\pi D_n(x) dx = \pi$
-\item $D_n(x) = \frac{\sin \left( n + \frac{1}{2} x \right)}{2 \sin \frac{x}{2}}, \quad \forall x \in \mathbb{R} \backslash \{ 2 k \pi \}_{k \in \mathbb{Z}}$
-\end{enumerate}
-\end{dusledek}
-
-\begin{proof}
-\begin{enumerate}
-\item č
-\end{enumerate}
-\end{proof}
-
 \begin{vetal}[vlastnosti Dirichletova jádra]
 Pro Dirichletovo jádro $D_n$ platí
 \begin{enumerate}
@@ -189,6 +175,7 @@ D_n(x) & = & \frac{1}{2} + Re \left( e^{ix} + e^{2ix} + \ldots + e^{nix} \right)
 & = & \frac{1}{2} + Re \left( \frac{e^{ix} - 1 - e^{i(n+1)x} + e^{inx}}{2 - 2 \cos(x)} \right) \\
 & = & \frac{1}{2} + \frac{\cos(x)-1-\cos(n+1)x + \cos(x)}{2-2\cos(x)} \\
 & = & \frac{\cos(mx) - \cos(n+1)x}{2 - 2\cos(x)} \\
+& & \textrm{ až sem by to mělo být správně} \\
 & = & \frac{-2 \sin \left( n + \frac{1}{2} \right) x \sin \frac{x}{2}}{4 \left( \sin \frac{x}{2} \right)^{2}} = \frac{\sin \left(n + \frac{1}{2} \right) x}{2 \sin \frac{x}{2}} 
 \end{eqnarray*}
 \end{enumerate}
@@ -286,7 +273,7 @@ v bodě $x = \pi$ konverguje k $\pi^2$
 \includegraphics[scale=0.2]{grafy/graf2.eps}
 \end{center}
 \end{figure}
-v bodě $x = 2\pi$ konverguje k $\frac{\pi^2}{2}$
+v bodě $x = 2\pi$ konverguje k $2\pi^2$
 
 \end{itemize}
 \end{priklad}

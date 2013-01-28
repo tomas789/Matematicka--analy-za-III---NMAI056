@@ -84,6 +84,11 @@ Například funkce $f(z) = 1 / z^k$ má v bodě 0 pól násobnosti k.
 Nechť $M \subset G \subset \mathbb{C}$ je konečná množina. Řekneme, že funkce $f : G \backslash M \rightarrow \mathbb{C}$ je \emph{meromorfní} v $G$, pokud je $f$ holomorfní na $G \backslash M$ a v bodech $M$ má $f$ póly (konečné násobnosti).
 \end{definice}
 
+\begin{center}
+\includegraphics[scale=0.7]{obrazky.2}
+\end{center}
+
+
 \begin{vetat}[o rozovji do Laurentovy řady]
 Nehcť $f$ je holomorfní na mezikruží $B(z_0, R) \backslash \overline{B(z_0, r)}$, $0 < r < R$. Pak existují jednoznačně určená čísla $a_k \in \mathbb{C}$, $k \in \mathbb{Z}$, že platí 
 $$f(z) = \sum_{k= - \infty}^\infty a_k (z-z_0)^k \textrm{ pro všechna } z \in B(z_0, R) \backslash \overline{B(z_0, r)}$$
@@ -92,6 +97,10 @@ $$f(z) = \sum_{k= - \infty}^\infty a_k (z-z_0)^k \textrm{ pro všechna } z \in B
 \begin{proof}
 Platí Cauchyho vzorec pro mezikruží:
 $$f(z) = \frac{1}{2 \pi i} \int_{\varphi_R} \frac{f(s)}{s-z} ds - \frac{1}{2 \pi i} \int_{\varphi_r} \frac{f(s)}{s-z} ds$$
+
+\begin{figure}[!hp] \begin{center}
+\includegraphics{obrazky.3}
+\end{center} \end{figure}
 
 \begin{equation*}
 F(z) = \left\{ \begin{array}{ll}
