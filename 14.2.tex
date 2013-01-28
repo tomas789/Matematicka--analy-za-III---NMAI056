@@ -13,7 +13,7 @@ Metrický prostor $(\mathbb{R}, |.|)$ je úplný.
 \begin{proof}
 \underline{Připomeňme:} $x_n$ je konvergentní v $\mathbb{R}$ $\Leftrightarrow$ splňuje BC-podmínku, tedy $\forall \varepsilon > 0 \ \exists n_0 \ \forall m,k \geq n_0 \textrm{ : } |x_m - x_k| < \varepsilon$
 
-Nechť $y_k$ je cauchyovská posloupnost v $\mathbb{R}^n$, chceme dokázat $\exists y \in \mathbb{R}^n \textrm{ : } y_k \overset{k \to \infty}{\to} y$ (to jest $y_k = (y_k^1, \ldots, y_k^n) \overset{\textrm{po složkách}}{\to} (y^1, \ldots, y^n)$).
+Nechť $y_k$ je cauchyovská posloupnost v $\mathbb{R}^n$, chceme dokázat $\exists y \in \mathbb{R}^n \textrm{ : } y_k \overset{k \to \infty}{\to} y$ 
 
 $|y_k^1 - y_m^1| \leq |y_k - y_m|$ dostaneme, že $y_k^1$ je cauchyovská v $\mathbb{R}$. Z BC-podmínky plyne existence $y^1 \in \mathbb{R}$ tak, že $y_k^1 \overset{\textrm{v }\mathbb{R}}{\to} y^1$. Analogicky nalezneme $y^2, \ldots, y^n \in \mathbb{R}$ tak, že $\forall i \in \{ 2, \ldots, n \} \textrm{ : } y_k^i \to y^i$, tedy $y_k \overset{\textrm{v } \mathbb{R}}{\to} y$, protože konvergence v $\mathbb{R}^n$ je konvergence pro $k \to \infty$ po složkách.
 \end{proof}
@@ -97,7 +97,7 @@ Položme $P = C(Q)$ s metrikou $\varrho (f,g) = \sup_{y \in Q} | f(x)-g(x) |$.
 Důkaz je analogický a důkazu věty o úplnosti $C([0,1])$
 \end{poznamka}
 
-\begin{figure}[!hp] \begin{center}
+\begin{figure}[!h] \begin{center}
 \includegraphics{obrazky.5}
 \end{center} \end{figure}
 
@@ -191,7 +191,7 @@ Zvolme $n > \max \left\{ |a|+1, \frac{2 \sup |f|}{\delta} \right\}$. Pak $f \in 
 
 Zkonstruujme funkci $z$ ("zubatice"). $z^\prime = \pm a$, $a > 3n$.
 
-\begin{figure}[!hp] \begin{center}
+\begin{figure}[!h] \begin{center}
 \includegraphics{obrazky.6}
 \end{center} \end{figure}
 
