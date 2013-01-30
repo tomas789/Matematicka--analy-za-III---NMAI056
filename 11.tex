@@ -6,6 +6,16 @@ Nehcť $x_0 \in \mathbb{R}$ a $a_n \in \mathbb{R}$ pro $n \in \mathbb{N}_0$. Řa
 \emph{Poloměrem konvergence} mocninné řady $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ nazveme $$R = \sup \left\{ r \in [ 0,\infty ) : \sum_{n=0}^{\infty}  a_n ( x - x_0 )^n \textrm{ konverguje } \forall x \in [ x_0 - r; x_0 + r ] \right\}$$
 \end{definice}
 
+\begin{definice}
+Nechť $a_n$ je posloupnost reálných čísel. Potom definujeme \emph{limes superior} a \emph{limes inferior} této posloupnosti jako
+$$\limsup_{n \to \infty} a_n = \lim_{n \to \infty} \sup_{k \geq n} a_k \textrm{ a } \liminf_{n \to \infty} a_n = \lim_{n \to \infty} \inf_{k \geq n} a_k$$
+\end{definice}
+
+\begin{poznamka}
+Nechť existuje $\lim_{n \to \infty} a_n = a$. Pak platí
+$$\limsup_{n \to \infty} a_n = \liminf_{n \to \infty} a_n = a$$
+\end{poznamka}
+
 \begin{vetal}[o poloměru konvergence mocninné řady]
 Nechť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada a $R \in [ 0, \infty ]$ její poloměr konvergence. Pak řada konverguje obsolutně pro všechna $x$ taková, že $| x - x_0| < R$ a diverguje pro všechna $x$ taková, že $| x - x_0 | > R$.
 \end{vetal}
@@ -20,7 +30,7 @@ $$\sum a_n(x-x_0)^n \textrm{ konverguje } \Rightarrow \sum a_n(y-x_0)^n \textrm{
 \end{proof}
 
 \begin{vetal}[výpočet poloměru konvergence]
-Nechť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada a $R \in [ 0, \infty ]$ její poloměr konvergence. Pak platí
+Nechť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada a $R \in [ 0, \infty)$ její poloměr konvergence. Pak platí
 $$R = \frac{1}{ \lim \sup_{n \rightarrow \infty} \sqrt[n]{| a_n |} }$$
 Pokud existuje $\lim_{n \rightarrow \infty} \frac{|a_n|}{|a_{n+1}|}$, pak $R = \lim_{n \rightarrow \infty} \frac{|a_n|}{|a_{n+1}|}$.
 \end{vetal}
@@ -99,7 +109,7 @@ $$\sum_{n=0}^{\infty} a_n R^n = \lim_{r \rightarrow R_-} \sum_{n=0}^{\infty} a_n
 
 \begin{proof}
 Předpokládejme bez újmy na obecnosti, že $x_0 = 0$. Označme $t_N = \sum_{n=N+1}^{\infty} a_n R^n$. Víme, že $\sum a_n R^n$ konverguje, tedy
-$$\forall \varepsilon>0 \quad \exists n_0 \quad \forall n \geq n_0 \quad : \quad |t_N| < \varepsilon$$
+$$\forall \varepsilon>0 \ \exists n_0 \ \forall n \geq n_0 \textrm{ : } |t_N| < \varepsilon$$
 \begin{eqnarray*}
 a_n & = & a_n R^n \left( \frac{x}{R} \right)^n \\
 & = & - t_N \left( \left( \frac{x}{R} \right)^n - \left( \frac{x}{R} \right)^{n+1} \right) + t_{n-1} \left( \frac{x}{R} \right)^n - t_n \left( \frac{x}{R} \right)^{n+1} 
