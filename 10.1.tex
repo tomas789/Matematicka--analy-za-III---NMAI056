@@ -1,5 +1,5 @@
 \begin{definice}
-Nechť $J \subset \mathbb{R}$ je interval a nechť máme $f : J \rightarrow \mathbb{R}$ a $f_n : J \rightarrow \mathbb{R}$ pro $n \in \mathbb{N}$.Rekneme, že posloupnost funkcí $\{f_n\}$:
+Nechť $J \subset \mathbb{R}$ je interval a nechť máme $f : J \rightarrow \mathbb{R}$ a $f_n : J \rightarrow \mathbb{R}$ pro $n \in \mathbb{N}$. Řekneme, že posloupnost funkcí $\{f_n\}$:
 
 \begin{enumerate}
 \item \emph{konverguje bodově} k $f$ na $J$, pokud pro každé $x \in J$ platí $\lim_{n \rightarrow \infty} f_n(x) = f(x)$, neboli
@@ -18,9 +18,11 @@ $$f_n \con f \textrm{ na } J \Leftrightarrow \lim_{n \rightarrow \infty} \sup \{
 \end{vetal}
 
 \begin{proof}
-$$ f_n \rightrightarrows f \Leftrightarrow \forall \varepsilon > 0 \  \exists n_0 \in \mathbb{N} \  \forall n \geq n_0 \  \forall x \in J \textrm{ : } |f_n(x) - f(x)| < \varepsilon \Leftrightarrow$$
-$$\Leftrightarrow \forall \varepsilon > 0 \  \exists n_0 \in \mathbb{N} \  \forall n \geq n_0 \textrm{ : } \sup \{ |f_n(x) - f(x) | \textrm{; } x \in J \} \leq \varepsilon \Leftrightarrow$$
-$$\Leftrightarrow \lim_{n \to \infty} \sup\{|f_n(x)-f(x)| \textrm{; } x \in J\} = 0$$
+\begin{eqnarray*}
+f_n \con f & \Leftrightarrow & \forall \varepsilon > 0 \  \exists n_0 \in \mathbb{N} \  \forall n \geq n_0 \  \forall x \in J \textrm{ : } |f_n(x) - f(x)| < \varepsilon \\
+& \Leftrightarrow & \forall \varepsilon > 0 \  \exists n_0 \in \mathbb{N} \  \forall n \geq n_0 \textrm{ : } \sup \{ |f_n(x) - f(x) | \textrm{; } x \in J \} \leq \varepsilon \\
+& \Leftrightarrow & \lim_{n \to \infty} \sup\{|f_n(x)-f(x)| \textrm{; } x \in J\} = 0
+\end{eqnarray*}
 \end{proof}
 
 \begin{vetat}[Bolzano-Cauchyho podmínka pro stejnoměrnou konvergenci]
@@ -32,15 +34,13 @@ $$f_n \con f \textrm{ na } J \Leftrightarrow \forall \varepsilon > 0 \  \exists 
 "$\Rightarrow$" 
 Nechť $\varepsilon > 0$. Zvolme $n_0$ z def. $f_n \rightrightarrows f$. 
 Nyní 
-$$\forall x \in J \ \exists m,n \geq n_0 |f_n(x) - f_m(x) | \leq $$
-$$\leq |f_n(x) - f(x)| + |f(x) - f_m(x)| < \varepsilon + \varepsilon $$
+$$\forall m,n \geq n_0 \ \forall x \in J \textrm{ : } |f_n(x) - f_m(x) | \leq |f_n(x) - f(x)| + |f(x) - f_m(x)| < \varepsilon + \varepsilon $$
 "$\Leftarrow$"
-Nechť $x \in J$ je pevné. Platí $$\forall \varepsilon > 0 \ \exists n_0 \in \mathbb{N} \ \forall m,n \geq n_0|f_n(x) - f_m(x)| < \varepsilon$$
-Tedy posloupnost ${f_n(x)}_{n=1}^\infty$ splňuje BC podmínku pro konvergenci posloupnosti. Tedy existuje její limita, zn.: $f(x)$.
+Nechť $x \in J$ je pevné. Platí $$\forall \varepsilon > 0 \ \exists n_0 \in \mathbb{N} \ \forall m,n \geq n_0 \textrm{ : } |f_n(x) - f_m(x)| < \varepsilon$$
+Tedy posloupnost $\{ f_n(x) \}_{n=1}^\infty$ splňuje BC podmínku pro konvergenci posloupnosti. Tedy existuje její limita, označme $\lim_{n \to \infty} f_n(x) = f(x)$. Víme, že $f_n(x)$ konverguje k $f(x)$ bodově, chceme stejnoměrně.
 Víme $$\forall \varepsilon > 0 \ \exists n_0 \in \mathbb{N} \ \forall m,n \geq n_0 \ \forall x \in J \textrm{ : } |f_n(x)-f_m(x)|<\varepsilon$$
-Provedme $lim_{n \to \infty}$, dostaneme:
-$$\forall \varepsilon > 0 \rightarrow n_0 \in \mathbb{N} \ \forall n \geq n_0 \ \forall x \in J: |f_n(x) - f(x)| \leq \varepsilon \Rightarrow$$
-$$\Rightarrow f_n \con f$$
+Proveďme $\lim_{n \to \infty}$, dostaneme:
+$$\forall \varepsilon > 0 \ \exists n_0 \in \mathbb{N} \ \forall n \geq n_0 \ \forall x \in J: |f_n(x) - f(x)| \leq \varepsilon \Rightarrow f_n \con f$$
 \end{proof}
 
 \begin{vetat}[Moore-Osgood]
@@ -53,25 +53,32 @@ Pak existují $\lim_{n \rightarrow \infty} a_n$ a $\lim_{x \rightarrow x_0} f(x)
 $$\lim_{n \rightarrow \infty} \lim_{x \rightarrow x_0} f_n(x) = \lim_{x \rightarrow x_0} \lim_{n \rightarrow \infty} f_n(x)$$
 \end{vetat}
 
+\begin{dusledek}
+Nechť $f_n \con f$ na $I$ a nechť $f_n$ jsou na $I$ spojité. Pak $f$ je spojitá na $I$.
+\end{dusledek}
+\begin{proof}[Důkaz důsledku]
+$$\lim_{x \to x_0}f(x) = \lim_{x \to x_0} \lim_{n \to \infty}f_n(x) \overset{MO}{=} \lim_{n \to \infty}\lim_{x \to x_0}f_n(x)=\lim_{n \to \infty}f_n(x_0) = f(x_0)$$
+\end{proof}
+
 \begin{proof}
 Víme, že $f_n \rightrightarrows$, tedy $f_n$ splňuje BC podmínku pro stejnoměrnou konvergenci:
-$$\forall \varepsilon > 0 \ \exists n_0 \ \forall m,n \geq n_0 \ \forall x \in J \textrm{ : } |f_n(x) - f_m(x)| < \varepsilon $$
+$$\forall \varepsilon > 0 \ \exists n_0 \in \mathbb{N} \ \forall m,n \geq n_0 \ \forall x \in J \textrm{ : } |f_n(x) - f_m(x)| < \varepsilon $$
 
-Provedme $\lim_{x \to x_0}$, dostáváme 
-$$\forall \varepsilon>0 \ \exists n_0 \ \forall m,n \geq n_0 \textrm{ : } |a_n - a_m| \leq \varepsilon$$
+Proveďme $\lim_{x \to x_0}$, dostáváme 
+$$\forall \varepsilon>0 \ \exists n_0 \in \mathbb{N} \ \forall m,n \geq n_0 \textrm{ : } |a_n - a_m| \leq \varepsilon$$
 
-Tedy platí BC podmínka pro posloupnost $a_n$, tedy existuje $\lim_{n \to \infty}a_n = a$.
+Tedy platí BC podmínka pro posloupnost $\{ a_n \}_{n=1}^\infty$, tedy existuje $\lim_{n \to \infty}a_n = a$.
 
 Nechť $\varepsilon > 0$. 
 \begin{enumerate}
-\item Z $\lim a_n = a$, $ \exists n_1 \ \forall n \geq n_1 |a - a_n| < \varepsilon $
-\item Z $f_n \con f$, $ \exists n_2 \ \forall n \geq n_2 \ \forall x |f_n(x) - f(x)| < \varepsilon$
+\item Z $\lim_{n \to \infty} a_n = a$, $ \exists n_1 \in \mathbb{N} \ \forall n \geq n_1 \textrm{ : } |a - a_n| < \varepsilon $
+\item Z $f_n \con f$, $ \exists n_2 \in \mathbb{N} \ \forall n \geq n_2 \ \forall x \textrm{ : } |f_n(x) - f(x)| < \varepsilon$
 \end{enumerate}
 
 Zvolme $n_0 = \max \{n_1,n_2\}$ pevné. Z $\lim_{x \to x_0}f_{n_0}(x) = a_{n_0}$ plyne 
-$$\exists \delta > 0 \ \forall x \in B(x_0,\delta) \textrm{ na } J \textrm{ : } |f_{n_0}(x) - a_{n_0}| < \varepsilon$$
+$$\exists \delta > 0 \ \forall x \in B(x_0,\delta) \cap J \textrm{ : } |f_{n_0}(x) - a_{n_0}| < \varepsilon$$
 
-K zadanému $\varepsilon$ jsem našel $\delta > 0$, že $\forall x \in B(x_0, \delta)$ na J.
+K zadanému $\varepsilon$ jsem našel $\delta > 0$, že $\forall x \in B(x_0, \delta) \cap J$:
 \begin{eqnarray*}
 |a - f(x)| & \leq & |a - a_{n_0}| + |a_{n_0} - f_{n_0}(x)| + |f_{n_0}(x) - f(x)| \\
 & \leq & \varepsilon + \varepsilon + \varepsilon = 3\varepsilon \Rightarrow a=\lim_{x \to x_0}f(x)
@@ -79,20 +86,13 @@ K zadanému $\varepsilon$ jsem našel $\delta > 0$, že $\forall x \in B(x_0, \d
 
 \end{proof}
 
-\begin{dusledek}
-Nechť $f_n \con f$ na $I$ a nechť $f_n$ jsou na $I$ spojité. Pak $f$ je spojitá na $I$.
-\end{dusledek}
-\begin{proof}
-$$\lim_{x \to x_0}f(x) = \lim_{x \to x_0} \lim_{n \to \infty}f_n(x) \overset{MO}{=} \lim_{n \to \infty}\lim_{x \to x_0}f_n(x)=lim_{n \to \infty}f_n(x_0) = f(x_0)$$
-\end{proof}
-
 \begin{vetal}[o záměně limity a integrálu]
-Nechť funkce $f_n \con f$ na $[a,b]$ a nechť $f_n \in \mathbb{R} ([a,b])$. Pak $f \in \mathbb{R}([a,b])$ a 
+Nechť funkce $f_n \con f$ na $[a,b]$ a nechť $f_n \in R([a,b])$. Pak $f \in R([a,b])$ a 
 $$(R) \int_a^b f(x) dx = \lim_{n \rightarrow \infty} (R) \int_a^b f_n(x) dx$$
 \end{vetal}
 
 \begin{proof}
-Nechť $\varepsilon > 0$. Z $f_n \con f \ \exists n_0 \ \forall n \geq n_0 \ \forall x \in J \textrm{ : } |f_n(x) - f(x)| < \varepsilon$
+Nechť $\varepsilon > 0$. Z $f_n \con f \ \exists n_0 \in \mathbb{N} \ \forall n \geq n_0 \ \forall x \in J \textrm{ : } |f_n(x) - f(x)| < \varepsilon$. Z toho dostaneme
 $$f_n(x) - \varepsilon < f(x) < f_n(x) + \varepsilon$$
 
 Nechť $n \geq n_0$ je pevné. Víme, že 
@@ -101,7 +101,7 @@ $$f_n(x) \in R([a,b]) \textrm{ tedy } \exists D \textrm{ že } S(f_n,D) - s(f_n,
 Nyní
 \begin{eqnarray*}
 S(f,D) - s(f,D) & \leq & S(f_n+\varepsilon, D) - s(f_n-\varepsilon,D) \\
-& \leq & S(f_n,D)+S(\varepsilon,D) - s(f_n,D) - s(\varepsilon,D) \\
+& \leq & S(f_n,D)+S(\varepsilon,D) - s(f_n,D) - s(-\varepsilon,D) \\
 & \leq & S(f_n,D) - s(f_n,D) +\varepsilon(b-a) - (-\varepsilon)(b-a) \\
 & < & \varepsilon +2\varepsilon(b-a)
 \end{eqnarray*}
