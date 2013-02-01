@@ -120,27 +120,33 @@ Potom existuje funkce $f$ tak, že $f_n \conloc f$ na $(a,b)$, $f$ má vlastní 
 Z bodu 2, víme, že $f^\prime_n$ splňuje BC podmínku $\bigstar$ 
 $$\forall \varepsilon > 0 \ \exists n_0 \in \mathbb{N} \ \forall m,n \geq n_0 \ \forall x \in J \textrm{ : } |f'_n(x) - f'_m(x)| < \varepsilon $$
 
-Chceme $f_n$ splňuje BC podmínku. K $\varepsilon > 0$ volme $n_0$ jako v $\bigstar$. Pak:
-$$|f_n(x) - f_m(x)| \leq |f_n(x) - f_m(x) - (f_n(x_0) - f_m(x_0))| + |f_n(x_0) - f_m(x_0)| =$$
-Z věty o střední hodnotě na $F = f_n - f_m$:
-$$= |(f'_n(\xi) - f'_m(\xi) - (x-x_0)| + |f_n(x_0) - f_m(x_0)| \leq \bigstar \leq \varepsilon (b-a) + |f_n(x_0) - f_m(x_0)|\leq $$
-$$\leq \varepsilon (b-a+1)$$
+Chceme $f_n$ splňuje BC podmínku. Pro $\varepsilon > 0$ volme $n_0$ jako v $\bigstar$. Pak
+\begin{eqnarray*}
+|f_n(x) - f_m(x)| & \leq & |f_n(x) - f_m(x)| - |f_n(x_0) - f_m(x_0)| + |f_n(x_0) - f_m(x_0)| \\
+& \leq & |f_n(x) - f_m(x) - (f_n(x_0) - f_m(x_0))| + |f_n(x_0) - f_m(x_0)| \\
+& \overset{\circledast}{\leq} & |(f_n^\prime(\xi)-f_m^\prime(\xi))(x-x_0)| + |f_n(x_0) - f_m(x_0)| \\ 
+& \overset{\textrm{z $\bigstar$}}{\leq} & \varepsilon (b-a) + |f_n(x_0) - f_m(x_0)| \\
+& \leq & \varepsilon (b-a+1)
+\end{eqnarray*}
 
-Tedy $\exists f, f_n \con f \textrm{ na } (a,b)$. Nyní chceme $\exists f'(x)$. To bude plynout z MO pro posloupnost 
+$\circledast$ : $F(b)-F(a) = F^\prime(c)(b-a)$, $c \in (a,b)$, $F=f_n - f_m$
+
+Tedy existuje $f$ taková, že $f_n \con f$ na $(a,b)$. Nyní chceme ukázat existenci $f'(x)$. Ta bude plynout z MO pro posloupnost
 $$\varphi_n (h) = \frac{f_n(x+h)-f_n(x)}{h}$$
 
-Předpoklady MO:
+Oběříme předpoklady MO:
 \begin{enumerate}
-\item Ověříme BC podmínku pro $\varphi_n$. K $\varepsilon > 0$ volme $n_0$ jako v $\bigstar$. Volme $m,n \geq n_0$ a $h$ libovolné $|x+h| \in (a,b)$.
-$$|\varphi_n(h) - \varphi_m(h)| = \left| \frac{f_n(x+h) - f_m(x+h) - (f_n(x) - f_m(x))}{h} \right| = $$
-Dle věty o střední hodnotě 
-$$ = \frac{(f'_n(\xi) - f'_m(\xi)) h}{h}\leq \bigstar \leq \varepsilon $$
+\item Ověříme BC podmínku pro $\varphi_n$. Pro $\varepsilon > 0$ volme $n_0$ jako v $\bigstar$. Volme $m,n \geq n_0$ a $h$ libovolné $|x+h| \in (a,b)$.
+\begin{eqnarray*}
+|\varphi_n(h) - \varphi_m(h)| & = & \left| \frac{f_n(x+h) - f_m(x+h) - (f_n(x) - f_m(x))}{h} \right| \\
+& \overset{\textrm{stř. hodnota}}{=} & \left| \frac{(f'_n(\xi) - f'_m(\xi))(x+h-x)}{h} \right| = | f'_n(\xi) - f'_m(\xi) | \overset{\textrm{z $\bigstar$}}{<} \varepsilon
+\end{eqnarray*}
+
+\item Existuje $\lim_{h \to 0} \varphi_n (h) = f'_n(x)$
+\end{enumerate}
 
 Jsou splněny předpoklady MO. Tedy mohu použít její závěr. Existuje
 $$\underbrace{\lim_{x \to 0} \lim_{n \to \infty} \frac{f_n(x+h) - f_n(x)}{h}}_{\lim_{h \to 0} \frac{f(x+h) - f(x)}{h} = f'(x)} = \underbrace{\lim_{n \to \infty} \lim_{h \to 0} \frac {f_n(x+h) - f_n(x)}{h}}_{\lim_{n \to \infty} f'_n(x)}$$
-\item Existuje
-$$\lim_{h \to 0} \varphi_n(h) = f'_n(x)$$
-\end{enumerate}
-Tedy existuje $f^\prime$ a 
-$$f'_n \con f' $$
+
+Tedy existuje $f^\prime$ a $f'_n \con f' $
 \end{proof}

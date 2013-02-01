@@ -1,5 +1,5 @@
 \begin{definice}
-Nehcť $x_0 \in \mathbb{R}$ a $a_n \in \mathbb{R}$ pro $n \in \mathbb{N}_0$. Řadu funkcí $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ nazýváme \emph{mocninnou řadou} s koeficienty $a_n$ o středu $x_0$.
+Nechť $x_0 \in \mathbb{R}$ a $a_n \in \mathbb{R}$ pro $n \in \mathbb{N}_0$. Řadu funkcí $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ nazýváme \emph{mocninnou řadou} s koeficienty $a_n$ o středu $x_0$.
 \end{definice}
 
 \begin{definice}
@@ -17,13 +17,14 @@ $$\limsup_{n \to \infty} a_n = \liminf_{n \to \infty} a_n = a$$
 \end{poznamka}
 
 \begin{vetal}[o poloměru konvergence mocninné řady]
+\label{o poloměru konvergence mocninné řady}
 Nechť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada a $R \in [ 0, \infty ]$ její poloměr konvergence. Pak řada konverguje obsolutně pro všechna $x$ taková, že $| x - x_0| < R$ a diverguje pro všechna $x$ taková, že $| x - x_0 | > R$.
 \end{vetal}
 
 \begin{proof}
-Nechť $|x-x_0|<R$, zvolme $r: |x-x_0|<r<R$. Z definice $R$, $\sum a_nr^n$ konverguje. Tedy je tato řada omezená, tedy $\exists K>0:\forall n \in \mathbb{N} |a_nr^n|<K$.
+Nechť $|x-x_0|<R$, zvolme $r: |x-x_0|<r<R$. Z definice $R$, $\sum a_nr^n$ konverguje. Tedy je tato řada omezená, tedy $\exists K>0 \textrm{ : } \forall n \in \mathbb{N} \textrm{ : } |a_nr^n|<K$.
 Nyní
-$$|a_n(x-x_0|^n = |a_n r^n \frac{(x-x_0)^n}{r^n}| \leq |a_nr^n|. \left( \frac{|x-x_0|}{r} \right)^n \leq K \frac{|x-x_0|^n}{r^n} $$
+$$|a_n(x-x_0)^n| = \left| a_n r^n \frac{(x-x_0)^n}{r^n} \right| \leq |a_nr^n| \left( \frac{|x-x_0|}{r} \right)^n \leq K \frac{|x-x_0|^n}{r^n} $$
 $|x-x_o|<r$, tedy geometrická řada $\sum K. \left( \frac{|x-x_0|}{r} \right)^n$ konverguje. Ze srovnávacího kritéria $\sum a_n(x-x_o)^n$ konverguje.
 Nechť $|x-x_o|>R$. Tvrdím, že $\sum a_n(x-x_o)^n$ diverguje. Jinak bychom našli $y: R< |y-x_0| < |x-x_0|$. Analogicky předchozí části důkazu:
 $$\sum a_n(x-x_0)^n \textrm{ konverguje } \Rightarrow \sum a_n(y-x_0)^n \textrm{ absolutně konverguje } \rightarrow \textrm{ spor s definicí } R$$
@@ -37,30 +38,32 @@ Pokud existuje $\lim_{n \rightarrow \infty} \frac{|a_n|}{|a_{n+1}|}$, pak $R = \
 
 \begin{proof}
 Nechť $R = \frac{1}{\limsup \sqrt[n]{|a_n|}}$ a $0<R<\infty$ (pro $K = 0$ a $R = \infty$ analogicky)
-Nechť $|x-x_0| < R$ , $\sum a_n(x-x_0)^n$ . Použijeme limitné odmocninové kritérium a dostaneme:
+Nechť $|x-x_0| < R$ , $\sum a_n(x-x_0)^n$ . Použijeme limitní odmocninové kritérium a dostaneme:
 $$\limsup_{n \to \infty} \sqrt[n]{a_n(x-x_0)^n} = \limsup_{n \to \infty} \sqrt[n]{|a_n|} . |x-x_0| - \frac{1}{R} |x-x_0| < 1$$
 Tedy řada konverguje.
 Nechť $|x-x_0|>R$. Pak 
-$$\limsup \sqrt[n]{a_n|x-x_0|} = \frac{1}{R}|x-x_0| > 1 \Rightarrow \limsup |a_n(x-x_0)|^n > 1$$
-Tedy $\exists $ podposloupnosť, že $|a_{n_k} (x-x_0)^n| > 1$. Není splněna nutná podmínka konvergeci, tedy řada diverguje.
-Nechť existuje $R = \lim_{n \to \infty } \frac{|a_n|}{a_{n+1}}$ a $|x-x_0|< R$. Podle limitního podílového kritéria:
-$$\lim_{n \to \infty} \frac{|a_{n+1}(x-x_0)^{n+1}|}{a_n(x-x_0)^n|} = \lim_{n \to \infty} \frac{|a_{n+1}|}{a_n} |x-x_0| = \frac{1}{R} (x-x_0) < 1 \Rightarrow \sum a_n(x-x_0)^n \textrm{ konverguje.}$$
+$$\limsup \sqrt[n]{a_n|x-x_0|} = \frac{1}{R}|x-x_0| > 1 \Rightarrow \limsup_{n \to \infty} |a_n(x-x_0)^n| > 1$$
+Tedy existuje podposloupnost, že $|a_{n_k} (x-x_0)^n| > 1$. Není splněna nutná podmínka konvergece, tedy řada diverguje.
+Nechť existuje $R = \lim_{n \to \infty } \frac{|a_n|}{|a_{n+1}|}$ a $|x-x_0|< R$. Podle limitního podílového kritéria:
+$$\lim_{n \to \infty} \frac{|a_{n+1}(x-x_0)^{n+1}|}{|a_n(x-x_0)^n|} = \lim_{n \to \infty} \frac{|a_{n+1}|}{|a_n|} |x-x_0| = \frac{1}{R} (x-x_0) < 1 \Rightarrow \sum a_n(x-x_0)^n \textrm{ konverguje.}$$
 Pokud $|x-x_0| > R$ , pak 
-$$\lim_{n \to \infty} \frac{|a_{n+1}(x-x_0)^{n+1}|}{a_n(x-x_0)^n|} = \frac{1}{R}|x-x_0|>1 \Rightarrow \textrm{řada diverguje.}$$
+$$\lim_{n \to \infty} \frac{|a_{n+1}(x-x_0)^{n+1}|}{|a_n(x-x_0)^n|} = \frac{1}{R}|x-x_0|>1 \Rightarrow \textrm{řada diverguje.}$$
 \end{proof}
 
-\begin{vetal}[o stejnoměrné konvergenci mocniné řady]
+\begin{vetal}[o stejnoměrné konvergenci mocninné řady]
+\label{o stejnoměrné konvergenci mocninné řady}
 Nechť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada s poloměrem konvergence $R > 0$.  Pak řada konverguje lokálně stejnoměrně na $(x_0 - R, x_0 + R)$ (je-li $R=\infty$, pak na celém $\mathbb{R}$).
 \end{vetal}
 
 \begin{proof}
-Nechť $r < R$, chceme $\sum \con \textrm{ na } [x_0-r,x_0+r]$. Z věty 1 víme absolutní konvergenci rady $\sum a_n.r^n$. Na $ \sum a_n(x-x_0)^n$ použijeme Weirstrassovo kritérium.
-$$b_n = \sup_{x \in[x_0-r, x_0+r]} |a_n(x-x_0)^n| = |a_n|r^n \textrm{ a } \sum b_n \Rightarrow \sum a_n(x-x_0)^n \con \textrm{ na } [x_0-r, x_0+r]$$
+Nechť $r < R$, chceme $\sum \con \textrm{ na } [x_0-r,x_0+r]$. Z Věta L\ref{o poloměru konvergence mocninné řady} víme absolutní konvergenci řady $\sum a_n r^n$. Na $ \sum a_n(x-x_0)^n$ použijeme Weirstrassovo kritérium.
+$$b_n = \sup_{x \in[x_0-r, x_0+r]} |a_n(x-x_0)^n| = |a_n|r^n$$
+$\sum b_n$ konverguje a tedy $\sum a_n (x-x_0)^n$ konverguje stejnoměrně na $[x_0-r, x_0+r]$
 \end{proof}
 
 \begin{vetal}[o derivaci mocninné řady]
 \label{o derivaci mocninné řady}
-Nechť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada s poloměrem konvergence $R > 0$. Pak $\sum_{n=1}^{\infty} n a_n (x-x_0)^{n-1}$ je také mocninná řada se stejným středem a poloměrem konvergence. Navíc pro $x \in ( x_0 - R, x_0 + R )$ ($\mathbb{R}$ pro $R = \infty$) platí
+Nechť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada s poloměrem konvergence $R > 0$. Pak $\sum_{n=1}^{\infty} n a_n (x-x_0)^{n-1}$ je také mocninná řada se stejným středem a poloměrem konvergence. Navíc pro $x \in ( x_0 - R, x_0 + R )$ (resp. $x \in\mathbb{R}$ pro $R = \infty$) platí
 $$ \left( \sum_{n=0}^{\infty} a_n (x-x_0)^n \right)' = \sum_{n=1}^{\infty} n a_n (x-x_0)^{n-1}$$
 \end{vetal}
 
@@ -89,16 +92,16 @@ Opět aplikuji Věta L\ref{o derivaci mocninné řady}
 a dosadím $z = \frac{1}{2}$
 
 \begin{vetal}[o integrování mocninné řady]
-Nehcť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada s poloměrem konvergence $R > 0$. Pak $\sum_{n=0}^{\infty} \frac{a_n}{n+1} \left(x-x_0 \right)^{n+1}$ je také mocninná řada se stejným poloměrem konvergence. Navíc platí
+Nechť $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ je mocninná řada s poloměrem konvergence $R > 0$. Pak $\sum_{n=0}^{\infty} \frac{a_n}{n+1} \left(x-x_0 \right)^{n+1}$ je také mocninná řada se stejným poloměrem konvergence. Navíc platí
 $$\int \sum_{n=0}^{\infty} a_n (x-x_0)^n dx = \sum_{n=1}^{\infty} \frac{a_n}{n+1} \left( x-x_0 \right)^{n+1} + C  \quad \textrm{na } \left( x_0 - R, x_0 + R \right)$$
 \end{vetal}
 
 \begin{proof}
 $$R = \frac{1}{\limsup \sqrt[n]{|a_n|}} \Rightarrow R = \frac{1}{\limsup \sqrt[n]{ \frac{|a_n|}{n+1}}} \Rightarrow R = \frac{1}{\limsup \sqrt[n+1]{ \frac {|a_n|}{n+1}}}$$
 Tedy skutečně má řada $\sum \frac{a_n}{n+1}(x-x_0)^{n+1}$ stejný poloměr konvergence a střed.
-Podle věty 3 $\sum a_n (x-x_0)^n $ konverguje $\conloc$ na $(x_0-R, x_0+R)$.
-Podle věty o zámene lim a integrálu použité na částečné součty řady dostaneme: $\forall [c,d] \subset (x_0-R,x_0+R) $
-$$\int_c^d \sum a_n(x-x_0)^n = \sum \int_c^d a_n(x-x_0)^n = \sum \frac{a_n}{n+1} \big[ (x-x_0)^{n+1} \big]_c^d $$
+Podle Věta L\ref{o stejnoměrné konvergenci mocninné řady} $\sum a_n (x-x_0)^n $ konverguje $\conloc$ na $(x_0-R, x_0+R)$.
+Podle věty o záměně limity a integrálu použité na částečné součty řady dostaneme: $\forall [c,d] \subset (x_0-R,x_0+R) $
+$$\int_c^d \sum_{n=0}^\infty a_n(x-x_0)^n = \sum_{n=0}^\infty \int_c^d a_n(x-x_0)^n = \sum_{n=0}^\infty \frac{a_n}{n+1} \left[ (x-x_0)^{n+1} \right]_c^d $$
 Funkce jsou spojité, z rovnosti integrálu plyne rovnost primitivních funkcí.
 \end{proof}
 
@@ -109,7 +112,7 @@ $$\sum_{n=0}^{\infty} a_n R^n = \lim_{r \rightarrow R_-} \sum_{n=0}^{\infty} a_n
 
 \begin{proof}
 Předpokládejme bez újmy na obecnosti, že $x_0 = 0$. Označme $t_N = \sum_{n=N+1}^{\infty} a_n R^n$. Víme, že $\sum a_n R^n$ konverguje, tedy
-$$\forall \varepsilon>0 \ \exists n_0 \ \forall n \geq n_0 \textrm{ : } |t_N| < \varepsilon$$
+$$\forall \varepsilon>0 \ \exists n_0 \in \mathbb{N} \ \forall n \geq n_0 \textrm{ : } |t_N| < \varepsilon$$
 \begin{eqnarray*}
 a_n & = & a_n R^n \left( \frac{x}{R} \right)^n \\
 & = & - t_N \left( \left( \frac{x}{R} \right)^n - \left( \frac{x}{R} \right)^{n+1} \right) + t_{n-1} \left( \frac{x}{R} \right)^n - t_n \left( \frac{x}{R} \right)^{n+1} 

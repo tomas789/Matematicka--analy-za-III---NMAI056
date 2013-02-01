@@ -45,7 +45,7 @@ Nechť $m, n \in \mathbb{N}$, pak
 
 \emph{Poznámka} proč se věta jmenuje o ortogonalitě trigoniometrických funkcí? Vraťme se zpět k lineární algebře. Skalární součin vektorů $x$ a $y$ jsme definovali jako $\left\langle x,y \right\rangle = \sum_{i=0}^{n} x_i y_i$. Zcela ekvivalentně byl zaveden skalární součit funkcí $f$ a $g$ jako $\left\langle f, g \right\rangle = \int f(x) g(x) dx$. O vektorech řekneme, že jsou na sebe kolmé (ortogonální), pokud je jejich skalární součin roven nule. Nejinak je tomu i u skalárního součinu funkcí. 
 
-\emph{Poznámka 2} Skalární součin funkcí se nazývá Hilbertovy prostory
+\emph{Poznámka 2} Prostor skalárních součinů funkcí nazýváme Hilbertův.
 
 \begin{proof}
 
@@ -75,7 +75,9 @@ Zbylé rovnosti analogicky.
 \end{opakovani}
 
 \begin{vetal}[Fourierovy vzorce]
-Nechť $f \in \mathcal{P}_{2 \pi}$ a nechť $f(x) = \frac{a_0}{2} + \sum_{k=1}^{\infty} a_k \cos(kx) + b_k \sin(kx)$, nechť navíc řada napravo konverguje stejnoměrně. Pak
+Nechť $f \in \mathcal{P}_{2 \pi}$ a nechť 
+$$f(x) = \frac{a_0}{2} + \sum_{k=1}^{\infty} ( a_k \cos(kx) + b_k \sin(kx)) \quad \textrm{pro všechna $x \in \mathbb{R}$}$$
+Nechť navíc řada napravo konverguje stejnoměrně. Pak
 \begin{eqnarray*}
 a_k & = & \frac{1}{\pi} \int_0^{2 \pi} f(x) \cos(kx) dx, \quad k \in \{0, 1, 2, \ldots\} \\
 b_k & = & \frac{1}{\pi} \int_0^{2 \pi} f(x) \sin(kx) dx, \quad k \in \{1, 2, \ldots\} 
@@ -127,7 +129,7 @@ F_f & = & \frac{a_0}{2} + \sum_{k=1}^{\infty} a_k \cos \left( \frac{2 k \pi}{l} 
 a_k & = & \frac{2}{l} \int_0^{l} f(x) \cos \left( \frac{2 k \pi}{l} x \right) dx \\
 b_k & = & \frac{2}{l} \int_0^l f(x) \sin \left( \frac{2 k \pi}{l} x \right) dx 
 \end{eqnarray*}
-\item někdy se pracuje s rozvoji vůči jinému systému než je trn trigoniometrický
+\item někdy se pracuje s rozvoji vůči jinému systému než je ten trigoniometrický
 \item je-li $f$ lichá, pak platí $\forall k : a_k = 0$
 \item je-li $f$ sudá, pak platí $\forall k : b_k = 0$
 \item opecně neplatí $F_f = f$
@@ -138,7 +140,7 @@ b_k & = & \frac{2}{l} \int_0^l f(x) \sin \left( \frac{2 k \pi}{l} x \right) dx
 Rozviňte funkci $f(x) = x^2$ do Fourierovy řady na $(-\pi, \pi)$.
 \end{priklad}
 
-Funkce $f$ je sudá $\Rightarrow \forall k b_k = 0$.
+Funkce $f$ je sudá $\Rightarrow \forall k \textrm{ : } b_k = 0$.
 
 \begin{eqnarray*}
 a_0 & = & \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) dx = \frac{2}{\pi} \int_0^{\pi} x^2 dx = \frac{2}{\pi} \left[ \frac{x^3}{3} \right]_0^\pi = \frac{2}{3} \pi^2 \\
@@ -185,7 +187,7 @@ Pozn.: Důkaz třetí rovnosti je až na znaménko, na přednášce nevyšel. Sn
 
 \begin{vetal}[částečné součty Fourierovy řady]
 Nechť $f \in \mathcal{P}_{2 \pi}$ a $F_f$ je Fourierova řada pro $f$. Potom pro částečné součty $s_n(x) = \frac{a_0}{2} + \sum_{k=1}^{n} (a_k \cos ( kx) + b_k \sin ( kx ))$ platí
-$$s_n(x) = \frac{1}{\pi} \int_{-pi}^\pi f(x+z)D_n(y)dy = \frac{1}{\pi} \int_0^\pi \left( f(x+y) + f(x-y) \right) D_n(y) dy$$
+$$s_n(x) = \frac{1}{\pi} \int_{-\pi}^\pi f(x+z)D_n(y)dy = \frac{1}{\pi} \int_0^\pi \left( f(x+y) + f(x-y) \right) D_n(y) dy$$
 \end{vetal}
 
 \begin{proof}
@@ -233,22 +235,24 @@ $$\lim_{t \rightarrow \infty} \int_a^b \chi_{[c,d]}(x) \cos(tx) dx = \lim_{t \ri
 Tvrzení platí pro $\chi_{[c,d]}(x)$, tedy platí pro $\alpha \chi_{[c,d]}(x) \Rightarrow$ pro pevné dělení $D = a = x_0 < x_1 < \ldots < x_m = b$ a $\alpha_i$ platí tvrzení pro
 $$f(x) = \sum_{i=1}^m \alpha_i \chi_{[x_{i-1}, x_i]}(x)$$
 
-Nechť nyní $f \in R([a,b])$ a $\varepsilon > 0$. Pak $\exists \textrm{ dělení } D$, že $0 \leq (R) \int_a^b f(x) dy - s(f,D) < \varepsilon$
+Nechť nyní $f \in R([a,b])$ a $\varepsilon > 0$. Pak existuje dělení $D$, že $0 \leq (R) \int_a^b f(x) dy - s(f,D) < \varepsilon$
 
-Označme $$\alpha_i = \min_{x \in [x_{i-1}, x_i]} f(x) \textrm{ a } g(x) = \sum_{i=1}^m \alpha_i \chi_{[x_{i-1}, x_i]} (x)$$ t. j. $(R) \int_a^b g = s(f,D)$.
+Označme 
+$$\alpha_i = \min_{x \in [x_{i-1}, x_i]} f(x) \textrm{ a } g(x) = \sum_{i=1}^m \alpha_i \chi_{[x_{i-1}, x_i]} (x)$$ 
+tedy $(R) \int_a^b g = s(f,D)$.
 
-Víme $\lim_{t \rightarrow \infty} \int_a^b g(x) \cos(tx) = 0$ tedy $\exists t_0 \ \forall t \geq t_0 \textrm{ : } \left| \int_a^b g(x) \cos(tx) dx \right| < \varepsilon$
+Víme $\lim_{t \rightarrow \infty} \int_a^b g(x) \cos(tx) = 0$ tedy $\exists t_0 \in \mathbb{N} \ \forall t \geq t_0 \textrm{ : } \left| \int_a^b g(x) \cos(tx) dx \right| < \varepsilon$
 
 Nyní pro $t \geq t_0$
 $$\left| \int_a^b f(x) \cos(tx) dx \right| \leq \left| \int_a^b (f(x)-g(x)) \cos(tx) dx \right| + \left| \int_a^b g(x) \cos(tx) dx \right| \leq$$
-Poznamenejme $f(x) \geq g(x) \Rightarrow f(x)-g(x) \geq 0 \textrm{ : } \left| \int F(x) \right| \leq \int \left| F(x) \right|$
-$$\leq \int_a^b (f(x)-g(x)) |\cos(tx)| dx + \varepsilon \leq \int_a^b f(x) dx - \int_a^b g(x) dx + \varepsilon < 2 \varepsilon$$
+Poznamenejme $f(x) \geq g(x) \Rightarrow f(x)-g(x) \geq 0$
+$$\left| \int F(x) \right| \leq \int \left| F(x) \right| \leq \int_a^b (f(x)-g(x)) |\cos(tx)| dx + \varepsilon \leq \int_a^b f(x) dx - \int_a^b g(x) dx + \varepsilon < 2 \varepsilon$$
 
 Pro sinus budeme postupovat analogicky
 \end{proof}
 
 \begin{vetat}[Diniho kriterium]
-Nechť $f \int \mathcal{P}_{2 \pi}$ a $x \in \mathbb{R}$. Nechť existují vlastní limity $f(x+) = \lim_{y \rightarrow x+} f(y)$ a $f(x-) = \lim_{y \rightarrow x-} f(y)$ a nechť existují vlastní limity
+Nechť $f \in \mathcal{P}_{2 \pi}$ a $x \in \mathbb{R}$. Nechť existují vlastní limity $f(x+) = \lim_{y \rightarrow x+} f(y)$ a $f(x-) = \lim_{y \rightarrow x-} f(y)$ a nechť existují vlastní limity
 $$\lim_{y \rightarrow x+} \frac{f(y)-f(x+)}{y-x} \quad \mathrm{a} \quad \lim_{y \rightarrow x-} \frac{f(y)-f(x-)}{y-x}$$
 Potom Fourierova řada funkce $f$ konverguje v bodě $x$ k hodnotě $\frac{f(x+) + f(x-)}{2}$.
 \end{vetat}
@@ -297,9 +301,9 @@ $$\lim_{y \rightarrow 0} F(y) = \lim_{x \rightarrow 0} \frac{y}{2 \sin \left( \f
 $h \in R([a,b])$ spojitá na $[a,b]$, $0 < \delta \leq g \leq D$. Pak $\frac{h}{g} \in R([a,b])$.
 \end{tvrzeni}
 
-Nechť $\varepsilon > 0 \ \exists \delta > 0 \ \forall y \in [0, \delta] \textrm{ : } |F(y)-A| < \varepsilon$
+Nechť $\varepsilon > 0$, pak $\exists \delta > 0 \ \forall y \in [0, \delta] \textrm{ : } |F(y)-A| < \varepsilon$
 
-Nyní $\delta$ je pevné a tedz dle tvrzení $F(y) \in R([\delta, \pi])$, $g(y) = 2 \sin \frac{y}{2}$.
+Nyní $\delta$ je pevné a tedy dle tvrzení $F(y) \in R([\delta, \pi])$, $g(y) = 2 \sin \frac{y}{2}$.
 
 Tedy $\exists \overline{D}$ dělení $[\delta, \pi]$ že $S(F,\overline{D}) - s(f,\overline{D}) < \varepsilon$.
 
@@ -308,5 +312,5 @@ $$S(F, D)-s(f,D) = \left( \max_{x \in [0, \delta]} F(x) - \min_{x \in [0, \delta
 \end{proof}
 
 \begin{vetabd}[Jordan-Dirichletovo kriterium]
-Nechť $f \in \mathcal{P}_{2\pi}$ je po částech monotónní. Tedy nechť existuje konečně mnoho bodů $0=a_1 < a_2 < \ldots < a_m = 2 \pi$ tak, že $f$ je monotónní na $(a_i, a_{i+1})$ pro $i \in \{1, \ldots, m-1 \}$. Potom Fourierova řada funkce $f$ konverguje v bodě $x$ k hodnotě $\frac{f(x+) + f(x-)}{2}$ pro všechna $x \in \mathbb{R}$.
+Nechť $f \in \mathcal{P}_{2\pi}$ je po částech monotónní. Tedy existuje konečně mnoho bodů $0=a_1 < a_2 < \ldots < a_m = 2 \pi$ tak, že $f$ je monotónní na $(a_i, a_{i+1})$ pro $i \in \{1, \ldots, m-1 \}$. Potom Fourierova řada funkce $f$ konverguje v bodě $x$ k hodnotě $\frac{f(x+) + f(x-)}{2}$ pro všechna $x \in \mathbb{R}$.
 \end{vetabd}
