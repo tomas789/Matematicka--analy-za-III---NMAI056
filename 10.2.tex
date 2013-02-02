@@ -48,6 +48,20 @@ Potom je funkce $F(x) = \sum_{n=1}^{\infty} u_n (x)$ dobře definovaná diferenc
 \end{enumerate}
 \end{proof}
 
+\begin{priklad}
+$F(x) = \sum_{n=0}^\infty \frac{(-1)^n}{2n+1} x^{2n+1}$, je $F(x)$ diferencovatelná na $(-1,1)$?
+\end{priklad}
+
+$u_n(x) = \frac{(-1)^n}{2n+1} x^{2n+1}$, $u_n^\prime (x) = (-1)^n x^{2n}$, $u_n(x)$ mají derivaci na $(-1,1)$
+\begin{enumerate}
+\item $x_0 = 0$, $\sum_{n=0}^\infty \frac{(-1)^n}{2n+1} 0$ konverguje
+\item $\delta > 0$, $[-1+\delta, 1-\delta]$, $\sum (-1)^n x^{2n}$ konverguje stejnoměrně?
+
+$a_n = \sup_{[-1+\delta, 1-\delta]} |(-1)^n x^{2n}| = (1-\delta)^{2n}$, $\sum (1-\delta)^{2n}$ konverguje $\overset{Weirstrass}{\Rightarrow} \sum (-1)^n x^{2n} \con$ na $[-1+\delta, 1-\delta]$ a tedy $\sum (-1)^n x^{2n} \conloc$ na $(-1,1)$.
+
+Podle Věta L\ref{o spojitosti a derivování řad funkcí} existuje $F^\prime (x)$.
+$$F^\prime (x) = \left( \sum_{n=0}^\infty \frac{(-1)^n}{2n+1} x^{2n+1} \right)^\prime = \sum_{n=0}^\infty \left( \frac{(-1)^n}{2n+1} x^{2n+1} \right)^\prime = \sum_{n=0}^\infty (-x^2)^n = \frac{1}{1-(-x^2)} = \frac{1}{1+x^2}$$
+\end{enumerate}
 
 Vraťme se ke konvergenci obyčejných řad. Následující kritérium bude užitečné v kapitole Fourierovy řady. Existuje i varianta tohoto tvrzení pro stejnoměrnou konvergenci, tu však nebudeme potřebovat.
 
