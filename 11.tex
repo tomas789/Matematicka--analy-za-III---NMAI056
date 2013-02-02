@@ -112,26 +112,35 @@ $$\sum_{n=0}^{\infty} a_n R^n = \lim_{r \rightarrow R_-} \sum_{n=0}^{\infty} a_n
 \end{vetat}
 
 \begin{proof}
-Předpokládejme bez újmy na obecnosti, že $x_0 = 0$. Označme $t_N = \sum_{n=N+1}^{\infty} a_n R^n$. Víme, že $\sum a_n R^n$ konverguje, tedy
-$$\forall \varepsilon>0 \ \exists n_0 \in \mathbb{N} \ \forall n \geq n_0 \textrm{ : } |t_N| < \varepsilon$$
-\begin{eqnarray*}
-a_n & = & a_n R^n \left( \frac{x}{R} \right)^n \\
-& = & - t_N \left( \left( \frac{x}{R} \right)^n - \left( \frac{x}{R} \right)^{n+1} \right) + t_{n-1} \left( \frac{x}{R} \right)^n - t_n \left( \frac{x}{R} \right)^{n+1} 
-\end{eqnarray*}
-Sečteme od $N$ do $N+k$
+Připomeň: 
+$$\sum u_n \con \textrm{ na } J \Leftrightarrow \forall \varepsilon > 0 \ \exists n_0 \in \mathbb{N} \ \forall n \geq n_0 \ \forall k \in \mathbb{N} \ \forall x \in J \textrm{ : } \left| \sum_{i=n}^{n+k} u_i(x) \right| < \varepsilon$$
+
+Předpokládejme bez újmy na obecnosti, že $x_0 = 0$. Označme $t_N = \sum_{n=N+1}^{\infty} a_n R^n$. 
+
+Víme, že $\sum a_n R^n$ konverguje, tedy
+$$\forall \varepsilon>0 \ \exists n_0 \in \mathbb{N} \ \forall n \geq n_0 \textrm{ : } |t_N| < \varepsilon \quad \circledast$$
+$$a_n x^n = a_n R^n \left( \frac{x}{R} \right)^n = - t_n \left( \left( \frac{x}{R} \right)^n - \left( \frac{x}{R} \right)^{n+1} \right) + t_{n-1} \left( \frac{x}{R} \right)^n - t_n \left( \frac{x}{R} \right)^{n+1}$$
+
+Pro $\varepsilon > 0$ zvolím $n_0$ jako v $\circledast$. Nechť $N \geq n_0$ a $k \in \mathbb{N}$. Sečteme od $N$ do $N+k$
 $$\sum_{n=N}^{N+k} a_n x^n = \left[ \sum_{n=N}^{N+k} -t_n \left( \left( \frac{x}{R} \right)^n - \left( \frac{x}{R} \right)^{n+1} \right) \right] + t_{N-1} \left( \frac{x}{R} \right)^n - t_{N+k} \left( \frac{x}{R} \right)^{n+k+1}$$
 Protože $x \in [0, R]$, tak $\left( \frac{x}{R} \right)^n \in [0,1]$. Dále platí $\left( \frac{x}{R} \right)^{n} - \left( \frac{x}{R} \right)^{n+1} \geq 0$.
 \begin{eqnarray*}
 \left|\sum_{n=N}^{N+k} a_n x^n \right| & \leq & \sum_{n=N}^{N+k} |t_n| \left( \left( \frac{x}{R} \right)^{n} - \left( \frac{x}{R} \right)^{n+1} \right) + |t_{N-1}| + |t_{N+k}| \\
-& \leq & \varepsilon \sum_{n=N}^{N+k} |t_n| \left( \left( \frac{x}{R} \right)^{n} - \left( \frac{x}{R} \right)^{n+1} \right) + 2 \varepsilon \\
-& = & \varepsilon \left( \left( \frac{x}{R} \right)^{N} - \left( \frac{x}{R} \right)^{N+k+1} \right) + 2 \varepsilon \\
-& \leq & 3 \varepsilon 
+& \leq & \varepsilon \sum_{n=N}^{N+k} \left( \left( \frac{x}{R} \right)^{n} - \left( \frac{x}{R} \right)^{n+1} \right) + 2 \varepsilon \\
+& = & \varepsilon \left( \left( \frac{x}{R} \right)^{N} - \left( \frac{x}{R} \right)^{N+k+1} \right) + 2 \varepsilon \leq 3 \varepsilon
 \end{eqnarray*}
-Z \emph{BC} podmínky pro stejnoměrnou konvergenci řady dostaneme $\sum_{n=0}^{\infty} a_n x^n \con$ na $[0, R]$
-Z MO věty dostaneme
-$$\lim_{n \rightarrow \infty} \lim_{r \rightarrow R_-} \sum_{n=0}^{N} a_n R^n = \lim_{r \rightarrow R_-} \lim_{n \rightarrow \infty} \sum_{n=0}^{N} a_n R^n$$
-$$\lim_{n \rightarrow \infty} \lim_{r \rightarrow R_-} \sum_{n=0}^{N} a_n R^n = \lim_{n \rightarrow \infty} \sum_{n=0}^{N} a_n R^n = \sum_{n=0}^{\infty} a_n R^n$$
-$$\lim_{r \rightarrow R_-} \lim_{n \rightarrow \infty} \sum_{n=0}^{N} a_n R^n = \lim_{r \rightarrow R_-} \sum_{n=0}^{\infty} a_n r^n$$
+Z \emph{BC} podmínky pro stejnoměrnou konvergenci řady dostaneme $\sum_{n=0}^{\infty} a_n x^n \con$ na $[0, R]$. Z MO dostaneme
+
+$$\lim_{n \rightarrow \infty} \lim_{r \rightarrow R_-} \sum_{n=0}^{N} a_n r^n = \lim_{r \rightarrow R_-} \lim_{n \rightarrow \infty} \sum_{n=0}^{N} a_n r^n$$
+
+Na levé straně rovnosti dostanu
+$$\lim_{n \rightarrow \infty} \lim_{r \rightarrow R_-} \sum_{n=0}^{N} a_n r^n = \lim_{n \rightarrow \infty} \sum_{n=0}^{N} \lim_{r \rightarrow R_-} a_n r^n = \lim_{n \rightarrow \infty} \sum_{n=0}^{N} a_n R^n = \sum_{n=0}^\infty a_n R^n$$
+
+A na pravé straně
+$$\lim_{r \rightarrow R_-} \lim_{n \rightarrow \infty} \sum_{n=0}^{N} a_n r^n = \lim_{r \rightarrow R_-} \sum_{n=0}^\infty a_n r^n$$
+
+Tedy mám
+$$\sum_{n=0}^\infty a_n R^n = \lim_{r \rightarrow R_-} \sum_{n=0}^\infty a_n r^n$$
 \end{proof}
 
 \begin{priklad}
