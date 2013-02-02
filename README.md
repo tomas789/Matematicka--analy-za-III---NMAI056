@@ -7,9 +7,11 @@ Toto skiptum obsahuje všechny věty včetně důkazů přednášených v průb�
 
 Pro sestavení dokumentu ve formátu PDF použijte následující příkazy
 
+```bash
 # mpost obrazky.mp
 # pdflatex skripta.tex
 # pdflatex skripta.tex
+```
 
 Poznámka: Opravdu je třeba příkaz pdflatex spustit dvakrát. Jinak se může stát (a nejspíše stane), že místo odkazů na část textu budou otazníky.
 
