@@ -184,15 +184,15 @@ Pozn.: Důkaz třetí rovnosti je až na znaménko, na přednášce nevyšel. Sn
 
 \begin{vetal}[částečné součty Fourierovy řady]
 Nechť $f \in \mathcal{P}_{2 \pi}$ a $F_f$ je Fourierova řada pro $f$. Potom pro částečné součty $s_n(x) = \frac{a_0}{2} + \sum_{k=1}^{n} (a_k \cos ( kx) + b_k \sin ( kx ))$ platí
-$$s_n(x) = \frac{1}{\pi} \int_{-\pi}^\pi f(x+z)D_n(y)dy = \frac{1}{\pi} \int_0^\pi \left( f(x+y) + f(x-y) \right) D_n(y) dy$$
+$$s_n(x) = \frac{1}{\pi} \int_{-\pi}^\pi f(x+y)D_n(y)dy = \frac{1}{\pi} \int_0^\pi \left( f(x+y) + f(x-y) \right) D_n(y) dy$$
 \end{vetal}
 
 \begin{proof}
 \begin{eqnarray*}
 s_n(x) & = & \frac{a_0}{2} + \sum_{k=1}^{n} \left[ a_k \cos(kx) + b_k \sin(kx) \right] \\
-& = & \frac{1}{\pi} \int_{-\pi}^\pi \left( \frac{1}{2} + \sum_{k=1}^n \left( \cos(ky) \sin(kx) + \sin(ky) \cos (kx) \right) f(y) dy \right) \\
-& = & \frac{1}{\pi} \int_{-\pi}^\pi \left( \frac{1}{2} \cos(k(y-x))  \right) f(y) dy \\
-& = & \frac{1}{\pi} \int_{-pi}^\pi D_n(y-x) f(y) dy \\
+& = & \frac{1}{\pi} \int_{-\pi}^\pi \left( \frac{1}{2} + \sum_{k=1}^n \left( \cos(ky) \sin(kx) + \sin(ky) \cos (kx) \right) \right) f(y) dy \\
+& = & \frac{1}{\pi} \int_{-\pi}^\pi \left( \frac{1}{2} + \sum_{k=1}^n \cos(k(y-x))  \right) f(y) dy \\
+& = & \frac{1}{\pi} \int_{-\pi}^\pi D_n(y-x) f(y) dy \\
 & = & \frac{1}{\pi} \int_{-\pi}^\pi D_n(t-x) f(t) dt 
 \end{eqnarray*}
 
